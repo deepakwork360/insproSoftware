@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode Palette - Ivory & Forest */
+  --background: #F9F8F6;
+  --foreground: #091413;
+  
+  --card: #FFFFFF;
+  --card-foreground: #091413;
+  
+  --primary: #285A48;
+  --primary-foreground: #F9F8F6;
+  
+  --secondary: #EAE6E1;
+  --secondary-foreground: #285A48;
+  
+  --accent: #408A71;
+  --accent-foreground: #FFFFFF;
+  
+  --muted: #EAE6E1;
+  --muted-foreground: #64748B;
+  
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #285A48;
+}
+
+.dark {
+  /* Dark Mode Palette - Deep Forest & Mint */
+  --background: #091413;
+  --foreground: #F9F8F6;
+  
+  --card: #121F1D;
+  --card-foreground: #B0E4CC;
+  
+  --primary: #408A71;
+  --primary-foreground: #091413;
+  
+  --secondary: #285A48;
+  --secondary-foreground: #B0E4CC;
+  
+  --accent: #B0E4CC;
+  --accent-foreground: #091413;
+  
+  --muted: #1A2E2A;
+  --muted-foreground: #8A9A97;
+  
+  --border: #1A2E2A;
+  --input: #1A2E2A;
+  --ring: #408A71;
 }
 
 @theme inline {
+  /* Semantic Tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Named Palette Tokens */
+  --color-forest-dark: #091413;
+  --color-forest-deep: #285A48;
+  --color-forest-sage: #408A71;
+  --color-forest-mint: #B0E4CC;
+  --color-ivory: #F9F8F6;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
