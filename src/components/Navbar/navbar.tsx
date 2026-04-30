@@ -14,12 +14,12 @@ export default function Navbar() {
 
                     {/* center or right */}
                     <div className="flex items-center gap-8 font-semibold hidden md:flex">
-                        <Link href="#">Home</Link>
-                        <Link href="#">About Us</Link>
-                        <Link href="#">Services</Link>
-                        <Link href="#">Portfolio</Link>
-                        <Link href="#">Blog</Link>
-                        <Link href="#">Contact Us</Link>
+                        <Link href="/">Home</Link>
+                        <Link href="/about">About Us</Link>
+                        <Link href="">Services</Link>
+                        <Link href="">Portfolio</Link>
+                        <Link href="/blog">Blog</Link>
+                        <Link href="/contact">Contact Us</Link>
                     </div>
 
                     {/* Right Side - Actions & Mobile Menu Button  */}

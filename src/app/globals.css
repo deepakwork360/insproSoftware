@@ -87,3 +87,131 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* HUD / Tech Sidebar UI */
+.banner-hud-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 20;
+}
+
+.hud-line {
+  width: 1px;
+  height: 0;
+  background: linear-gradient(to bottom, transparent, var(--color-forest-mint), transparent);
+  position: absolute;
+  left: 4rem;
+  bottom: 6rem;
+  animation: grow-line 1.5s forwards ease-out;
+}
+
+@keyframes grow-line {
+  to { height: 300px; }
+}
+
+.hud-content {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(176, 228, 204, 0.1);
+  border: 1px solid rgba(176, 228, 204, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  color: var(--color-forest-mint);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  animation: fade-in-up 0.8s forwards;
+}
+
+.banner-head-hud {
+  font-family: var(--font-playfair), serif;
+  font-size: 5rem;
+  font-weight: 500;
+  color: white;
+  line-height: 1;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  opacity: 0;
+  animation: fade-in-up 1s 0.2s forwards;
+}
+
+.banner-head-hud span {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+.banner-para-hud {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 450px;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fade-in-up 1s 0.4s forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner-hud-container {
+    padding: 3rem;
+  }
+  .hud-line {
+    left: 2rem;
+  }
+  .banner-head-hud {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner-hud-container {
+    padding: 1rem;
+    bottom: 0.5rem;
+  }
+  .hud-line {
+    display: none;
+  }
+  .hud-content {
+    margin-left: 0;
+  }
+  .hud-badge {
+    margin-bottom: 0.5rem;
+    font-size: 0.6rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .banner-head-hud {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .banner-para-hud {
+    display: none;
+  }
+}
