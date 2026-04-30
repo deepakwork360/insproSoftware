@@ -36,7 +36,7 @@ export default function CompanyDetails() {
     return (
         <section className="bg-background py-10 lg:py-20 px-6 md:px-12 lg:px-24 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
-                <div className="mb-20 space-y-6 max-w-3xl">
+                <div className="mb-10 md:mb-20 space-y-6 max-w-3xl">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-[10px] uppercase tracking-widest font-mono">
                         Our Expertise
                     </div>
