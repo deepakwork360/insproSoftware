@@ -17,7 +17,7 @@ export default function InputField({ label, isTextArea, error, className, ...pro
                 <label className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] font-bold">
                     {label}
                 </label>
-                {error && <span className="text-[8px] font-mono text-red-500 uppercase tracking-widest animate-pulse">Error.Detected</span>}
+                {error && <span className="text-[8px] font-mono text-red-500 uppercase tracking-widest animate-pulse">{error}</span>}
             </div>
             
             <div className="relative overflow-hidden">

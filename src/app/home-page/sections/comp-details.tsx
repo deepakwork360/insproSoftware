@@ -49,7 +49,7 @@ export default function CompanyDetails() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                     {details.map((item, index) => (
                         <CompDetailCard
                             key={index}
