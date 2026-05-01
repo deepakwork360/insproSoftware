@@ -48,30 +48,46 @@ const faqs = [
 
 function FAQItem({ que, ans, index, isOpen, toggle }: { que: string, ans: string, index: number, isOpen: boolean, toggle: () => void }) {
     return (
-        <div className={`group border-b border-border/40 transition-all duration-500 ${isOpen ? "bg-primary/5" : "hover:bg-primary/[0.02]"}`}>
+        <div className={`group border-b border-border/40 transition-all duration-700 relative ${isOpen ? "bg-primary/[0.04] backdrop-blur-sm" : "hover:bg-primary/[0.01]"}`}>
+            {/* Dynamic left accent bar */}
+            <div className={`absolute left-0 top-0 bottom-0 w-[3px] bg-primary transition-all duration-700 ease-out z-20 ${isOpen ? "opacity-100" : "opacity-0 h-0"}`} />
+            
             <button 
                 onClick={toggle}
-                className="w-full flex items-center justify-between p-6 md:p-8 text-left transition-all"
+                className="w-full flex items-center justify-between p-6 md:p-8 text-left transition-all relative overflow-hidden group/btn"
             >
-                <div className="flex items-center gap-6">
-                    <span className="font-mono text-[10px] text-primary/40 group-hover:text-primary transition-colors">
+                {/* Active background glow */}
+                <div className={`absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent transition-opacity duration-700 ${isOpen ? "opacity-100" : "opacity-0"}`} />
+                
+                <div className="flex flex-col gap-2 md:gap-6 md:flex-row md:items-center relative z-10 pr-14">
+                    <span className={`font-mono text-[9px] md:text-[10px] uppercase tracking-widest transition-colors duration-500 ${isOpen ? "text-primary" : "text-primary/40 group-hover/btn:text-primary"}`}>
                         [Q.{index + 1 < 10 ? `0${index + 1}` : index + 1}]
                     </span>
-                    <h3 className="text-lg md:text-xl font-playfair font-medium text-foreground/80 group-hover:text-foreground transition-colors">
+                    <h3 className={`text-base md:text-xl font-playfair font-medium transition-all duration-500 leading-tight ${isOpen ? "text-foreground md:translate-x-2" : "text-foreground/80 group-hover/btn:text-foreground"}`}>
                         {que}
                     </h3>
                 </div>
-                <div className={`p-2 rounded-none border transition-all duration-500 ${isOpen ? "bg-primary border-primary text-white rotate-180" : "bg-transparent border-border/40 text-primary"}`}>
-                    {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                
+                <div className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-500 z-10 rounded-full border ${isOpen ? "bg-primary border-primary text-white rotate-180 scale-110 shadow-[0_0_20px_rgba(var(--primary),0.3)]" : "bg-background/50 border-border/40 text-primary"}`}>
+                    <Plus 
+                        size={20} 
+                        className={`absolute transition-all duration-500 ease-out ${isOpen ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"}`} 
+                    />
+                    <Minus 
+                        size={20} 
+                        className={`absolute transition-all duration-500 ease-out ${isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-50"}`} 
+                    />
                 </div>
             </button>
             
-            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}`}>
-                <div className="px-6 md:px-8 pb-8 flex gap-6">
-                    <div className="w-px h-auto bg-primary/20 ml-[1.1rem]" />
-                    <p className="text-base md:text-lg text-foreground/50 font-poppins font-light leading-relaxed max-w-4xl">
-                        {ans}
-                    </p>
+            <div className={`grid transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div className="overflow-hidden">
+                    <div className="px-6 md:px-8 pb-8 flex gap-4 md:gap-6 relative z-10">
+                        <div className="w-px h-auto bg-primary/20 ml-[1.1rem] hidden md:block" />
+                        <p className="text-sm md:text-lg text-foreground/50 font-poppins font-light leading-relaxed max-w-4xl">
+                            {ans}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,7 +142,10 @@ export default function FAQ() {
                 </div>
 
                 {/* Accordion List */}
-                <div className="border-t border-border/40">
+                <div className="border-t border-border/40 relative">
+                    {/* Side decorative line */}
+                    <div className="absolute -left-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/40 via-primary/5 to-transparent hidden md:block" />
+                    
                     {faqs.map((faq, index) => (
                         <FAQItem 
                             key={index}
@@ -139,7 +158,19 @@ export default function FAQ() {
                     ))}
                 </div>
 
-                {/* Technical Label */}
+                {/* Technical Label / Footer for section */}
+                <div className="flex justify-between items-center text-[10px] font-mono text-foreground/30 uppercase tracking-[0.3em]">
+                    <div className="flex gap-8">
+                        <span className="flex items-center gap-2">
+                            <span className="w-1 h-1 bg-primary animate-pulse" />
+                            Status: Optimized
+                        </span>
+                        <span>Layer: Support_UI</span>
+                    </div>
+                    <div className="hidden sm:block">
+                        Query_Response_v2.0
+                    </div>
+                </div>
             </div>
         </section>
     )

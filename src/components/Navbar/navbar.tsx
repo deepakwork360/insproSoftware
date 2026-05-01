@@ -15,7 +15,7 @@ export default function Navbar() {
                     {/* center or right */}
                     <div className="flex items-center gap-8 font-semibold hidden md:flex">
                         <Link href="/">Home</Link>
-                        <Link href="/about">About Us</Link>
+                        <Link href="/about-us">About Us</Link>
                         <Link href="">Services</Link>
                         <Link href="">Portfolio</Link>
                         <Link href="/blog">Blog</Link>

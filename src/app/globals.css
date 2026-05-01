@@ -3,32 +3,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light Mode Palette - Ivory & Forest */
-  --background: #F9F8F6;
-  --foreground: #091413;
+  /* Premium Light Mode - Mist & Sapphire */
+  --background: #F8FAFC;
+  --foreground: #0F172A;
   
   --card: #FFFFFF;
-  --card-foreground: #091413;
+  --card-foreground: #1E293B;
   
-  --primary: #285A48;
-  --primary-foreground: #F9F8F6;
+  --primary: #2563EB; /* Royal Sapphire */
+  --primary-foreground: #F8FAFC;
   
-  --secondary: #EAE6E1;
-  --secondary-foreground: #285A48;
+  --secondary: #6366F1; /* Indigo Mist */
+  --secondary-foreground: #F8FAFC;
   
-  --accent: #408A71;
-  --accent-foreground: #FFFFFF;
+  --accent: #2085d8; /* Amber Gold */
+  --accent-foreground: #0F172A;
   
-  --muted: #EAE6E1;
+  --muted: #F1F5F9;
   --muted-foreground: #64748B;
   
   --border: #E2E8F0;
   --input: #E2E8F0;
-  --ring: #285A48;
+  --ring: #2563EB;
 }
 
 .dark {
-  /* Dark Mode Palette - Deep Forest & Mint */
+  /* Restore Original Dark Mode - Deep Forest & Mint */
   --background: #091413;
   --foreground: #F9F8F6;
   
@@ -51,6 +51,8 @@
   --input: #1A2E2A;
   --ring: #408A71;
 }
+
+
 
 @theme inline {
   /* Semantic Tokens */
@@ -77,8 +79,14 @@
   --color-forest-mint: #B0E4CC;
   --color-ivory: #F9F8F6;
 
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  @keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+  }
 }
 
 body {
@@ -104,7 +112,7 @@ body {
 .hud-line {
   width: 1px;
   height: 0;
-  background: linear-gradient(to bottom, transparent, var(--color-forest-mint), transparent);
+  background: linear-gradient(to bottom, transparent, var(--primary), transparent);
   position: absolute;
   left: 4rem;
   bottom: 6rem;
@@ -124,11 +132,11 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: rgba(176, 228, 204, 0.1);
-  border: 1px solid rgba(176, 228, 204, 0.2);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
   padding: 0.5rem 1rem;
   border-radius: 99px;
-  color: var(--color-forest-mint);
+  color: var(--primary);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -137,6 +145,7 @@ body {
   backdrop-filter: blur(10px);
   animation: fade-in-up 0.8s forwards;
 }
+
 
 .banner-head-hud {
   font-family: var(--font-playfair), serif;
@@ -215,3 +224,33 @@ body {
     display: none;
   }
 }
+
+/* Adaptive Premium HUD Cards */
+.card-hud-cyan {
+  background: color-mix(in srgb, var(--primary) 3%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 10%, transparent);
+}
+.card-hud-cyan:hover {
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+  box-shadow: 0 0 30px -10px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.card-hud-orchid {
+  background: color-mix(in srgb, var(--secondary) 3%, transparent);
+  border: 1px solid color-mix(in srgb, var(--secondary) 10%, transparent);
+}
+.card-hud-orchid:hover {
+  border-color: color-mix(in srgb, var(--secondary) 40%, transparent);
+  box-shadow: 0 0 30px -10px color-mix(in srgb, var(--secondary) 20%, transparent);
+}
+
+.card-hud-amber {
+  background: color-mix(in srgb, var(--accent) 3%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.card-hud-amber:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 0 0 30px -10px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+
