@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, ArrowRight } from "lucide-react";
 import InputField from "@/components/ui/input-field";
 import ImageContainer from "@/components/ui/image-container";
 
@@ -125,12 +125,13 @@ export default function FormPart() {
                                 <button 
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`w-full bg-primary text-primary-foreground font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.4em] py-5 transition-all group flex items-center justify-center gap-3
-                                        ${isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-foreground hover:text-background"}
-                                    `}
+                                    className="group relative inline-flex w-full items-center justify-center gap-6 px-12 py-5 bg-[var(--primary)] text-white text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-[var(--primary)]/20 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    <span>{isSubmitting ? "Processing Signal..." : "Submit Message"}</span>
-                                    {!isSubmitting && <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
+                                    {/* Button Glint Effect */}
+                                    <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />
+                                    
+                                    <span className="relative z-10">{isSubmitting ? "Processing Signal..." : "Submit Message"}</span>
+                                    {!isSubmitting && <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />}
                                 </button>
                             </div>
                         </form>

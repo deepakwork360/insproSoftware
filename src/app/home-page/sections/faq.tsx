@@ -159,7 +159,7 @@ export default function FAQ() {
                 </div>
 
                 {/* Technical Label / Footer for section */}
-                <div className="flex justify-between items-center text-[10px] font-mono text-foreground/30 uppercase tracking-[0.3em]">
+                {/* <div className="flex justify-between items-center text-[10px] font-mono text-foreground/30 uppercase tracking-[0.3em]">
                     <div className="flex gap-8">
                         <span className="flex items-center gap-2">
                             <span className="w-1 h-1 bg-primary animate-pulse" />
@@ -170,7 +170,7 @@ export default function FAQ() {
                     <div className="hidden sm:block">
                         Query_Response_v2.0
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )
