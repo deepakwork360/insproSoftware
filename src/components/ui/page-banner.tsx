@@ -7,9 +7,24 @@ interface PageBannerProps {
     description?: string;
     imageUrl?: string;
     subtitle?: string;
+    imagePosition?: string;
 }
 
-export default function PageBanner({ title = "", description = "", imageUrl = "", subtitle }: PageBannerProps) {
+export default function PageBanner({ 
+    title = "", 
+    description = "", 
+    imageUrl = "", 
+    subtitle,
+    imagePosition = "center"
+}: PageBannerProps) {
+    // Handle simple percentage positioning: positive = from top, negative = from bottom
+    const finalPosition = imagePosition.includes('%') && !imagePosition.includes(' ')
+        ? (() => {
+            const val = parseFloat(imagePosition);
+            return `center ${val < 0 ? 100 + val : val}%`;
+        })()
+        : imagePosition;
+
     return (
         <section className="relative w-full aspect-video md:aspect-auto md:h-[70vh] lg:h-[80vh] overflow-hidden">
             {/* Background Image with HUD Overlay */}
@@ -20,6 +35,7 @@ export default function PageBanner({ title = "", description = "", imageUrl = ""
                         alt={title} 
                         fill 
                         className="object-cover"
+                        style={{ objectPosition: finalPosition }}
                         priority
                     />
                 )}

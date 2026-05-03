@@ -44,8 +44,7 @@ export default function Map() {
                         <div className="absolute bottom-0 left-0 w-8 md:w-12 h-8 md:h-12 border-b-2 border-l-2 border-primary/40 z-10 pointer-events-none" />
                         <div className="absolute bottom-0 right-0 w-8 md:w-12 h-8 md:h-12 border-b-2 border-r-2 border-primary/40 z-10 pointer-events-none" />
 
-                        {/* Scanning Line Animation */}
-                        <div className="absolute top-0 left-0 w-full h-px bg-primary/20 shadow-[0_0_15px_rgba(64,138,113,0.5)] z-10 animate-[scan_4s_linear_infinite] pointer-events-none" />
+
 
                         {/* Map Iframe with Filters - Removed Grayscale on Mobile */}
                         <iframe 
@@ -58,7 +57,7 @@ export default function Map() {
                     </div>
 
                     {/* Info Overlay - Stacked on Mobile, Absolute on Desktop */}
-                    <div className="relative md:absolute md:bottom-8 md:left-8 md:w-96 z-20">
+                    <div className="relative md:absolute md:top-12 md:right-12 md:bottom-auto md:w-96 z-20">
                         <div className="bg-card md:backdrop-blur-md md:bg-background/90 border border-primary/20 p-6 md:p-6 shadow-2xl relative overflow-hidden group/card border-t-0 md:border-t">
                             {/* HUD Accent Line */}
                             <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
@@ -102,12 +101,7 @@ export default function Map() {
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
             
-            <style jsx>{`
-                @keyframes scan {
-                    0% { top: 0; }
-                    100% { top: 100%; }
-                }
-            `}</style>
+
         </section>
     );
 }

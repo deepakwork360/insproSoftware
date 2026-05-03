@@ -43,6 +43,7 @@ export default async function ServicePage({ params }: PageProps) {
         title={data.title}
         description={data.bannerDescription}
         imageUrl={data.bannerImage}
+        imagePosition={data.imagePosition}
         subtitle={data.subtitle}
       />
 

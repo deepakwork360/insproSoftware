@@ -23,6 +23,10 @@ const serviceCategories = [
     title: "Web & Software",
     icon: <Code className="w-5 h-5 text-blue-500" />,
     links: [
+      { name: "Web Development", href: "/services/web-development" },
+      { name: "Enterprise Solutions", href: "/services/enterprise-web-solutions" },
+      { name: "E-commerce Solutions", href: "/services/ecommerce-development" },
+      { name: "Progressive Web Apps", href: "/services/progressive-web-app" },
       { name: "ASP.NET Solutions", href: "/services/asp-net" },
       { name: "Python Web Solutions", href: "/services/python-web-solutions" },
       { name: "PHP Development", href: "/services/php-development" },

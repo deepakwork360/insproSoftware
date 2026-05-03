@@ -6,7 +6,8 @@ export default function ContactBanner() {
             title="Connect with Our Experts"
             subtitle="Contact Hub"
             description="Have a vision? We have the engineering expertise to bring it to life. Reach out for consultations, inquiries, or technical support."
-            imageUrl="/contact/contact.png"
+            imageUrl="/banner/19.jpg"
+            imagePosition="36%"
         />
     );
 
