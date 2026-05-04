@@ -46,17 +46,17 @@ export default function Portfolio() {
             <div className="max-w-7xl mx-auto space-y-16 lg:space-y-0">
                 
                 {/* Header Section */}
-                <div className="max-w-4xl space-y-8">
+                <div className="space-y-8 mb-16 lg:mb-20">
                     <div className="space-y-6">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
                             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Showcase</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-playfair font-medium text-foreground leading-[1.1]">
+                        <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             Our <span className="italic text-primary">Portfolio</span> of Excellence
                         </h2>
                     </div>
-                    <p className="text-lg lg:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-3xl">
+                    <p className="text-lg md:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-5xl">
                         Explore Insprosoftware’s portfolio, featuring innovative IT solutions, mobile apps, web development, 
                         and digital transformation projects that drive business success with cutting-edge technology.
                     </p>
@@ -70,7 +70,7 @@ export default function Portfolio() {
                     <PortfolioSlider items={portfolioData} />
 
                     {/* HUD Technical Labels */}
-                    <div className="mt-6 flex justify-between items-center text-[10px] font-mono text-foreground/30 uppercase tracking-widest">
+                    {/* <div className="mt-6 flex justify-between items-center text-[10px] font-mono text-foreground/30 uppercase tracking-widest">
                         <div className="flex gap-4">
                             <span>S_TYPE.DYNAMIC_SLIDER</span>
                             <span>REF.7749X</span>
@@ -78,7 +78,7 @@ export default function Portfolio() {
                         <div className="hidden md:block">
                             EST.2024 / INSPRO.CORE
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>

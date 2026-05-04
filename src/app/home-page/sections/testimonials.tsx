@@ -62,7 +62,7 @@ export default function Testimonials() {
             <div className="max-w-7xl mx-auto space-y-12 lg:space-y-16">
 
                 {/* Header Section */}
-                <div className="max-w-3xl space-y-6">
+                <div className="space-y-6">
                     <div className="space-y-4">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
@@ -72,14 +72,15 @@ export default function Testimonials() {
                             Trust Built on <span className="italic text-primary">Excellence</span>
                         </h2>
                     </div>
-                    <p className="text-base md:text-lg text-foreground/70 font-poppins font-light leading-relaxed max-w-2xl">
+                    <p className="text-lg md:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-5xl">
                         Discover what industry leaders say about their partnership with Insprosoftware.
+                        We pride ourselves on delivering consistent, high-quality results.
                     </p>
                 </div>
 
 
                 {/* Testimonial Carousel */}
-                <div className="max-w-5xl mx-auto">
+                <div className="w-full">
                     <TestimonialCarousel items={testimonialData} />
                 </div>
             </div>

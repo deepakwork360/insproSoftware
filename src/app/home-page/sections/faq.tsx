@@ -105,21 +105,21 @@ export default function FAQ() {
             <div className="max-w-7xl mx-auto space-y-16 lg:space-y-24 relative z-10">
                 
                 {/* Header & Intro Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-                    <div className="space-y-8">
-                        <div className="space-y-6">
-                            <div className="inline-flex items-center gap-3">
-                                <div className="w-8 h-px bg-primary" />
-                                <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Support.Center</span>
-                            </div>
-                            <h2 className="text-4xl md:text-6xl font-playfair font-medium text-foreground leading-[1.1]">
-                                Frequently Asked <br /><span className="italic text-primary">Questions</span>
-                            </h2>
+                <div className="space-y-8">
+                    <div className="space-y-6">
+                        <div className="inline-flex items-center gap-3">
+                            <div className="w-8 h-px bg-primary" />
+                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Support.Center</span>
                         </div>
-                        <p className="text-lg text-foreground/60 font-poppins font-light leading-relaxed max-w-xl">
-                            Find answers to common queries about our processes, technologies, and specialized services.
-                        </p>
+                        <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
+                            Frequently Asked <br /><span className="italic text-primary">Questions</span>
+                        </h2>
                     </div>
+                    <p className="text-lg md:text-xl text-foreground/60 font-poppins font-light leading-relaxed max-w-5xl">
+                        Find answers to common queries about our processes, technologies, and specialized services.
+                        Our goal is to provide clarity and transparency at every step.
+                    </p>
+                </div>
 
                     {/* Support HUD Card */}
                     {/* <div className="hidden lg:flex flex-col items-end">
@@ -139,8 +139,7 @@ export default function FAQ() {
                             </button>
                         </div>
                     </div> */}
-                </div>
-
+                
                 {/* Accordion List */}
                 <div className="border-t border-border/40 relative">
                     {/* Side decorative line */}

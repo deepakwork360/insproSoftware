@@ -102,10 +102,10 @@ export default function FooterCTA() {
                                 <div className="w-8 h-px bg-primary" />
                                 <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Contact Node</span>
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-playfair font-medium text-foreground leading-[1.1]">
+                            <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                                 Let's Build Your <span className="italic text-primary">Future</span>
                             </h2>
-                            <p className="text-lg text-foreground/60 font-poppins font-light leading-relaxed max-w-xl">
+                            <p className="text-lg md:text-xl text-foreground/60 font-poppins font-light leading-relaxed max-w-5xl">
                                 Ready to bring your next project to life? At Insprosoftware, we turn complex ideas 
                                 into powerful digital realities. Our global expertise is at your disposal.
                             </p>

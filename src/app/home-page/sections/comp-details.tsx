@@ -34,16 +34,16 @@ export default function CompanyDetails() {
     ];
 
     return (
-        <section className="bg-background py-10 lg:py-20 px-6 md:px-12 lg:px-24 transition-colors duration-300">
+        <section className="bg-background py-10 lg:py-15 px-6 md:px-12 lg:px-24 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
-                <div className="mb-10 md:mb-20 space-y-6 max-w-3xl">
+                <div className="mb-10 md:mb-16 space-y-6">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary text-[10px] uppercase tracking-widest font-mono">
                         Our Expertise
                     </div>
                     <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-tight">
                         insprosoftware System – <span className="italic text-primary">Premier</span> Technology Partner
                     </h2>
-                    <p className="text-lg text-foreground/60 font-poppins leading-relaxed">
+                    <p className="text-lg md:text-xl text-foreground/60 font-poppins leading-relaxed max-w-5xl">
                         We specialize in developing high-performance, scalable, and secure software solutions tailored to your business needs.
                         With years of industry experience, we deliver cutting-edge technology that drives real results.
                     </p>

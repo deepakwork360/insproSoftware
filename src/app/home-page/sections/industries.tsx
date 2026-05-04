@@ -39,17 +39,17 @@ export default function Industries() {
             <div className="max-w-7xl mx-auto space-y-12 lg:space-y-20 relative z-10">
                 
                 {/* Header Section */}
-                <div className="max-w-4xl space-y-6 md:space-y-8">
+                <div className="space-y-6 md:space-y-8">
                     <div className="space-y-4 md:space-y-6">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
                             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Industries</span>
                         </div>
-                        <h2 className="text-3xl md:text-6xl font-playfair font-medium text-foreground leading-[1.1]">
+                        <h2 className="text-3xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             Expertise <span className="italic text-primary">Across</span> Global Sectors
                         </h2>
                     </div>
-                    <p className="text-base md:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-3xl">
+                    <p className="text-base md:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-5xl">
                         We leverage the top 1% of software engineering talent to deliver specialized, 
                         high-performance solutions tailored to the unique demands of these core industries.
                     </p>

@@ -6,6 +6,12 @@ import Understand from "../home-page/sections/understand";
 import AboutUsBanner from "./sections/about-us-banner";
 import MeetTeam from "./sections/meet-team";
 import Team from "./sections/team";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Our Story & Expertise",
+  description: "Learn about Insprosoftware's journey, our values, and the expert team behind our world-class software solutions. We are dedicated to innovation and client success.",
+};
 
 export default function AboutUsPage() {
     return (

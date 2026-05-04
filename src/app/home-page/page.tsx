@@ -1,4 +1,10 @@
 import Footer from "@/components/Footer/footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to Insprosoftware. Your partner for innovative software solutions.",
+};
 import CompanyDetails from "./sections/comp-details";
 import DevProcess from "./sections/dev-process";
 import DigitalServices from "./sections/digitial-services";

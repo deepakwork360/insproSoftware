@@ -8,11 +8,19 @@ interface ImageContainerProps {
     className?: string;
     showBackground?: boolean;
     showLabel?: boolean;
+    padding?: string;
 }
 
-export default function ImageContainer({ children, id, className = "", showBackground = true, showLabel = false }: ImageContainerProps) {
+export default function ImageContainer({ 
+    children, 
+    id, 
+    className = "", 
+    showBackground = true, 
+    showLabel = false,
+    padding = "p-4 md:p-6"
+}: ImageContainerProps) {
     return (
-        <div className={`group relative p-4 md:p-6 border border-border/80 dark:border-border/40 hover:border-primary/40 transition-all duration-500 overflow-hidden ${showBackground ? "bg-card/20 backdrop-blur-sm" : "bg-transparent"} ${className}`}>
+        <div className={`group relative ${padding} border border-border/80 dark:border-border/40 hover:border-primary/40 transition-all duration-500 overflow-hidden ${showBackground ? "bg-card/20 backdrop-blur-sm" : "bg-transparent"} ${className}`}>
             {/* HUD Decoration */}
             {showLabel && (
                 <div className="absolute top-0 right-0 p-2 opacity-5 font-mono text-[8px] tracking-widest text-foreground uppercase pointer-events-none">

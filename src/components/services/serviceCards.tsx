@@ -92,10 +92,10 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ cards }) => {
                     <p className="text-white/90 text-sm md:text-base leading-relaxed mb-6 font-medium drop-shadow-md">
                       {card.description}
                     </p>
-                    <div className="flex items-center text-[var(--accent)] text-xs font-bold uppercase tracking-[0.2em] drop-shadow-md">
+                    {/* <div className="flex items-center text-[var(--accent)] text-xs font-bold uppercase tracking-[0.2em] drop-shadow-md">
                       Learn More 
                       <MoveRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-2" />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

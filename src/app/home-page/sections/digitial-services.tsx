@@ -71,41 +71,42 @@ export default function DigitalServices() {
     const current = servicesData[activeTab];
 
     return (
-        <section className="bg-background py-10 px-6 md:px-12 lg:px-24 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto space-y-12 lg:space-y-20">
+        <section className="bg-background py-10 md:py-18 px-6 md:px-12 lg:px-24 transition-colors duration-300">
+            <div className="max-w-7xl mx-auto space-y-10 lg:space-y-15">
 
                 {/* Header */}
-                <div className="max-w-3xl space-y-4">
+                <div className="space-y-6">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-none text-primary text-[10px] uppercase tracking-widest font-mono font-bold">
                         Services
                     </div>
                     <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-tight">
                         Professional Development & <span className="italic text-primary">Digital Services</span>
                     </h2>
-                    <p className="text-lg text-foreground/60 font-poppins leading-relaxed">
+                    <p className="text-lg md:text-xl text-foreground/60 font-poppins leading-relaxed max-w-5xl">
                         Comprehensive software development and digital marketing services tailored for businesses in USA.
+                        We deliver cutting-edge technology that drives real results.
                     </p>
                 </div>
 
                 {/* Main Interactive Grid */}
-                <div className="flex flex-col lg:flex-row border border-border/40 bg-card overflow-hidden">
-
+                <div className="flex flex-col lg:flex-row border border-border/40 bg-card overflow-hidden min-h-[450px] lg:min-h-[500px]">
+                    
                     {/* Sidebar: Service Titles */}
-                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-border/40">
+                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-border/40 flex flex-col">
                         {servicesData.map((service, index) => (
                             <button
                                 key={service.id}
                                 onClick={() => setActiveTab(index)}
-                                className={`w-full text-left p-6 lg:p-8 transition-all duration-300 relative group flex items-center justify-between border-b border-border/20 last:border-0
+                                className={`flex-1 text-left p-6 lg:p-8 transition-all duration-300 relative group flex items-center justify-between border-b last:border-0
                                     ${activeTab === index
-                                        ? "bg-primary text-white"
-                                        : "hover:bg-primary/5 text-foreground/70"}`}
+                                        ? "bg-primary text-white border-primary"
+                                        : "hover:bg-primary/5 text-foreground/70 border-border/20"}`}
                             >
-                                <span className={`text-sm lg:text-lg font-medium font-poppins tracking-wide ${activeTab === index ? "translate-x-2" : "translate-x-0"} transition-transform duration-300`}>
+                                <span className="text-sm lg:text-lg font-medium font-poppins tracking-wide">
                                     {service.title}
                                 </span>
 
-                                {/* Arrow Effect (similar to image) */}
+                                {/* Arrow Effect */}
                                 {activeTab === index && (
                                     <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-primary rotate-45 z-20 hidden lg:block" />
                                 )}
@@ -121,7 +122,7 @@ export default function DigitalServices() {
                                 {current.title}
                             </h3>
                             <div className="w-16 h-px bg-primary" />
-                            <p className="text-foreground/70 leading-relaxed">
+                            <p className="text-foreground/70 leading-relaxed min-h-[100px]">
                                 {current.description}
                             </p>
 
@@ -138,13 +139,14 @@ export default function DigitalServices() {
                         </div>
 
                         {/* Right: Visual Image */}
-                        <div className="w-full md:w-2/5 min-h-[300px]">
+                        <div className="w-full md:w-2/5 min-h-[350px] relative overflow-hidden">
                             <ImageContainer className="w-full h-full p-0 border-0" id={activeTab + 1} showBackground={false}>
                                 <Image
                                     src={current.image}
                                     alt={current.title}
                                     fill
-                                    className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                                    priority
+                                    className="object-cover opacity-80 group-hover:opacity-100"
                                 />
                                 {/* Visual Overlay to maintain HUD feel */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 z-10" />

@@ -135,7 +135,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Partner With Our Design Agency",
       description: "We combine strategic thinking with exceptional execution to deliver world-class digital experiences.",
-      image: "/services/choose.png",
+      image: "/banner/ui.jpg",
       points: [
         {
           title: "Industry Specialization",
@@ -545,7 +545,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our Python Development Services",
       description: "Partner with a leading Python development company in USA for intelligent and scalable web solutions.",
-      image: "/services/choose.png",
+      image: "/banner/python.jpg",
       points: [
         {
           title: "Full-Stack Python",
@@ -619,7 +619,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our PHP Development Services",
       description: "Partner with a leading PHP development company in USA for modern and scalable web solutions.",
-      image: "/services/choose.png",
+      image: "/banner/php.jpg",
       points: [
         {
           title: "Framework Expertise",
@@ -693,7 +693,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our Angular Development Services",
       description: "Partner with a leading Angular development company in USA for modern and scalable web solutions.",
-      image: "/services/choose.png",
+      image: "/banner/angular.jpg",
       points: [
         {
           title: "Angular Expertise",
@@ -766,7 +766,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our Node.js Development Services",
       description: "Partner with a leading Node.js development company in USA for scalable and high-performance solutions.",
-      image: "/services/choose.png",
+      image: "/banner/nodejs.jpg",
       points: [
         {
           title: "Performance Focus",
@@ -825,8 +825,8 @@ export const servicesData: Record<string, ServicePageData> = {
     title: "SaaS Development Services",
     subtitle: "Cloud Software Solutions",
     bannerDescription: "Build powerful cloud-based software solutions with our expert SaaS development team. We create scalable, secure, and user-friendly applications that drive business growth.",
-    bannerImage: "/banner/36.jpg",
-    imagePosition: "100%",
+    bannerImage: "/banner/28.jpg",
+    imagePosition: "60%",
     sectionTitle: "Enterprise SaaS Development",
     sectionDescription: "Transforming ideas into scalable cloud platforms with multi-tenant architecture and robust security.",
     metaTitle: "SaaS Development Services | Inspro Software",
@@ -840,7 +840,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our SaaS Development Services",
       description: "Partner with SaaS experts who understand cloud architecture, security, and scalability.",
-      image: "/services/choose.png",
+      image: "/banner/saas.jpg",
       points: [
         {
           title: "Architecture Expertise",
@@ -914,7 +914,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our CMS Development Services",
       description: "Partner with CMS experts who focus on scalability, speed, and ease of use for your business.",
-      image: "/services/choose.png",
+      image: "/banner/52.jpg",
       points: [
         {
           title: "Platform Expertise",
@@ -988,7 +988,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our Software Development Services",
       description: "Partner with expert engineers who focus on delivering measurable business value through custom software.",
-      image: "/services/choose.png",
+      image: "/banner/custom.jpg",
       points: [
         {
           title: "Tailored Solutions",
@@ -1062,7 +1062,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Why Choose Our Mobile Development Services",
       description: "Partner with mobile experts who focus on performance, design, and seamless cross-platform functionality.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Native Performance",
@@ -1139,7 +1139,7 @@ export const servicesData: Record<string, ServicePageData> = {
     profSection: {
       title: "Android Development Excellence",
       description: "Partner with a leading Android development company to launch apps that captivate users and drive results.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Custom Android App Development",
@@ -1218,12 +1218,12 @@ export const servicesData: Record<string, ServicePageData> = {
       { title: "Swift Development", description: "Leveraging Swift to build fast, scalable iOS applications with clean architecture and seamless Apple ecosystem integration.", image: "/services/web1.png" },
       { title: "Premium UI/UX", description: "Crafting intuitive, visually appealing interfaces using SwiftUI and iOS design best practices for exceptional user engagement.", image: "/services/mobile1.png" },
       { title: "Enterprise Solutions", description: "Developing robust, secure iOS applications for businesses, ensuring scalability, data protection, and smooth integration with existing systems.", image: "/services/graphic1.png" },
-      { title: "App Excellence", description: "Achieve App Store excellence by ensuring full compliance with guidelines, optimizing app performance, fine-tuning for speed and efficiency, and enhancing store presence through compelling visuals, metadata, and user engagement.", image: "/services/brand1.png" },
+      { title: "App Excellence", description: "Achieve App Store excellence by ensuring full compliance with guidelines, optimizing app performance, fine-tuning for speed and efficiency, and enhancing store presence through compelling visuals, metadata, and user engagement.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our iOS Development Services",
       description: "Partner with a leading iOS app development company in USA for premium mobile solutions.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Native Excellence",
@@ -1289,15 +1289,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional IoT App Development | Inspro Software",
     metaDescription: "Create powerful IoT applications with modern connected device solutions. Delivering enterprise-grade IoT platforms.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Seamless Device Integration", description: "Device integration involves seamless sensor integration for data collection, supporting various communication protocols for compatibility, implementing gateway solutions for device connectivity, and utilizing edge computing to process data locally for faster, more efficient performance. These elements ensure real-time, reliable, and scalable systems for connected devices and IoT ecosystems.", image: "/services/web1.png" },
+      { title: "Real Time Monitoring", description: "Real-time data monitoring involves collecting, processing, and displaying data streams as they happen, ensuring timely updates for quick decisions, supporting live data visualization with charts and graphs, enabling immediate alerts for anomalies or critical events, and offering historical data analysis for trend identification. These features ensure real-time visibility and efficient system management.", image: "/services/mobile1.png" },
+      { title: "Enterprise Solution", description: "Enterprise solutions deliver robust device connectivity, ensuring seamless sensor integration and support for multiple communication protocols. They include advanced security, cloud-based data management for scalability, and edge computing for real-time processing. These systems provide reliable device management, comprehensive monitoring, and analytics, enabling businesses to optimize operations and decision-making.", image: "/services/graphic1.png" },
+      { title: "Security and Compliance", description: "Security and compliance in IoT involve robust data encryption to protect sensitive information, implementing secure authentication methods for device access control, maintaining compliance with industry regulations and data privacy standards, and regularly updating security protocols to address emerging threats. These measures ensure secure and trustworthy connected ecosystems.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our IoT Development Services",
       description: "Partner with a leading IoT app development company in USA for connected device solutions.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Device Expertise",
@@ -1363,15 +1363,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Wearable App Development | Smartwatch Solutions",
     metaDescription: "Create powerful wearable applications with modern technology solutions. Delivering innovative health and fitness platforms.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Smartwatch Apps", description: "Smartwatch apps are designed for platforms like Apple Watch, Wear OS, watchOS, and Tizen. These apps provide seamless integration with their respective ecosystems, enabling features like fitness tracking, notifications, and real-time updates, offering an optimized user experience tailored to each smartwatch operating system’s capabilities and user needs.", image: "/services/web1.png" },
+      { title: "Health & Fitness", description: "Health & fitness apps focus on activity tracking, health monitoring, and capturing workout metrics like steps, calories burned, heart rate, and more. They provide progress analytics to help users visualize their fitness journey, set goals, and stay motivated, ensuring a comprehensive approach to health and well-being.", image: "/services/uiux1.png" },
+      { title: "Enterprise Solutions", description: "Enterprise solutions focus on secure architecture to safeguard systems, robust data protection to ensure confidentiality and compliance, strong authentication to control access, and cloud sync for seamless data synchronization across devices and platforms. These elements work together to provide scalable, reliable, and secure solutions for modern business needs.", image: "/services/graphic1.png" },
+      { title: "Device Integration", description: "Device integration involves incorporating sensor data for accurate monitoring, using Bluetooth for wireless communication between devices, leveraging GPS tracking for location-based services, and enabling real-time sync to ensure seamless data updates across connected devices. This creates a smooth, responsive experience for users in IoT and smart device ecosystems.", image: "/services/mobile1.png" },
     ],
     profSection: {
       title: "Why Choose Our Wearable Development Services",
       description: "Partner with a leading wearable app development company in USA for innovative solutions.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Platform Expertise",
@@ -1437,15 +1437,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional React Native Development | Cross-Platform Apps",
     metaDescription: "Create powerful cross-platform applications with modern React Native solutions. Delivering enterprise-grade mobile apps.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Cross Platform Excellence", description: "Achieve consistent user experiences across iOS and Android with a single, unified codebase.", image: "/services/web1.png" },
+      { title: "Speed & Performance", description: "Deliver high-performance apps that feel fully native, with efficient rendering and smooth animations.", image: "/services/graphic1.png" },
+      { title: "Seamless Integrations", description: "Connect effortlessly with native device features and third-party APIs for advanced functionality.", image: "/services/mobile1.png" },
+      { title: "Cost-Effective Development", description: "Reduce development time and costs with a shared codebase while maintaining high quality.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our React Native Development Services",
       description: "Partner with a leading React Native app development company in USA for cross-platform solutions.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Cross-Platform Expertise",
@@ -1511,15 +1511,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Flutter Development | Multi-Platform Apps",
     metaDescription: "Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Blazing Fast Performance", description: "Flutter uses a fast rendering engine to compile code to native ARM code, ensuring smooth animations and quick startup times.", image: "/services/web1.png" },
+      { title: "Rich UI & Animations", description: "Flutter provides a rich set of customizable widgets and animation tools, allowing you to create visually stunning and engaging user interfaces.", image: "/services/graphic1.png" },
+      { title: "Single Codebase", description: "Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.", image: "/services/mobile1.png" },
+      { title: "Cost-Efficient Development", description: "Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Flutter Development Services",
       description: "Partner with a leading Flutter app development company in USA for cross-platform solutions.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Flutter Expertise",
@@ -1585,15 +1585,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Kotlin Android Development | Native Android",
     metaDescription: "Create powerful native Android applications with modern Kotlin solutions. Delivering enterprise-grade mobile apps.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Modern Android Solutions", description: "Building native Android applications with the latest Kotlin features for optimal performance and user experience.", image: "/services/web1.png" },
+      { title: "Full Native Capabilities", description: "Leveraging Kotlin's concise syntax and modern features to create seamless, high-performance applications.", image: "/services/graphic1.png" },
+      { title: "Enterprise-Grade Apps", description: "Delivering secure, scalable, and maintainable Android applications tailored to meet business requirements.", image: "/services/mobile1.png" },
+      { title: "Quality & Reliability", description: "Ensuring robust testing and adherence to best practices to deliver polished, reliable Android applications.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Kotlin Android Development Services",
       description: "Partner with a leading Kotlin Android app development company in USA for native solutions.",
-      image: "/services/choose.png",
+      image: "/banner/mobile.jpg",
       points: [
         {
           title: "Kotlin Expertise",
@@ -1659,15 +1659,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Graphic Design Services | Visual Excellence",
     metaDescription: "Transform your brand with stunning visual solutions. Delivering creative excellence across digital and print media.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Brand Identity Design", description: "Creating unique and memorable brand identities that communicate your brand's values and personality.", image: "/services/web1.png" },
+      { title: "Logo Design", description: "Developing custom logos that are visually appealing, scalable, and reflective of your brand's essence.", image: "/services/graphic1.png" },
+      { title: "Marketing Materials", description: "Designing high-quality marketing materials such as brochures, flyers, and presentations to support your business goals.", image: "/services/mobile1.png" },
+      { title: "Digital & Print Media", description: "Creating designs for both digital and print platforms, ensuring brand consistency across all touchpoints.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Graphic Design Services?",
       description: "Partner with a professional graphic design company that delivers creative and impactful visual solutions.",
-      image: "/services/choose.png",
+      image: "/banner/motion.jpg",
       points: [
         {
           title: "Creative Excellence",
@@ -1726,22 +1726,22 @@ export const servicesData: Record<string, ServicePageData> = {
     title: "Professional Brand Identity & Logo Design",
     subtitle: "Brand Excellence",
     bannerDescription: "Create a lasting impression with a unique and powerful brand identity. Leading branding agency in USA delivering strategic logo design and comprehensive brand systems.",
-    bannerImage: "/banner/20.jpg",
-    imagePosition:"65%",
+    bannerImage: "/banner/7.jpg",
+    imagePosition:"08%",
     sectionTitle: "Strategic Brand Identity",
     sectionDescription: "We build unified and scalable brand identities that guide growth and ensure consistent communication across all touchpoints.",
     metaTitle: "Professional Brand Identity & Logo Design | Inspro Software",
     metaDescription: "Create a lasting impression with a unique and powerful brand identity. Delivering strategic logo design and brand systems.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Memorable Logo Design", description: "Developing custom logos that are visually appealing, scalable, and reflective of your brand's essence.", image: "/services/web1.png" },
+      { title: "Complete Brand Identity Systems", description: "Creating unique and memorable brand identities that communicate your brand's values and personality.", image: "/services/graphic1.png" },
+      { title: "Responsive Branding Solutions", description: "Designing high-quality marketing materials such as brochures, flyers, and presentations to support your business goals.", image: "/services/mobile1.png" },
+      { title: "Professional Brand Strategy", description: "Creating designs for both digital and print platforms, ensuring brand consistency across all touchpoints.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Strategic Brand Partners",
       description: "We combine strategic thinking with exceptional design execution to build world-class brand identities.",
-      image: "/services/choose.png",
+      image: "/banner/brand.jpg",
       points: [
         {
           title: "Strategic Foundation",
@@ -1807,15 +1807,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Product Design Assets | Design Systems",
     metaDescription: "Create premium product assets that elevate your brand. Delivering comprehensive asset libraries and animation solutions.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Premium Asset Creation", description: "Delivering high-quality, efficient, and maintainable digital assets that ensure a consistent brand experience across all platforms.", image: "/services/web1.png" },
+      { title: "Efficient Asset Management", description: "Creating unique and memorable brand identities that communicate your brand's values and personality.", image: "/services/graphic1.png" },
+      { title: "Responsive Design Systems", description: "Designing high-quality marketing materials such as brochures, flyers, and presentations to support your business goals.", image: "/services/mobile1.png" },
+      { title: "Professional Asset Strategy", description: "Creating designs for both digital and print platforms, ensuring brand consistency across all touchpoints.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Design Asset Services",
       description: "Partner with design experts for premium product assets that elevate your brand and ensure consistency.",
-      image: "/services/choose.png",
+      image: "/banner/ui.jpg",
       points: [
         {
           title: "Brand Consistency",
@@ -1881,15 +1881,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Marketing Design Services | Strategic Results",
     metaDescription: "Drive engagement and conversions with strategic visual solutions. Delivering impactful results across digital and print.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Strategic Campaign Design", description: "Creating cohesive visual campaigns across digital and print channels that reinforce messaging and drive conversions.", image: "/services/web1.png" },
+      { title: "Performance-Driven Design", description: "Developing designs optimized for engagement and conversions, supported by data-driven insights and A/B testing.", image: "/services/graphic1.png" },
+      { title: "Multi-Platform Content Creation", description: "Designing high-quality marketing materials such as brochures, flyers, and presentations to support your business goals.", image: "/services/mobile1.png" },
+      { title: "End-to-End Marketing Support", description: "Creating designs for both digital and print platforms, ensuring brand consistency across all touchpoints.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Marketing Design Services",
       description: "Partner with design experts who understand marketing strategy and business goals for impactful results.",
-      image: "/services/choose.png",
+      image: "/banner/52.jpg",
       points: [
         {
           title: "Strategic Approach",
@@ -1952,18 +1952,18 @@ export const servicesData: Record<string, ServicePageData> = {
     imagePosition: "60%",
     sectionTitle: "Purposeful Motion Design",
     sectionDescription: "We craft meaningful animations that guide users, reinforce brand identity, and elevate the overall interactive experience.",
-    metaTitle: "Professional Motion & Interaction Design | Dynamic Experiences",
+    metaTitle: "Professional Motion & Interfaction Design | Dynamic Experiences",
     metaDescription: "Bring your digital products to life with purposeful motion. Delivering high-performance animations and interactive experiences.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Engaging Animated Videos", description: "Creating captivating animations that tell your brand story and communicate complex ideas in a visually engaging way.", image: "/services/web1.png" },
+      { title: "Micro-Interactions", description: "Designing subtle animations that enhance user engagement and provide visual feedback for every interaction.", image: "/services/graphic1.png" },
+      { title: "Interactive Animations", description: "Developing immersive animations that respond to user input, creating dynamic and personalized experiences.", image: "/services/mobile1.png" },
+      { title: "Brand Animation Systems", description: "Creating comprehensive animation systems that maintain brand consistency across all platforms and touchpoints.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Motion Design Services",
       description: "Partner with motion experts who understand user experience and technical implementation for high-impact results.",
-      image: "/services/choose.png",
+      image: "/banner/motion.jpg",
       points: [
         {
           title: "Purpose-Driven Animation",
@@ -2029,15 +2029,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Brochure Design Services | Print Excellence",
     metaDescription: "Capture attention with professionally designed brochures that tell your brand story. Delivering creative excellence across print and digital formats.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Stunning Brochure Design", description: "Creating visually captivating brochures that effectively communicate your brand message and value proposition.", image: "/services/web1.png" },
+      { title: "Comprehensive Marketing Materials", description: "Developing high-quality marketing materials such as brochures, flyers, and presentations to support your business goals.", image: "/services/graphic1.png" },
+      { title: "Professional Brochure Design", description: "Designing high-quality marketing materials such as brochures, flyers, and presentations to support your business goals.", image: "/services/mobile1.png" },
+      { title: "End-to-End Brochure Design Services", description: "Creating comprehensive brochure designs that cover concept development, layout, printing, and distribution.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Brochure Design Services",
       description: "Partner with design experts who understand effective marketing communication and high-quality print production.",
-      image: "/services/choose.png",
+      image: "/banner/ui.jpg",
       points: [
         {
           title: "Strategic Approach",
@@ -2103,15 +2103,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional SEO Services | Organic Growth",
     metaDescription: "Drive organic growth and dominate search results with proven SEO strategies. Delivering measurable results through data-driven optimization.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Comprehensive SEO Audits", description: "In-depth analysis of websites to identify technical issues, content gaps, and optimization opportunities.", image: "/services/web1.png" },
+      { title: "On-Page Optimization", description: "Strategic optimization of website content, structure, and internal linking to improve search engine rankings.", image: "/services/graphic1.png" },
+      { title: "Link Building Strategies", description: "Developing high-quality backlinks through natural and ethical methods to enhance website authority and visibility.", image: "/services/mobile1.png" },
+      { title: "SEO Performance Tracking", description: "Continuous monitoring of website performance and SEO metrics to ensure sustainable growth and improvement.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our SEO Services",
       description: "Partner with SEO experts who deliver measurable results through proven, data-driven strategies.",
-      image: "/services/choose.png",
+      image: "/banner/69.jpg",
       points: [
         {
           title: "Data-Driven Approach",
@@ -2172,15 +2172,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Local SEO Services | Regional Dominance",
     metaDescription: "Dominate your local market and attract nearby customers with strategic Local SEO. Delivering regional search excellence.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Hyper-Local SEO Strategies", description: "Targeting specific geographic areas with localized content and optimization techniques to attract nearby customers.", image: "/services/web1.png" },
+      { title: "Google Business Profile Optimization", description: "Creating and optimizing Google Business Profile listings to improve local visibility and search rankings.", image: "/services/graphic1.png" },
+      { title: "Local Citation Management", description: "Managing business citations across directories and platforms to enhance local credibility and search visibility.", image: "/services/mobile1.png" },
+      { title: "Location-Based Content Creation", description: "Developing localized website content and landing pages that resonate with target audiences in specific geographic regions.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Local SEO Services",
       description: "Partner with local search experts who deliver measurable results and help you dominate regional search rankings.",
-      image: "/services/choose.png",
+      image: "/banner/seo.jpg",
       points: [
         {
           title: "Local Search Expertise",
@@ -2246,15 +2246,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional PPC Management Services | Paid Search",
     metaDescription: "Maximize your ROI and drive instant traffic with strategic Pay-Per-Click campaigns. Delivering data-driven advertising excellence.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Strategic Campaign Planning", description: "Developing comprehensive PPC strategies aligned with business goals, target audiences, and performance objectives.", image: "/services/web1.png" },
+      { title: "High-Converting Ad Creation", description: "Creating compelling ad copy, visuals, and landing pages optimized for maximum engagement and conversion rates.", image: "/services/graphic1.png" },
+      { title: "Multi-Platform Ad Management", description: "Managing PPC campaigns across Google Ads, social media platforms, and other advertising channels for comprehensive reach.", image: "/services/mobile1.png" },
+      { title: "Performance Monitoring & Optimization", description: "Continuously tracking campaign performance, analyzing results, and implementing optimizations to maximize ROI and achieve business goals.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our PPC Services",
       description: "Partner with paid search experts who deliver measurable ROI through strategic and performance-focused campaigns.",
-      image: "/services/choose.png",
+      image: "/banner/seo.jpg",
       points: [
         {
           title: "ROI-Focused Approach",
@@ -2320,15 +2320,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Social Media Marketing | Brand Engagement",
     metaDescription: "Build a powerful brand presence and engage your audience across all social platforms. Delivering strategic content and community management.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Strategic Social Strategy", description: "Developing comprehensive social media strategies aligned with business goals and target audiences for maximum impact.", image: "/services/web1.png" },
+      { title: "Engaging Content Creation", description: "Creating high-quality, brand-aligned content optimized for engagement and audience retention across platforms.", image: "/services/graphic1.png" },
+      { title: "Community Management", description: "Building and nurturing active communities through responsive engagement and meaningful interactions with followers.", image: "/services/mobile1.png" },
+      { title: "Performance Analytics & Optimization", description: "Continuously monitoring campaign performance, analyzing results, and implementing optimizations to maximize engagement and achieve business goals.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Social Media Services",
       description: "Partner with social media experts who understand audience engagement and platform algorithms for maximum impact.",
-      image: "/services/choose.png",
+      image: "/banner/social.jpg",
       points: [
         {
           title: "Strategic Approach",
@@ -2387,22 +2387,22 @@ export const servicesData: Record<string, ServicePageData> = {
     title: "Professional Email Marketing Services",
     subtitle: "Direct Engagement",
     bannerDescription: "Nurture leads and drive conversions with strategic email marketing. Leading optimization company in USA delivering personalized campaigns and automated workflows.",
-    bannerImage: "/banner/54.jpg",
-    imagePosition: "40%",
+    bannerImage: "/banner/33.jpg",
+    imagePosition: "23%",
     sectionTitle: "Personalized Email Growth",
     sectionDescription: "We specialize in building automated, high-conversion email systems that deliver the right message to the right person at the right time.",
     metaTitle: "Professional Email Marketing Services | Direct Engagement",
     metaDescription: "Nurture leads and drive conversions with strategic email marketing. Delivering personalized campaigns and automated workflows.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Strategic Email Strategy", description: "Developing comprehensive email marketing strategies aligned with business goals, target audiences, and conversion objectives.", image: "/services/web1.png" },
+      { title: "Engaging Campaign Creation", description: "Creating high-quality, brand-aligned email content optimized for engagement and conversion across platforms.", image: "/services/graphic1.png" },
+      { title: "Community Management", description: "Building and nurturing active communities through responsive engagement and meaningful interactions with followers.", image: "/services/mobile1.png" },
+      { title: "Performance Analytics & Optimization", description: "Continuously monitoring campaign performance, analyzing results, and implementing optimizations to maximize engagement and achieve business goals.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Email Marketing Services",
       description: "Partner with email marketing experts who understand audience engagement and conversion optimization for long-term growth.",
-      image: "/services/choose.png",
+      image: "/banner/53.jpg",
       points: [
         {
           title: "Strategic Approach",
@@ -2468,15 +2468,15 @@ export const servicesData: Record<string, ServicePageData> = {
     metaTitle: "Professional Influencer & Affiliate Marketing | Partnership Growth",
     metaDescription: "Amplify your brand reach through strategic partnerships. Delivering authentic connections and measurable affiliate growth.",
     cards: [
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
-      { title: "", description: "", image: "" },
+      { title: "Strategic Influencer Selection", description: "Identifying and partnering with influencers whose audience demographics align perfectly with your brand values and target markets.", image: "/services/web1.png" },
+      { title: "Authentic Content Creation", description: "Collaborating with influencers to create genuine, engaging content that resonates with their audience while promoting your brand naturally.", image: "/services/graphic1.png" },
+      { title: "Performance Tracking & Analysis", description: "Continuously monitoring influencer and affiliate campaign performance, analyzing results, and optimizing strategies for maximum impact.", image: "/services/mobile1.png" },
+      { title: "Affiliate Network Management", description: "Building and managing high-performance affiliate networks with streamlined tracking, commission management, and performance optimization.", image: "/services/uiux1.png" },
     ],
     profSection: {
       title: "Why Choose Our Partnership Marketing Services",
       description: "Partner with marketing experts who specialize in building authentic connections and high-performance affiliate networks.",
-      image: "/services/choose.png",
+      image: "/banner/influencer.jpg",
       points: [
         {
           title: "Strategic Alignment",

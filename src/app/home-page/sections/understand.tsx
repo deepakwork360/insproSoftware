@@ -63,9 +63,9 @@ function Counter({ value, label, id }: CounterProps) {
             className="group relative p-8 bg-card border border-border/40 hover:border-primary/40 transition-all duration-500 overflow-hidden"
         >
             {/* HUD Decoration */}
-            <div className="absolute top-0 right-0 p-2 opacity-5 font-mono text-[8px] tracking-widest text-foreground uppercase">
+            {/* <div className="absolute top-0 right-0 p-2 opacity-5 font-mono text-[8px] tracking-widest text-foreground uppercase">
                 Data.Point_{id}
-            </div>
+            </div> */}
             <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-700" />
 
             <div className="relative z-10 space-y-2">
@@ -103,21 +103,21 @@ export default function Understand() {
     ];
 
     return (
-        <section className="bg-background lg:py-10 px-6 md:px-12 lg:px-24 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto space-y-12 lg:space-y-20">
+        <section className="bg-background px-6 md:px-12 lg:px-24 transition-colors duration-300">
+            <div className="max-w-7xl mx-auto space-y-10 lg:space-y-10">
 
                 {/* Header Section */}
-                <div className="max-w-4xl space-y-8">
+                <div className="space-y-8">
                     <div className="space-y-6">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
                             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Value Proposition</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-playfair font-medium text-foreground leading-[1.1]">
+                        <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             We <span className="italic text-primary">Understand</span> You, Like No one Else
                         </h2>
                     </div>
-                    <p className="text-lg lg:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-3xl">
+                    <p className="text-lg md:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-5xl">
                         At Insprosoftware, we go beyond service — we focus on understanding your unique business goals and challenges.
                         Our personalized approach ensures tailored IT solutions that align perfectly with your vision.
                     </p>

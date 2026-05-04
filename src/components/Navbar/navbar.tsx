@@ -9,7 +9,7 @@ import { MegaMenu } from "./MegaMenu";
 import { PortfolioDropdown } from "./PortfolioDropdown";
 import { MobileMenu } from "./MobileMenu";
 
-export default function Navbar() {
+export default function Navbar({ navData }: { navData?: any[] }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
@@ -23,12 +23,30 @@ export default function Navbar() {
 
                     {/* center or right */}
                     <div className="flex items-center gap-8 font-semibold hidden md:flex">
-                        <Link href="/">Home</Link>
-                        <Link href="/about-us">About Us</Link>
-                        <MegaMenu />
-                        <PortfolioDropdown />
-                        <Link href="/blog">Blog</Link>
-                        <Link href="/contact">Contact Us</Link>
+                        {navData ? (
+                            navData.map((link, idx) => {
+                                if (link.type === "mega") {
+                                    return <MegaMenu key={idx} label={link.label} sections={link.sections} />;
+                                }
+                                if (link.type === "dropdown") {
+                                    return <PortfolioDropdown key={idx} label={link.label} links={link.dropdownLinks} />;
+                                }
+                                return (
+                                    <Link key={idx} href={link.href || "#"}>
+                                        {link.label}
+                                    </Link>
+                                );
+                            })
+                        ) : (
+                            <>
+                                <Link href="/">Home</Link>
+                                <Link href="/about-us">About Us</Link>
+                                <MegaMenu />
+                                <PortfolioDropdown />
+                                <Link href="/blog">Blog</Link>
+                                <Link href="/contact">Contact Us</Link>
+                            </>
+                        )}
                     </div>
 
                     {/* Right Side - Actions & Mobile Menu Button  */}

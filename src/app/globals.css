@@ -52,6 +52,100 @@
   --ring: #408A71;
 }
 
+/* Premium Color Palettes */
+
+.theme-sapphire-gold {
+  --primary: #C5A059;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E3A8A;
+  --secondary-foreground: #FFFFFF;
+  --accent: #D4AF37;
+  --accent-foreground: #1E3A8A;
+  --ring: #C5A059;
+}
+
+.theme-emerald-night {
+  --primary: #10B981;
+  --primary-foreground: #064E3B;
+  --secondary: #064E3B;
+  --secondary-foreground: #F0FDF4;
+  --accent: #34D399;
+  --accent-foreground: #064E3B;
+  --ring: #10B981;
+}
+
+.theme-royal-amethyst {
+  --primary: #8B5CF6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #4C1D95;
+  --secondary-foreground: #F5F3FF;
+  --accent: #A78BFA;
+  --accent-foreground: #4C1D95;
+  --ring: #8B5CF6;
+}
+
+.theme-crimson-slate {
+  --primary: #EF4444;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1F2937;
+  --secondary-foreground: #F9FAFB;
+  --accent: #F87171;
+  --accent-foreground: #1F2937;
+  --ring: #EF4444;
+}
+
+.theme-cyber-neon {
+  --primary: #06B6D4;
+  --primary-foreground: #083344;
+  --secondary: #0F172A;
+  --secondary-foreground: #ECFEFF;
+  --accent: #22D3EE;
+  --accent-foreground: #083344;
+  --ring: #06B6D4;
+}
+
+/* Dark Mode Overrides for Themes */
+.dark.theme-sapphire-gold {
+  --background: #0A0F1D; /* Deep, rich navy black */
+  --card: #111827;       /* Slightly lighter navy for contrast */
+  --border: #1E3A8A;
+  --muted: #172554;
+  --muted-foreground: #93C5FD;
+}
+
+.dark.theme-emerald-night {
+  --background: #05140F; /* Deep forest black */
+  --card: #0A2118;       /* Slightly lighter forest green */
+  --border: #064E3B;
+  --muted: #022C22;
+  --muted-foreground: #6EE7B7;
+}
+
+.dark.theme-royal-amethyst {
+  --background: #0B0714; /* Deep violet black */
+  --card: #150E24;       /* Lighter violet */
+  --border: #4C1D95;
+  --muted: #2E1065;
+  --muted-foreground: #C4B5FD;
+}
+
+.dark.theme-crimson-slate {
+  --background: #120808; /* Deep crimson black */
+  --card: #1C0C0C;       /* Slightly lighter crimson */
+  --border: #7F1D1D;
+  --muted: #450A0A;
+  --muted-foreground: #FCA5A5;
+}
+
+.dark.theme-cyber-neon {
+  --background: #051016; /* Deep ocean black */
+  --card: #0A1922;       /* Lighter ocean */
+  --border: #082F49;
+  --muted: #082F49;
+  --muted-foreground: #67E8F9;
+}
+
+
 
 
 @theme inline {
@@ -169,10 +263,10 @@ body {
 
 .banner-para-hud {
   font-family: var(--font-poppins), sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.6);
-  max-width: 450px;
-  line-height: 1.8;
+  max-width: 800px;
+  line-height: 1.6;
   opacity: 0;
   animation: fade-in-up 1s 0.4s forwards;
 }
@@ -221,7 +315,10 @@ body {
     margin-bottom: 0.25rem;
   }
   .banner-para-hud {
-    display: none;
+    display: block;
+    font-size: 0.875rem;
+    max-width: 100%;
+    line-height: 1.5;
   }
 }
 
