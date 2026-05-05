@@ -27,7 +27,7 @@ export default function HomePage() {
             <DigitalServices />
             <Understand />
             <Portfolio />
-            <ProfessionalExp />
+            {/* <ProfessionalExp /> */}
             <Industries />
             <DevProcess />
             <FAQ />

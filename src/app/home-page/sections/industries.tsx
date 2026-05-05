@@ -32,15 +32,15 @@ const row2 = [
 
 export default function Industries() {
     return (
-        <section className="bg-background  md:py-10 px-4 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
+        <section className="bg-background px-4 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
             {/* Background Accent for Premium Feel */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto space-y-12 lg:space-y-20 relative z-10">
+            <div className="max-w-7xl mx-auto space-y-8 relative z-10">
                 
                 {/* Header Section */}
-                <div className="space-y-6 md:space-y-8">
-                    <div className="space-y-4 md:space-y-6">
+                <div className="space-y-4 mb-10">
+                    <div className="space-y-2 md:space-y-4">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
                             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Industries</span>

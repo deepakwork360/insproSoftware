@@ -6,8 +6,8 @@ export default function BlogBanner() {
             title="Insights & Innovations"
             subtitle="Knowledge Hub"
             description="Exploring the future of technology, software engineering, and digital strategy. Stay ahead with our latest technical guides and industry analysis."
-            imageUrl="/banner/16.jpg"
-            imagePosition="18%"
+            imageUrl="/banner/42.jpg"
+            imagePosition="88%"
         />
     );
 }

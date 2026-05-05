@@ -23,27 +23,27 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
         <div className="relative w-full max-w-4xl mx-auto py-8 px-4 group">
             {/* Background Decorative HUD elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-primary/20 via-border/10 to-transparent hidden md:block" />
-            
+
             <div className="relative flex flex-col items-center">
                 {/* Client Image - Centered and Premium */}
                 <div className="relative mb-8">
                     {/* Ambient Glow */}
                     <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                    
+
                     <div className="relative w-24 h-24 md:w-32 md:h-32 group-hover:scale-105 transition-transform duration-700">
                         {/* Technical HUD Frame Corners */}
                         <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/40" />
                         <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-primary/40" />
                         <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-primary/40" />
                         <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary/40" />
-                        
+
                         {/* Main Image Container */}
                         <div className="w-full h-full p-2 border border-border/20 bg-card/40 backdrop-blur-xl relative overflow-hidden">
-                            <Image 
-                                src={testimonial.image || "/experience/1.png"} 
-                                alt={testimonial.name} 
-                                fill 
-                                className="object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700" 
+                            <Image
+                                src={testimonial.image || "/experience/1.png"}
+                                alt={testimonial.name}
+                                fill
+                                className="object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
                             />
                             {/* Scanning line effect */}
                             <div className="absolute inset-0 w-full h-[1px] bg-primary/20 -translate-y-full group-hover:animate-[scan_3s_infinite_linear] pointer-events-none" />
@@ -64,10 +64,10 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                 {/* Rating Stars */}
                 <div className="flex gap-1.5 mb-8">
                     {[...Array(5)].map((_, i) => (
-                        <Star 
-                            key={i} 
-                            size={14} 
-                            className={`${i < testimonial.rating ? "text-primary fill-primary" : "text-border/20"} group-hover:scale-125 transition-transform duration-500`} 
+                        <Star
+                            key={i}
+                            size={14}
+                            className={`${i < testimonial.rating ? "text-primary fill-primary" : "text-border/20"} group-hover:scale-125 transition-transform duration-500`}
                             style={{ transitionDelay: `${i * 100}ms` }}
                         />
                     ))}
@@ -77,7 +77,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                 <div className="relative max-w-3xl text-center space-y-6">
                     {/* Large Quote Icons */}
                     <Quote size={40} className="text-primary/5 absolute -top-8 left-0 md:-left-12" />
-                    
+
                     <p className="text-lg md:text-2xl font-playfair font-medium text-foreground leading-[1.4] md:leading-[1.3] relative z-10 px-4">
                         "{testimonial.description}"
                     </p>
@@ -91,7 +91,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                                 {testimonial.position}
                             </p>
                         </div>
-                        
+
                         {/* Elegant Signature */}
                         <div className="pt-2 flex flex-col items-center gap-1">
                             <span className="text-3xl md:text-4xl font-playfair italic text-foreground/10 font-light tracking-tighter select-none">
@@ -170,11 +170,11 @@ export default function TestimonialCarousel({ items }: TestimonialCarouselProps)
             {/* Active Testimonial Stage */}
             <div className="relative min-h-[500px] md:min-h-[550px] flex items-center">
                 {items.map((item, idx) => (
-                    <div 
+                    <div
                         key={idx}
                         className={`absolute inset-0 transition-all duration-1000 ease-in-out transform
-                            ${idx === activeIndex 
-                                ? "opacity-100 translate-x-0 scale-100 pointer-events-auto" 
+                            ${idx === activeIndex
+                                ? "opacity-100 translate-x-0 scale-100 pointer-events-auto"
                                 : "opacity-0 translate-x-12 scale-95 pointer-events-none"}`}
                     >
                         <TestimonialCard testimonial={item} />
@@ -185,33 +185,29 @@ export default function TestimonialCarousel({ items }: TestimonialCarouselProps)
             {/* Control Deck */}
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 mt-12 md:mt-0 relative z-20">
                 {/* Pagination Controls */}
-                <div className="flex items-center gap-8">
-                    <span className="font-mono text-[10px] text-foreground/30">01</span>
-                    <div className="flex gap-2">
-                        {items.map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => handleManualSelect(i)}
-                                className="group p-2"
-                            >
-                                <div className={`h-[2px] transition-all duration-500 rounded-full
-                                    ${i === activeIndex ? "w-12 bg-primary" : "w-4 bg-border/20 group-hover:bg-primary/40"}`} 
-                                />
-                            </button>
-                        ))}
-                    </div>
-                    <span className="font-mono text-[10px] text-foreground/30">0{items.length}</span>
+                <div className="flex items-center gap-2">
+                    {items.map((_, i) => (
+                        <button
+                            key={i}
+                            onClick={() => handleManualSelect(i)}
+                            className="group py-4 px-1"
+                        >
+                            <div className={`h-[2px] transition-all duration-500 rounded-full
+                                ${i === activeIndex ? "w-12 bg-primary" : "w-6 bg-border/20 group-hover:bg-primary/40"}`} 
+                            />
+                        </button>
+                    ))}
                 </div>
 
                 {/* Navigation Arrows */}
                 <div className="hidden md:flex gap-4">
-                    <button 
+                    <button
                         onClick={handleManualPrev}
                         className="w-12 h-12 md:w-14 md:h-14 border border-border/20 hover:border-primary/40 hover:bg-primary/5 transition-all flex items-center justify-center group/btn"
                     >
                         <ChevronLeft size={20} className="group-hover/btn:-translate-x-1 transition-transform" />
                     </button>
-                    <button 
+                    <button
                         onClick={handleManualNext}
                         className="w-12 h-12 md:w-14 md:h-14 border border-border/20 hover:border-primary/40 hover:bg-primary/5 transition-all flex items-center justify-center group/btn"
                     >

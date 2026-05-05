@@ -59,10 +59,10 @@ export default function Testimonials() {
             {/* Background Glow */}
             <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto space-y-12 lg:space-y-16">
+            <div className="max-w-7xl mx-auto space-y-1 md:space-y-1">
 
                 {/* Header Section */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                     <div className="space-y-4">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />

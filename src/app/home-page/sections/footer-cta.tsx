@@ -150,13 +150,13 @@ export default function FooterCTA() {
                         </div>
 
                         {/* Technical Metadata Footer */}
-                        <div className="pt-8 border-t border-border/10 flex flex-wrap gap-6 items-center opacity-30 select-none">
+                        {/* <div className="pt-8 border-t border-border/10 flex flex-wrap gap-6 items-center opacity-30 select-none">
                             <div className="flex items-center gap-2">
                                 <Globe size={12} />
                                 <span className="text-[8px] font-mono uppercase tracking-[0.3em]">Global.Deployment_Active</span>
                             </div>
                             <div className="text-[8px] font-mono uppercase tracking-[0.3em]">Server.Region: APAC-SOUTH</div>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Right Side: Glassmorphic Contact Form */}
@@ -226,12 +226,12 @@ export default function FooterCTA() {
                                     <button 
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="group relative inline-flex w-full items-center justify-center gap-6 px-12 py-5 bg-[var(--primary)] text-white text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-[var(--primary)]/20 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="group relative inline-flex w-full items-center justify-center gap-4 md:gap-6 px-6 md:px-12 py-5 bg-[var(--primary)] text-white text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-[var(--primary)]/20 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {/* Button Glint Effect */}
                                         <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />
                                         
-                                        <span className="relative z-10">{isSubmitting ? "Processing Signal..." : "Initialize Inquiry"}</span>
+                                        <span className="relative z-10 whitespace-nowrap">{isSubmitting ? "Processing Signal..." : "Initialize Inquiry"}</span>
                                         {!isSubmitting && <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />}
                                     </button>
 

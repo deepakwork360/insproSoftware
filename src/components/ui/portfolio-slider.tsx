@@ -79,7 +79,7 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
 
     return (
         <div 
-            className="w-full relative py-12 lg:py-24"
+            className="w-full relative pb-12 lg:pb-24 pt-0"
             {...swipeHandlers}
         >
 

@@ -79,7 +79,7 @@ export default async function ServicePage({ params }: PageProps) {
       <ProfWebDev data={data.profSection} />
       <CustomWebDev data={data.techSection} />
       <DevProcess />
-      <ProfessionalExp />
+      {/* <ProfessionalExp /> */}
       <Portfolio />
       <WantTalk />
       <Testimonials />

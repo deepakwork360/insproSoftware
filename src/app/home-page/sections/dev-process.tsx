@@ -46,16 +46,16 @@ const devData = [
 
 export default function DevProcess() {
     return (
-        <section className="bg-background py-10 px-6 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
+        <section className="bg-background py-10 md:py-18 px-6 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
             {/* Background Ambient Glow */}
             <div className="absolute -top-[10%] -right-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute -bottom-[10%] -left-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto space-y-16 lg:space-y-28 relative z-10">
+            <div className="max-w-7xl mx-auto space-y-12 relative z-10">
                 
                 {/* Header Section */}
-                <div className="space-y-8">
-                    <div className="space-y-6">
+                <div className="space-y-4 mb-10">
+                    <div className="space-y-4">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
                             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Workflow.Architecture</span>
@@ -80,9 +80,9 @@ export default function DevProcess() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-6">
                         {devData.map((item, index) => (
                             <div key={index} className="relative group">
-                                <div className="space-y-10">
+                                <div className="flex flex-row lg:flex-col items-start lg:items-stretch gap-6 lg:gap-10">
                                     {/* Step Icon with HUD Frame */}
-                                    <div className="relative z-10 flex flex-col items-center lg:items-start">
+                                    <div className="relative shrink-0">
                                         <div className="relative">
                                             {/* Pulsing Glow behind icon */}
                                             <div className="absolute inset-0 bg-primary/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000 animate-pulse" />
@@ -90,9 +90,10 @@ export default function DevProcess() {
                                             <ImageContainer 
                                                 id={item.id} 
                                                 showBackground={true}
-                                                className="w-20 h-20 md:w-28 md:h-28 p-0 flex items-center justify-center bg-card/40 backdrop-blur-xl border-border/20 group-hover:border-primary/40 transition-all duration-700"
+                                                className="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 p-0 flex items-center justify-center bg-card/40 backdrop-blur-xl border-border/20 group-hover:border-primary/40 transition-all duration-700"
                                             >
-                                                <item.icon size={36} className="text-primary/70 transition-all duration-700 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12" />
+                                                <item.icon size={28} className="text-primary/70 md:hidden transition-all duration-700 group-hover:text-primary" />
+                                                <item.icon size={36} className="text-primary/70 hidden md:block transition-all duration-700 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12" />
                                                 
                                                 {/* HUD Scanning Line Effect */}
                                                 <div className="absolute inset-0 w-full h-[2px] bg-primary/5 -translate-y-full group-hover:animate-[scan_2s_infinite_linear] pointer-events-none" />
@@ -101,24 +102,24 @@ export default function DevProcess() {
                                         
                                         {/* Mobile/Tablet Connector Line */}
                                         {index !== devData.length - 1 && (
-                                            <div className="absolute top-[7rem] md:top-[8rem] left-1/2 -translate-x-1/2 w-[1px] h-12 bg-gradient-to-b from-primary/30 to-transparent lg:hidden" />
+                                            <div className="absolute top-[4.5rem] left-1/2 -translate-x-1/2 w-px h-16 md:h-20 bg-gradient-to-b from-primary/30 to-transparent lg:hidden" />
                                         )}
                                     </div>
 
                                     {/* Content Area */}
-                                    <div className="space-y-4 text-center lg:text-left relative">
-                                        <div className="flex items-center justify-center lg:justify-start gap-4">
-                                            <span className="font-mono text-[10px] text-primary/40 font-bold group-hover:text-primary transition-colors">
+                                    <div className="space-y-3 md:space-y-4 text-left relative pt-1 md:pt-2">
+                                        <div className="flex items-center justify-start gap-3 md:gap-4">
+                                            <span className="font-mono text-[9px] md:text-[10px] text-primary/40 font-bold group-hover:text-primary transition-colors">
                                                 STEP_{index + 1 < 10 ? `0${index + 1}` : index + 1}
                                             </span>
-                                            <div className="h-px w-6 bg-primary/20 group-hover:w-12 group-hover:bg-primary/50 transition-all duration-700" />
+                                            <div className="h-px w-4 md:w-6 bg-primary/20 group-hover:w-12 group-hover:bg-primary/50 transition-all duration-700" />
                                         </div>
                                         
-                                        <div className="space-y-2">
-                                            <h3 className="text-2xl font-playfair font-medium text-foreground tracking-wide group-hover:text-primary transition-colors duration-500">
+                                        <div className="space-y-1 md:space-y-2">
+                                            <h3 className="text-xl md:text-2xl font-playfair font-medium text-foreground tracking-wide group-hover:text-primary transition-colors duration-500">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-sm text-foreground/50 leading-relaxed font-poppins font-light group-hover:text-foreground/70 transition-colors duration-500">
+                                            <p className="text-xs md:text-sm text-foreground/50 leading-relaxed font-poppins font-light group-hover:text-foreground/70 transition-colors duration-500">
                                                 {item.desc}
                                             </p>
                                         </div>

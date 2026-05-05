@@ -48,10 +48,13 @@ export default function BestMobile() {
                         <div className="pt-6">
                             <Link 
                                 href="/contact" 
-                                className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.2em] hover:bg-primary/90 transition-all group"
+                                className="relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.2em] transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-primary/20 overflow-hidden group"
                             >
-                                Build Your App
-                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                {/* Button Glint Effect */}
+                                <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />
+                                
+                                <span className="relative z-10">Build Your App</span>
+                                <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-transform duration-500" />
                             </Link>
                         </div>
                     </div>

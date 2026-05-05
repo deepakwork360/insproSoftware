@@ -21,7 +21,7 @@ export default function AboutUsPage() {
             <Team />
             <Understand />
             <MeetTeam />
-            <ProfessionalExp />
+            {/* <ProfessionalExp /> */}
             <Testimonials />
             <FooterCTA />
         </main>

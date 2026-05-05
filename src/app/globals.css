@@ -315,7 +315,7 @@ body {
     margin-bottom: 0.25rem;
   }
   .banner-para-hud {
-    display: block;
+    display: none;
     font-size: 0.875rem;
     max-width: 100%;
     line-height: 1.5;
@@ -351,3 +351,11 @@ body {
 }
 
 
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -42,12 +42,12 @@ const portfolioData = [
 
 export default function Portfolio() {
     return (
-        <section className="bg-background py-10 px-6 md:px-12 lg:px-24 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto space-y-16 lg:space-y-0">
+        <section className="bg-background py-10 md:py-18 px-6 md:px-12 lg:px-24 transition-colors duration-300">
+            <div className="max-w-7xl mx-auto">
                 
                 {/* Header Section */}
-                <div className="space-y-8 mb-16 lg:mb-20">
-                    <div className="space-y-6">
+                <div className="space-y-6 mb-6">
+                    <div className="space-y-4">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
                             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Showcase</span>

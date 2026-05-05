@@ -64,7 +64,7 @@ export default function PageBanner({
                     )}
 
                     {description && (
-                        <p className="banner-para-hud !text-white/70 !max-w-2xl !text-sm md:!text-base animate-in fade-in slide-in-from-left duration-1000 delay-200">
+                        <p className="banner-para-hud hidden md:block !text-white/70 !max-w-5xl !text-sm md:!text-base animate-in fade-in slide-in-from-left duration-1000 delay-200">
                             {description}
                         </p>
                     )}
