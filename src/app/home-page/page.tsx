@@ -2,8 +2,8 @@ import Footer from "@/components/Footer/footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "insprosoftware - Web Development, Mobile & Digital Solutions Agency",
-  description: "insprosoftware provides modern web development, mobile app development, UI/UX Design, branding, and digital marketing solutions focused on performance , creativity, and business growth.",
+  title: "InsproSoftware - Web Development, Mobile & Digital Solutions Agency",
+  description: "InsproSoftware provides modern web development, mobile app development, UI/UX Design, branding, and digital marketing solutions focused on performance , creativity, and business growth.",
 };
 import CompanyDetails from "./sections/comp-details";
 import DevProcess from "./sections/dev-process";

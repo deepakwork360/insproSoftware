@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Phone, Mail, MapPin, Send, Globe, CheckCircle, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, Mail, MapPin, Send, Globe, CheckCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import InputField from "@/components/ui/input-field";
 import ImageContainer from "@/components/ui/image-container";
+import HoldVerify from "@/components/ui/hold-verify";
+import { sendInquiryEmail } from "@/app/actions/send-email";
 
 interface FooterCTAProps {
     contactData?: {
@@ -28,6 +30,7 @@ export default function FooterCTA({ contactData }: FooterCTAProps) {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isVerifying, setIsVerifying] = useState(false);
 
     const validate = () => {
         const newErrors: Record<string, string> = {};
@@ -44,17 +47,31 @@ export default function FooterCTA({ contactData }: FooterCTAProps) {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleInitialSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!validate()) return;
+        setIsVerifying(true);
+    };
 
+    const onVerifySuccess = async () => {
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
         
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({ name: "", email: "", projectType: "", message: "" });
+        try {
+            const result = await sendInquiryEmail(formData);
+            
+            if (result.success) {
+                setIsSuccess(true);
+                setFormData({ name: "", email: "", projectType: "", message: "" });
+            } else {
+                alert(`Submission failed: ${result.error}`);
+            }
+        } catch (error) {
+            console.error('Submission Error:', error);
+            alert('A technical error occurred. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+            setIsVerifying(false);
+        }
         
         setTimeout(() => setIsSuccess(false), 5000);
     };
@@ -156,15 +173,6 @@ export default function FooterCTA({ contactData }: FooterCTAProps) {
                                 </p>
                             </div>
                         </div>
-
-                        {/* Technical Metadata Footer */}
-                        {/* <div className="pt-8 border-t border-border/10 flex flex-wrap gap-6 items-center opacity-30 select-none">
-                            <div className="flex items-center gap-2">
-                                <Globe size={12} />
-                                <span className="text-[8px] font-mono uppercase tracking-[0.3em]">Global.Deployment_Active</span>
-                            </div>
-                            <div className="text-[8px] font-mono uppercase tracking-[0.3em]">Server.Region: APAC-SOUTH</div>
-                        </div> */}
                     </div>
 
                     {/* Right Side: Glassmorphic Contact Form */}
@@ -191,8 +199,39 @@ export default function FooterCTA({ contactData }: FooterCTAProps) {
                                         Send another message
                                     </button>
                                 </div>
+                            ) : isVerifying ? (
+                                <div className="min-h-[400px] flex flex-col items-center justify-center text-center space-y-8 animate-in fade-in zoom-in duration-500">
+                                    <div className="w-16 h-16 bg-primary/10 border border-primary/20 flex items-center justify-center rounded-full">
+                                        <ShieldCheck size={32} className={`text-primary ${isSubmitting ? 'animate-pulse' : ''}`} />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h3 className="text-xl font-playfair font-medium text-foreground">
+                                            {isSubmitting ? "Initiating Uplink..." : "Security Handshake"}
+                                        </h3>
+                                        <p className="text-sm text-foreground/60 font-poppins">
+                                            {isSubmitting ? "Finalizing technical connection..." : "Manual verification required."}
+                                        </p>
+                                    </div>
+                                    
+                                    {!isSubmitting && (
+                                        <HoldVerify 
+                                            onVerify={onVerifySuccess}
+                                            text="Hold to Authorize"
+                                            holdDuration={2000}
+                                        />
+                                    )}
+
+                                    {!isSubmitting && (
+                                        <button 
+                                            onClick={() => setIsVerifying(false)}
+                                            className="text-xs font-poppins text-foreground/40 hover:text-primary transition-colors uppercase tracking-[0.2em]"
+                                        >
+                                            ← Back to form
+                                        </button>
+                                    )}
+                                </div>
                             ) : (
-                                <form className="space-y-6" onSubmit={handleSubmit}>
+                                <form className="space-y-6" onSubmit={handleInitialSubmit}>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <InputField 
                                             label="Full Name" 
@@ -241,7 +280,6 @@ export default function FooterCTA({ contactData }: FooterCTAProps) {
                                         <span className="relative z-10 whitespace-nowrap">{isSubmitting ? "Processing..." : "Initialize Inquiry"}</span>
                                         {!isSubmitting && <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />}
                                     </button>
-
                                 </form>
                             )}
                         </ImageContainer>

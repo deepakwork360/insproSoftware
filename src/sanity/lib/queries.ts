@@ -1,7 +1,7 @@
 import { client } from "./client";
 
 export async function getSiteSettings() {
-  return client.fetch(`*[_type == "siteSettings"][0]{ lightTheme, darkTheme, defaultAppearance }`);
+  return client.fetch(`*[_type == "siteSettings"][0]{ lightTheme, darkTheme, defaultAppearance, showThemeToggle }`);
 }
 
 export async function getNavigation(title: string) {
@@ -100,4 +100,12 @@ export const GET_PORTFOLIOS = `*[_type == "portfolio" && platform == $platform] 
   category,
   "imageUrl": imageUrl.asset->url,
   link
+}`;
+
+export const GET_HOME_PORTFOLIOS = `*[_type == "portfolio" && showOnHome == true] | order(orderRank asc) {
+  _id,
+  title,
+  description,
+  imagePosition,
+  "image": imageUrl.asset->url
 }`;

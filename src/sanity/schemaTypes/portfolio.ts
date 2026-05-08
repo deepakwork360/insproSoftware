@@ -33,6 +33,25 @@ export const portfolio = {
       type: 'url',
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      description: 'A detailed description of the project for the homepage showcase.',
+    },
+    {
+      name: 'showOnHome',
+      title: 'Show on Home Page',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
+      name: 'imagePosition',
+      title: 'Image Position',
+      type: 'string',
+      description: 'CSS object-position (e.g., "center", "top", "bottom", or percentage "center 20%"). Default is "center".',
+      initialValue: 'center',
+    },
+    {
       name: 'platform',
       title: 'Platform',
       type: 'string',

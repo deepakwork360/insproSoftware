@@ -1,8 +1,8 @@
-"use client";
-
 import PortfolioSlider from "@/components/ui/portfolio-slider";
+import { client } from "@/sanity/lib/client";
+import { GET_HOME_PORTFOLIOS } from "@/sanity/lib/queries";
 
-const portfolioData = [
+const fallbackData = [
     {
         title: "QuickFinder",
         description: "At Quickfinder.dk we update all companies in Denmark twice a day via CVR.DK (Danish Business Authority). All information such as name, address, zip code/city, telephone number, email and web address must therefore be changed on VIRK.DK. after which it will automatically be changed on Quickfinder.dk.",
@@ -40,7 +40,10 @@ const portfolioData = [
     },
 ];
 
-export default function Portfolio() {
+export default async function Portfolio() {
+    const portfolioData = await client.fetch(GET_HOME_PORTFOLIOS);
+    const finalData = portfolioData && portfolioData.length > 0 ? portfolioData : fallbackData;
+
     return (
         <section className="bg-background py-10 md:py-18 px-6 md:px-12 lg:px-24 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
@@ -64,18 +67,7 @@ export default function Portfolio() {
                     {/* Shadow Glow behind slider */}
                     <div className="absolute -inset-4 bg-primary/5 rounded-none blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
                     
-                    <PortfolioSlider items={portfolioData} />
-
-                    {/* HUD Technical Labels */}
-                    {/* <div className="mt-6 flex justify-between items-center text-[10px] font-mono text-foreground/30 uppercase tracking-widest">
-                        <div className="flex gap-4">
-                            <span>S_TYPE.DYNAMIC_SLIDER</span>
-                            <span>REF.7749X</span>
-                        </div>
-                        <div className="hidden md:block">
-                            EST.2024 / INSPRO.CORE
-                        </div>
-                    </div> */}
+                    <PortfolioSlider items={finalData} />
                 </div>
 
             </div>

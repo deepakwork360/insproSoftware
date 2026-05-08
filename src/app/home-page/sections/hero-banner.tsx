@@ -2,13 +2,28 @@
 
 export default function HeroBanner() {
     return (
-        <section className="w-full aspect-video md:aspect-auto md:h-[70vh] lg:h-[76vh] overflow-hidden relative bg-black/40">
-            <video src="/home/test2.mp4"
+        <section className="w-full aspect-video md:aspect-auto md:h-[76vh] lg:h-[86vh] overflow-hidden relative bg-black/40 md:-mt-14 md:pt-14">
+            {/* Mobile Video - Only loads/plays on small screens */}
+            <video 
+                src="/home/mobile-banner.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-cover absolute inset-0"
+                disablePictureInPicture
+                className="w-full h-full object-cover absolute inset-0 md:hidden pointer-events-none"
+                style={{ objectPosition: "center" }}
+            />
+            
+            {/* Desktop Video - Only loads/plays on medium screens and up */}
+            <video 
+                src="/home/desktop-banner.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                disablePictureInPicture
+                className="w-full h-full object-cover absolute inset-0 hidden md:block pointer-events-none"
                 style={{ objectPosition: "center" }}
             />
 
@@ -18,10 +33,10 @@ export default function HeroBanner() {
                 <div className="hud-line" />
 
                 <div className="hud-content">
-                    {/* <div className="hud-badge">
+                    <div className="hud-badge md:!hidden">
                         <span className="w-2 h-2 rounded-full bg-forest-mint animate-pulse" />
                         Innovation Hub
-                    </div> */}
+                    </div>
 
                     <h1 className="banner-head-hud">
                         Transform Your Business with

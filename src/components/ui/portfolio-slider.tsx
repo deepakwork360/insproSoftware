@@ -3,13 +3,13 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import ImageContainer from "@/components/ui/image-container";
-
 import { useSwipe } from "@/hooks/use-swipe";
 
 interface PortfolioItem {
     title: string;
     description: string;
     image: string;
+    imagePosition?: string;
 }
 
 interface PortfolioSliderProps {
@@ -77,6 +77,16 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
 
     const current = items[activeIndex];
 
+    // Handle percentage or keyword positioning
+    const getFinalPosition = (pos?: string) => {
+        if (!pos) return "center";
+        if (pos.includes('%') && !pos.includes(' ')) {
+            const val = parseFloat(pos);
+            return `center ${val < 0 ? 100 + val : val}%`;
+        }
+        return pos;
+    };
+
     return (
         <div 
             className="w-full relative pb-12 lg:pb-24 pt-0"
@@ -89,7 +99,6 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
                 <div className="w-full lg:w-[40%] space-y-8">
                     <div className="space-y-4">
                         <div className="flex items-center gap-4">
-                            {/* <span className="text-primary font-mono text-[10px] tracking-[0.3em] font-bold">PROJECT.0{activeIndex + 1}</span> */}
                             <div className="h-px flex-1 bg-border/40" />
                         </div>
                         <h3 className="text-3xl lg:text-5xl font-playfair font-medium text-foreground leading-tight">
@@ -134,6 +143,7 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
                                     alt={current.title}
                                     fill
                                     className="object-cover"
+                                    style={{ objectPosition: getFinalPosition(current.imagePosition) }}
                                     priority
                                 />
                             </div>
@@ -141,7 +151,6 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
                         <div className="mt-4 h-1 lg:h-2 w-[90%] mx-auto bg-zinc-800 rounded-full opacity-50 blur-[2px]" />
                     </div>
                 </div>
-
 
             </div>
 

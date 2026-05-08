@@ -26,7 +26,7 @@ export default function PageBanner({
         : imagePosition;
 
     return (
-        <section className="relative w-full aspect-video md:aspect-auto md:h-[70vh] lg:h-[80vh] overflow-hidden">
+        <section className="relative w-full aspect-video md:aspect-auto md:h-[75vh] lg:h-[85vh] md:-mt-14 overflow-hidden bg-black">
             {/* Background Image with HUD Overlay */}
             <div className="absolute inset-0 z-0">
                 {imageUrl && (

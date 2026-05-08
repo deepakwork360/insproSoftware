@@ -139,7 +139,7 @@ export function MegaMenu({ label = "Services", sections = defaultSections }: Meg
                     src="/banner/brand69.jpg"
                     alt="Our Expertise"
                     fill
-                    className="object-cover opacity-80 transition-all duration-700"
+                    className="object-cover transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-[1]" />
                 </div>

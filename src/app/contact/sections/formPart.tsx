@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle, ArrowRight } from "lucide-react";
+import { Send, CheckCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import InputField from "@/components/ui/input-field";
 import ImageContainer from "@/components/ui/image-container";
+import HoldVerify from "@/components/ui/hold-verify";
+import { sendInquiryEmail } from "@/app/actions/send-email";
 
 export default function FormPart() {
     const [formData, setFormData] = useState({
@@ -15,6 +17,7 @@ export default function FormPart() {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isVerifying, setIsVerifying] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -43,17 +46,34 @@ export default function FormPart() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleInitialSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!validate()) return;
+        setIsVerifying(true);
+    };
 
+    const onVerifySuccess = async () => {
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
         
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        try {
+            const result = await sendInquiryEmail({
+                ...formData,
+                source: "Contact Page"
+            });
+            
+            if (result.success) {
+                setIsSuccess(true);
+                setFormData({ name: "", email: "", subject: "", message: "" });
+            } else {
+                alert(`Submission failed: ${result.error}`);
+            }
+        } catch (error) {
+            console.error('Submission Error:', error);
+            alert('A technical error occurred. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+            setIsVerifying(false);
+        }
         
         setTimeout(() => setIsSuccess(false), 5000);
     };
@@ -80,8 +100,39 @@ export default function FormPart() {
                                 Send another message
                             </button>
                         </div>
+                    ) : isVerifying ? (
+                        <div className="min-h-[400px] flex flex-col items-center justify-center text-center space-y-8 animate-in fade-in zoom-in duration-500">
+                            <div className="w-16 h-16 bg-primary/10 border border-primary/20 flex items-center justify-center rounded-full">
+                                <ShieldCheck size={32} className={`text-primary ${isSubmitting ? 'animate-pulse' : ''}`} />
+                            </div>
+                            <div className="space-y-2">
+                                <h3 className="text-xl font-playfair font-medium text-foreground">
+                                    {isSubmitting ? "Initiating Uplink..." : "Security Handshake"}
+                                </h3>
+                                <p className="text-sm text-foreground/60 font-poppins">
+                                    {isSubmitting ? "Finalizing technical connection..." : "Manual verification required."}
+                                </p>
+                            </div>
+                            
+                            {!isSubmitting && (
+                                <HoldVerify 
+                                    onVerify={onVerifySuccess}
+                                    text="Hold to Authorize"
+                                    holdDuration={2000}
+                                />
+                            )}
+
+                            {!isSubmitting && (
+                                <button 
+                                    onClick={() => setIsVerifying(false)}
+                                    className="text-xs font-poppins text-foreground/40 hover:text-primary transition-colors uppercase tracking-[0.2em]"
+                                >
+                                    ← Back to form
+                                </button>
+                            )}
+                        </div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="space-y-8 animate-in fade-in duration-700">
+                        <form onSubmit={handleInitialSubmit} className="space-y-8 animate-in fade-in duration-700">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <InputField 
                                     label="First Name" 

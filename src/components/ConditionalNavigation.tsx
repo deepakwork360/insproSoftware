@@ -8,12 +8,14 @@ interface ConditionalNavigationProps {
   children: React.ReactNode;
   navData?: any[];
   footerData?: any;
+  settings?: any;
 }
 
 export function ConditionalNavigation({ 
   children, 
   navData, 
-  footerData 
+  footerData,
+  settings
 }: ConditionalNavigationProps) {
   const pathname = usePathname();
   const isStudio = pathname?.startsWith("/studio");
@@ -24,7 +26,7 @@ export function ConditionalNavigation({
 
   return (
     <>
-      <Navbar navData={navData} />
+      <Navbar navData={navData} settings={settings} />
       <main className="flex-grow">
         {children}
       </main>

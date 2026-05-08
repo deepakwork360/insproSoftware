@@ -369,3 +369,77 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Theme-Responsive Logo System */
+.logo-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: none !important;
+}
+
+/* Visibility Logic: Show ONLY when the correct combination of theme and mode matches */
+
+/* Master Suppression: If any premium theme is active, hide all default logos immediately */
+html[class*="theme-"] .logo-img.default-only {
+    display: none !important;
+}
+
+/* 1. Default Logos (Only when no theme is active) */
+html:not([class*="theme-"]) .logo-img.default-only.light-only { display: block !important; }
+.dark html:not([class*="theme-"]) .logo-img.default-only.light-only { display: none !important; }
+.dark html:not([class*="theme-"]) .logo-img.default-only.dark-only { display: block !important; }
+/* Top of Page Override */
+html:not([class*="theme-"]) header:not(.is-scrolled) .logo-img.default-only.dark-only { display: block !important; }
+html:not([class*="theme-"]) header:not(.is-scrolled) .logo-img.default-only.light-only { display: none !important; }
+
+/* 2. Sapphire Gold */
+.theme-sapphire-gold .logo-img.sapphire-only.light-only { display: block !important; }
+.dark.theme-sapphire-gold .logo-img.sapphire-only.light-only { display: none !important; }
+.dark.theme-sapphire-gold .logo-img.sapphire-only.dark-only { display: block !important; }
+/* Top of Page Override */
+.theme-sapphire-gold header:not(.is-scrolled) .logo-img.sapphire-only.dark-only { display: block !important; }
+.theme-sapphire-gold header:not(.is-scrolled) .logo-img.sapphire-only.light-only { display: none !important; }
+
+/* 3. Emerald Night */
+.theme-emerald-night .logo-img.emerald-only.light-only { display: block !important; }
+.dark.theme-emerald-night .logo-img.emerald-only.light-only { display: none !important; }
+.dark.theme-emerald-night .logo-img.emerald-only.dark-only { display: block !important; }
+/* Top of Page Override */
+.theme-emerald-night header:not(.is-scrolled) .logo-img.emerald-only.dark-only { display: block !important; }
+.theme-emerald-night header:not(.is-scrolled) .logo-img.emerald-only.light-only { display: none !important; }
+
+/* 4. Royal Amethyst */
+.theme-royal-amethyst .logo-img.purple-only.light-only { display: block !important; }
+.dark.theme-royal-amethyst .logo-img.purple-only.light-only { display: none !important; }
+.dark.theme-royal-amethyst .logo-img.purple-only.dark-only { display: block !important; }
+/* Top of Page Override */
+.theme-royal-amethyst header:not(.is-scrolled) .logo-img.purple-only.dark-only { display: block !important; }
+.theme-royal-amethyst header:not(.is-scrolled) .logo-img.purple-only.light-only { display: none !important; }
+
+/* 5. Crimson Slate */
+.theme-crimson-slate .logo-img.crimson-only.light-only { display: block !important; }
+.dark.theme-crimson-slate .logo-img.crimson-only.light-only { display: none !important; }
+.dark.theme-crimson-slate .logo-img.crimson-only.dark-only { display: block !important; }
+/* Top of Page Override */
+.theme-crimson-slate header:not(.is-scrolled) .logo-img.crimson-only.dark-only { display: block !important; }
+.theme-crimson-slate header:not(.is-scrolled) .logo-img.crimson-only.light-only { display: none !important; }
+
+/* 6. Cyber Neon */
+.theme-cyber-neon .logo-img.cyber-only.light-only { display: block !important; }
+.dark.theme-cyber-neon .logo-img.cyber-only.light-only { display: none !important; }
+.dark.theme-cyber-neon .logo-img.cyber-only.dark-only { display: block !important; }
+/* Top of Page Override */
+.theme-cyber-neon header:not(.is-scrolled) .logo-img.cyber-only.dark-only { display: block !important; }
+.theme-cyber-neon header:not(.is-scrolled) .logo-img.cyber-only.light-only { display: none !important; }
+
+/* Mobile-Specific Navbar Fix (Light Mode only) */
+/* When not scrolled on mobile, the background must be black to keep the white text/logo visible, 
+   since the hero video doesn't bleed behind the navbar on small screens. */
+@media (max-width: 767px) {
+    html:not(.dark) header:not(.is-scrolled) {
+        background-color: black !important;
+    }
+}

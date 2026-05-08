@@ -53,7 +53,7 @@ export function PortfolioDropdown({ label = "Portfolio", links = [
                     <Icons.Globe className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold">{link.label}</p>
+                    <p className="text-sm font-bold text-foreground">{link.label}</p>
                     <p className="text-[10px] text-muted-foreground">View Project</p>
                   </div>
                 </Link>

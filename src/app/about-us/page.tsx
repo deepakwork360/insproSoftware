@@ -10,7 +10,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us | Our Story & Expertise",
-  description: "Learn about Insprosoftware's journey, our values, and the expert team behind our world-class software solutions. We are dedicated to innovation and client success.",
+  description: "Learn about InsproSoftware's journey, our values, and the expert team behind our world-class software solutions. We are dedicated to innovation and client success.",
 };
 
 import { getContactSettings, getTeamMembers } from "@/sanity/lib/queries";

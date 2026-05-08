@@ -49,5 +49,12 @@ export const siteSettings = {
       initialValue: 'system',
       description: 'Choose whether the site should default to light or dark mode.',
     },
+    {
+      name: 'showThemeToggle',
+      title: 'Show Theme Toggle',
+      type: 'boolean',
+      initialValue: true,
+      description: 'Enable or disable the light/dark mode switch in the navigation bar.',
+    },
   ],
 }

@@ -82,7 +82,7 @@ export default async function RootLayout({
             darkTheme={settings?.darkTheme} 
             defaultAppearance={settings?.defaultAppearance} 
           />
-          <ConditionalNavigation navData={navData?.links} footerData={footerData}>
+          <ConditionalNavigation navData={navData?.links} footerData={footerData} settings={settings}>
             {children}
           </ConditionalNavigation>
         </ThemeProvider>

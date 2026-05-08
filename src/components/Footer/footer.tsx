@@ -66,21 +66,30 @@ export default function Footer({ data }: FooterProps) {
                     {/* Brand Section */}
                     <div className="lg:col-span-4 space-y-8">
                         <div className="flex items-center gap-3 group cursor-pointer" onClick={scrollToTop}>
-                            <div className="relative w-40 h-12">
-                                <Image
-                                    src="/home/logo.png"
-                                    alt="Logo"
-                                    width={180}
-                                    height={60}
-                                    className="object-contain dark:hidden transition-all duration-500"
-                                />
-                                <Image
-                                    src="/home/logo-main.webp"
-                                    alt="Logo"
-                                    width={180}
-                                    height={60}
-                                    className="object-contain hidden dark:block transition-all duration-500"
-                                />
+                            <div className="relative w-[180px] h-[60px]">
+                                {/* Default Logos */}
+                                <Image src="/logo/blue-black.png" alt="Logo" width={180} height={40} className="logo-img light-only default-only" priority />
+                                <Image src="/logo/green-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only default-only" priority />
+
+                                {/* Sapphire Gold */}
+                                <Image src="/logo/golden-black3.png" alt="Logo" width={180} height={40} className="logo-img light-only sapphire-only" priority />
+                                <Image src="/logo/golden-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only sapphire-only" priority />
+
+                                {/* Emerald Night */}
+                                <Image src="/logo/green-black.png" alt="Logo" width={180} height={40} className="logo-img light-only emerald-only" priority />
+                                <Image src="/logo/green-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only emerald-only" priority />
+
+                                {/* Royal Amethyst */}
+                                <Image src="/logo/purple-black.png" alt="Logo" width={180} height={40} className="logo-img light-only purple-only" priority />
+                                <Image src="/logo/purple-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only purple-only" priority />
+
+                                {/* Crimson Slate */}
+                                <Image src="/logo/red-black.png" alt="Logo" width={180} height={40} className="logo-img light-only crimson-only" priority />
+                                <Image src="/logo/red-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only crimson-only" priority />
+
+                                {/* Cyber Neon */}
+                                <Image src="/logo/blue-black.png" alt="Logo" width={180} height={40} className="logo-img light-only cyber-only" priority />
+                                <Image src="/logo/blue-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only cyber-only" priority />
                             </div>
                         </div>
 
