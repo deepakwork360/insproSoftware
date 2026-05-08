@@ -50,13 +50,13 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                         </div>
 
                         {/* Technical ID Tag - Refined */}
-                        <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                        {/* <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
                             <div className="w-4 h-[1px] bg-primary/40" />
                             <div className="bg-background border border-primary/30 px-3 py-1 text-[9px] font-mono text-primary uppercase tracking-[0.3em] whitespace-nowrap backdrop-blur-md">
                                 ID_{testimonial.name.split(" ")[0].toUpperCase()}
                             </div>
                             <div className="w-4 h-[1px] bg-primary/40" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                             <h4 className="text-xl md:text-2xl font-playfair font-medium text-primary tracking-tight">
                                 {testimonial.name}
                             </h4>
-                            <p className="text-[9px] md:text-xs font-mono text-foreground/40 uppercase tracking-[0.4em]">
+                            <p className="text-[9px] md:text-base font-playfair text-foreground/40  tracking-[0.1em]">
                                 {testimonial.position}
                             </p>
                         </div>

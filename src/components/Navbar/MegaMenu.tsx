@@ -110,7 +110,7 @@ export function MegaMenu({ label = "Services", sections = defaultSections }: Meg
                   <div key={idx} className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="w-1.5 h-6 bg-primary/20 rounded-full" />
-                      <h3 className="font-mono text-[10px] uppercase tracking-[0.3em] font-bold text-primary">
+                      <h3 className="text-primary font-playfair text-lg font-medium">
                         {category.title}
                       </h3>
                     </div>
@@ -136,32 +136,31 @@ export function MegaMenu({ label = "Services", sections = defaultSections }: Meg
               <div className="w-[400px] relative overflow-hidden bg-muted/30 border-l border-border/40">
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="/banner/brand.jpg"
+                    src="/banner/brand69.jpg"
                     alt="Our Expertise"
                     fill
-                    className="object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="object-cover opacity-80 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                  <div className="absolute inset-0 bg-primary/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-[1]" />
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 p-10 space-y-6 z-10">
+                <div className="absolute inset-x-0 bottom-0 p-10 space-y-6 z-10 text-white">
                   <div className="space-y-2">
-                    <div className="inline-flex items-center gap-2 px-2 py-1 bg-primary/10 border border-primary/20 rounded text-[9px] font-mono uppercase tracking-widest text-primary">
+                    <div className="inline-flex items-center gap-2 px-2 py-1 bg-white/10 border border-white/20 backdrop-blur-md rounded text-xs font-playfair font-medium text-white">
                       <span className="w-1 h-1 bg-primary animate-pulse rounded-full" />
                       Digital Transformation
                     </div>
-                    <h4 className="text-2xl font-playfair font-medium text-foreground">
-                      Ready to <span className="italic text-primary">Innovate?</span>
+                    <h4 className="text-2xl font-playfair font-medium text-white">
+                      Ready to <span className="italic text-primary-foreground">Innovate?</span>
                     </h4>
-                    <p className="text-sm text-foreground/50 font-poppins font-light leading-relaxed">
+                    <p className="text-sm text-white/70 font-poppins font-light leading-relaxed">
                       Transform your business with our cutting-edge technology solutions. Let's build something extraordinary together.
                     </p>
                   </div>
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-4 text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-foreground group/cta"
+                    className="inline-flex items-center gap-4 text-sm font-playfair font-medium text-white group/cta"
                     onClick={() => setIsOpen(false)}
                   >
                     Start Your Project
@@ -176,7 +175,7 @@ export function MegaMenu({ label = "Services", sections = defaultSections }: Meg
             </div>
 
             {/* Bottom HUD Metadata */}
-            <div className="px-10 py-4 border-t border-border/40 bg-muted/10 flex justify-between items-center text-[9px] font-mono uppercase tracking-[0.3em] text-foreground/30">
+            <div className="px-10 py-4 border-t border-border/40 bg-muted/10 flex justify-between items-center text-[11px] font-poppins text-foreground/20 font-light">
               <div className="flex gap-8">
                 <span>Ref: Inspro_Services_v2.6</span>
                 <span>Layer: Navigation_Core</span>

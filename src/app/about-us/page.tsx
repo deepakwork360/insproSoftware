@@ -13,18 +13,22 @@ export const metadata: Metadata = {
   description: "Learn about Insprosoftware's journey, our values, and the expert team behind our world-class software solutions. We are dedicated to innovation and client success.",
 };
 
-export default function AboutUsPage() {
+import { getContactSettings, getTeamMembers } from "@/sanity/lib/queries";
+
+export default async function AboutUsPage() {
+    const contactData = await getContactSettings();
+    const teamData = await getTeamMembers();
+
     return (
         <main>
             <AboutUsBanner />
-            <LeadingSection />
-            <Team />
+            <LeadingSection className="py-10 md:py-14" phoneNumber={contactData?.phoneNumbers?.[0]} />
+            <Team data={teamData} />
             <Understand />
             <MeetTeam />
             {/* <ProfessionalExp /> */}
             <Testimonials />
-            <FooterCTA />
+            <FooterCTA contactData={contactData} />
         </main>
     );
 }
-

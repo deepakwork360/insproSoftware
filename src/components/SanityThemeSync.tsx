@@ -6,9 +6,10 @@ import { useTheme } from "next-themes";
 interface ThemeSyncProps {
   lightTheme?: string;
   darkTheme?: string;
+  defaultAppearance?: string;
 }
 
-export function SanityThemeSync({ lightTheme, darkTheme }: ThemeSyncProps) {
+export function SanityThemeSync({ lightTheme, darkTheme, defaultAppearance }: ThemeSyncProps) {
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {

@@ -143,7 +143,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             <div className="p-6 flex items-center justify-between border-b border-border bg-background">
               <div className="flex flex-col">
                 <span className="font-playfair font-bold text-2xl text-foreground tracking-tight">Navigation</span>
-                <span className="text-[10px] font-mono text-primary uppercase tracking-widest mt-1">Innovation Hub</span>
+                <span className="text-xs font-playfair font-medium text-primary mt-1">Innovation Hub</span>
               </div>
               <button
                 onClick={onClose}
@@ -246,7 +246,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <Link 
                 href="/contact"
                 onClick={onClose}
-                className="group relative inline-flex w-full items-center justify-center gap-6 px-8 py-5 bg-primary text-primary-foreground text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-primary/20 overflow-hidden"
+                className="group relative inline-flex w-full items-center justify-center gap-6 px-8 py-5 bg-primary text-primary-foreground text-base font-playfair font-medium transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-primary/20 overflow-hidden"
               >
                 {/* Button Glint Effect */}
                 <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />
@@ -255,14 +255,14 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />
               </Link>
               <div className="mt-6 flex flex-col items-center gap-2">
-                <p className="text-[10px] text-muted-foreground uppercase tracking-[0.4em] font-mono font-bold">
+                <p className="text-xs text-muted-foreground font-playfair font-medium">
                   Insprosoftware HUD
                 </p>
-                <div className="flex items-center gap-4 text-[8px] text-muted-foreground/40 font-mono tracking-widest uppercase">
+                {/* <div className="flex items-center gap-4 text-[8px] text-muted-foreground/40 font-mono tracking-widest uppercase">
                   <span>Version 1.2</span>
                   <div className="w-1 h-1 bg-primary rounded-full animate-pulse" />
                   <span>Adaptive System</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.div>

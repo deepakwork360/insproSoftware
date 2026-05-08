@@ -8,6 +8,7 @@ import { ThemeToggle } from "../ThemeToggle";
 import { MegaMenu } from "./MegaMenu";
 import { PortfolioDropdown } from "./PortfolioDropdown";
 import { MobileMenu } from "./MobileMenu";
+import Image from "next/image";
 
 export default function Navbar({ navData }: { navData?: any[] }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,7 +19,22 @@ export default function Navbar({ navData }: { navData?: any[] }) {
                 <nav className="flex items-center justify-between h-14">
                     {/* left - logo */}
                     <div className="flex gap-6">
-                        <Link href="/" className="font-playfair font-bold text-xl tracking-tight">Insprosoftware</Link>
+                        <Link href="/" className="font-playfair font-bold text-xl tracking-tight">
+                            <Image
+                                src="/home/logo.png"
+                                alt="Logo"
+                                width={120}
+                                height={40}
+                                className="dark:hidden object-contain"
+                            />
+                            <Image
+                                src="/home/logo-main.webp"
+                                alt="Logo"
+                                width={120}
+                                height={40}
+                                className="hidden dark:block object-contain"
+                            />
+                        </Link>
                     </div>
 
                     {/* center or right */}
@@ -32,19 +48,19 @@ export default function Navbar({ navData }: { navData?: any[] }) {
                                     return <PortfolioDropdown key={idx} label={link.label} links={link.dropdownLinks} />;
                                 }
                                 return (
-                                    <Link key={idx} href={link.href || "#"}>
+                                    <Link key={idx} href={link.href || "#"} className="hover:text-primary transition-colors">
                                         {link.label}
                                     </Link>
                                 );
                             })
                         ) : (
                             <>
-                                <Link href="/">Home</Link>
-                                <Link href="/about-us">About Us</Link>
+                                <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                                <Link href="/about-us" className="hover:text-primary transition-colors">About Us</Link>
                                 <MegaMenu />
-                                <PortfolioDropdown />
-                                <Link href="/blog">Blog</Link>
-                                <Link href="/contact">Contact Us</Link>
+                                <PortfolioDropdown label="Portfolio" />
+                                <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+                                <Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link>
                             </>
                         )}
                     </div>
@@ -52,7 +68,7 @@ export default function Navbar({ navData }: { navData?: any[] }) {
                     {/* Right Side - Actions & Mobile Menu Button  */}
                     <div className="flex items-center gap-4">
                         <ThemeToggle />
-                        <button 
+                        <button
                             onClick={() => setIsMobileMenuOpen(true)}
                             className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-muted transition-colors"
                         >
@@ -63,9 +79,9 @@ export default function Navbar({ navData }: { navData?: any[] }) {
             </div>
 
             {/* Mobile Menu Component */}
-            <MobileMenu 
-                isOpen={isMobileMenuOpen} 
-                onClose={() => setIsMobileMenuOpen(false)} 
+            <MobileMenu
+                isOpen={isMobileMenuOpen}
+                onClose={() => setIsMobileMenuOpen(false)}
             />
         </header>
     )

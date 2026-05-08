@@ -48,3 +48,56 @@ export async function getFooterSettings() {
     copyrightText
   }`);
 }
+
+export async function getContactSettings() {
+  return client.fetch(`*[_type == "contactSettings"][0]{
+    phoneNumbers,
+    email,
+    address,
+    googleMapsLink
+  }`);
+}
+
+export async function getTeamMembers() {
+  return client.fetch(`*[_type == "teamMember"] | order(order asc) {
+    name,
+    role,
+    location,
+    "imageUrl": image.asset->url
+  }`);
+}
+
+// Blog Queries
+export const GET_BLOG_POSTS = `*[_type == "blogPost"] | order(orderRank asc) {
+  _id,
+  title,
+  "slug": slug.current,
+  bannerDescription,
+  "imageUrl": bannerImage.asset->url,
+  category,
+  publishedAt,
+  author,
+  readTime
+}`;
+
+export const GET_BLOG_POST_BY_SLUG = `*[_type == "blogPost" && slug.current == $slug][0] {
+  ...,
+  "slug": slug.current,
+  "bannerImage": bannerImage.asset->url,
+  sections[] {
+    ...,
+    "content": select(
+      type == "list" => string::split(content, "\n"),
+      content
+    )
+  }
+}`;
+
+// Portfolio Queries
+export const GET_PORTFOLIOS = `*[_type == "portfolio" && platform == $platform] | order(orderRank asc) {
+  _id,
+  title,
+  category,
+  "imageUrl": imageUrl.asset->url,
+  link
+}`;

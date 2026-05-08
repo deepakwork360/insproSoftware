@@ -10,14 +10,12 @@ export default function Map() {
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
 
     return (
-        <section className="relative py-20 px-6 md:px-12 lg:px-24 bg-background overflow-hidden">
+        <section className="relative py-10 px-6 md:px-12 lg:px-24 bg-background overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Header Info */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4">
                     <div className="space-y-2 md:space-y-4">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-none text-primary text-[10px] uppercase tracking-[0.3em] font-mono font-bold">
-                            Deployment.Location
-                        </div>
+                       
                         <h2 className="text-3xl md:text-5xl font-playfair font-medium text-foreground leading-tight">
                             Find Us <span className="italic text-primary">On Ground</span>
                         </h2>
@@ -27,7 +25,7 @@ export default function Map() {
                         href={googleMapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center gap-2 text-[10px] md:text-sm font-mono uppercase tracking-widest text-foreground/60 hover:text-primary transition-colors duration-300"
+                        className="group flex items-center gap-2 text-sm font-playfair font-medium text-primary hover:underline transition-all"
                     >
                         Open in Google Maps
                         <ExternalLink size={12} className="md:w-[14px] md:h-[14px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -67,7 +65,7 @@ export default function Map() {
                                     <MapPin size={20} />
                                 </div>
                                 <div className="space-y-1">
-                                    <h3 className="text-sm font-mono font-bold text-primary uppercase tracking-tighter">Office Headquarters</h3>
+                                    <h3 className="text-base font-playfair font-medium text-primary">Office Headquarters</h3>
                                     <p className="text-sm text-foreground/80 font-poppins leading-relaxed">
                                         {address}
                                     </p>
@@ -87,7 +85,7 @@ export default function Map() {
                                 </div>
                                 <div className="flex items-center gap-2 text-[10px] font-mono text-primary animate-pulse">
                                     <Navigation size={10} />
-                                    LIVE_SIGNAL
+                                    LIVE SIGNAL
                                 </div>
                             </div>
                         </div>
@@ -104,4 +102,4 @@ export default function Map() {
 
         </section>
     );
-}
+}

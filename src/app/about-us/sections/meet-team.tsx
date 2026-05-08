@@ -3,7 +3,7 @@ import { Target, Eye, Users } from "lucide-react";
 
 export default function MeetTeam() {
     return (
-        <section className="md:py-10 px-6 md:px-12 lg:px-24 bg-background overflow-hidden">
+        <section className="py-10 md:py-15 px-6 md:px-12 lg:px-24 bg-background overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     
@@ -36,10 +36,6 @@ export default function MeetTeam() {
                     <div className="space-y-12 order-1 lg:order-2">
                         {/* Meet Our Team */}
                         <div className="space-y-4">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-none text-primary text-[10px] uppercase tracking-[0.3em] font-mono font-bold">
-                                <Users size={12} />
-                                The.Collective
-                            </div>
                             <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-tight">
                                 Meet Our <span className="italic text-primary">Team</span>
                             </h2>
@@ -56,7 +52,7 @@ export default function MeetTeam() {
                                 <div className="w-10 h-10 bg-primary/10 flex items-center justify-center text-primary mb-4">
                                     <Target size={20} />
                                 </div>
-                                <h3 className="text-xl font-playfair font-medium text-foreground mb-3 uppercase tracking-wide">Our Mission</h3>
+                                <h3 className="text-xl font-playfair font-medium text-foreground mb-3">Our Mission</h3>
                                 <p className="text-sm text-foreground/60 font-poppins leading-relaxed">
                                     To empower businesses by providing innovative digital solutions that drive growth and success, tailored to each client's unique needs.
                                 </p>
@@ -68,7 +64,7 @@ export default function MeetTeam() {
                                 <div className="w-10 h-10 bg-primary/10 flex items-center justify-center text-primary mb-4">
                                     <Eye size={20} />
                                 </div>
-                                <h3 className="text-xl font-playfair font-medium text-foreground mb-3 uppercase tracking-wide">Our Vision</h3>
+                                <h3 className="text-xl font-playfair font-medium text-foreground mb-3">Our Vision</h3>
                                 <p className="text-sm text-foreground/60 font-poppins leading-relaxed">
                                     To deliver cutting-edge technology solutions that empower businesses to thrive in the digital era through seamless, user-centric experiences.
                                 </p>

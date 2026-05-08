@@ -41,10 +41,6 @@ export default function Industries() {
                 {/* Header Section */}
                 <div className="space-y-4 mb-10">
                     <div className="space-y-2 md:space-y-4">
-                        <div className="inline-flex items-center gap-3">
-                            <div className="w-8 h-px bg-primary" />
-                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Industries</span>
-                        </div>
                         <h2 className="text-3xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             Expertise <span className="italic text-primary">Across</span> Global Sectors
                         </h2>
@@ -75,7 +71,7 @@ export default function Industries() {
                                     <item.icon size={48} className="text-primary/60 group-hover:text-primary transition-all duration-500 relative z-10 hidden md:block" />
                                 </div>
 
-                                <h3 className="text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] font-bold text-foreground/70 group-hover:text-primary transition-colors text-center px-2">
+                                <h3 className="text-sm md:text-base font-playfair font-medium text-primary group-hover:text-primary transition-colors text-center px-2">
                                     {item.title}
                                 </h3>
                             </ImageContainer>

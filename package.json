@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sanity/orderable-document-list": "^1.5.1",
     "@sanity/vision": "^5.23.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",

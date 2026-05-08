@@ -7,120 +7,14 @@ import Link from 'next/link';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 export interface PortfolioItem {
-    id: number;
+    _id: string;
     title: string;
     category: string;
     imageUrl: string;
     link: string;
 }
 
-export const webPortfolioData: PortfolioItem[] = [
-    {
-        id: 1,
-        title: "Brosa",
-        category: "E-commerce",
-        imageUrl: "/portfolio/port-1.png",
-        link: "https://www.brosa.com.au"
-    },
-    {
-        id: 2,
-        title: "Mdina Glass",
-        category: "E-commerce",
-        imageUrl: "/portfolio/mdina.png",
-        link: "https://mdinaglass.com"
-    },
-    {
-        id: 3,
-        title: "QuickFinder",
-        category: "Marketplace",
-        imageUrl: "/portfolio/quickfinder.png",
-        link: "https://quickfinder.dk"
-    },
-    {
-        id: 4,
-        title: "Bring me beauty",
-        category: "E-commerce",
-        imageUrl: "/portfolio/port-15.webp",
-        link: "https://www.bringmebeauty.com/"
-    },
-    {
-        id: 5,
-        title: "BCUK",
-        category: "Education",
-        imageUrl: "/portfolio/port-3.webp",
-        link: "https://bcuks.org"
-    },
-    {
-        id: 6,
-        title: "Dave Dee Wedding Discos",
-        category: "Entertainment",
-        imageUrl: "/portfolio/port-4.webp",
-        link: "https://www.davedeeweddingdiscos.co.uk/"
-    },
-    {
-        id: 7,
-        title: "World innovators",
-        category: "Web Development",
-        imageUrl: "/portfolio/port-5.webp",
-        link: "https://www.worldinnovators.com/"
-    },
-    {
-        id: 8,
-        title: "Eurolingua",
-        category: "Education",
-        imageUrl: "/portfolio/port-6.webp",
-        link: "https://www.eurolingua.com/en/"
-    },
-    {
-        id: 9,
-        title: "Friday night churches",
-        category: "Community",
-        imageUrl: "/portfolio/port-7.webp",
-        link: "https://fridaynightchurches.com/"
-    },
-    {
-        id: 10,
-        title: "Kensington Hill Media",
-        category: "Media",
-        imageUrl: "/portfolio/port-10.webp",
-        link: "https://kensingtonhillmedia.com/"
-    },
-    {
-        id: 11,
-        title: "Blavals",
-        category: "E-commerce",
-        imageUrl: "/portfolio/port-11.webp",
-        link: "https://www.blavals.com/"
-    },
-    {
-        id: 12,
-        title: "Khimar Online",
-        category: "E-commerce",
-        imageUrl: "/portfolio/port-12.webp",
-        link: "https://www.khimaronline.co.uk/"
-    },
-    {
-        id: 13,
-        title: "Moon Creations",
-        category: "E-commerce",
-        imageUrl: "/portfolio/port-13.webp",
-        link: "https://www.mooncreationsusa.com/"
-    },
-    {
-        id: 14,
-        title: "Kate Family Photo",
-        category: "Portfolio",
-        imageUrl: "/portfolio/port-14.webp",
-        link: "https://katfamphoto.com/"
-    },
-    {
-        id: 15,
-        title: "Future Safe",
-        category: "Web Development",
-        imageUrl: "/portfolio/port-2.webp",
-        link: "https://futuresafe.com/"
-    }
-];
+// Hardcoded data removed. Data is now fetched from Sanity.
 
 function PortfolioCard({ item, aspectRatio = "aspect-[16/10]", className = "" }: { item: PortfolioItem, aspectRatio?: string, className?: string }) {
     const [isCentered, setIsCentered] = React.useState(false);
@@ -178,10 +72,11 @@ function PortfolioCard({ item, aspectRatio = "aspect-[16/10]", className = "" }:
 
             {/* Content Overlay */}
             <div className={`absolute bottom-0 left-0 p-8 w-full z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ${isCentered ? 'translate-y-0' : ''}`}>
-                <div className="space-y-1">
-                    <p className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] font-bold">
+                <div className="space-y-4">
+                    <div className="hud-badge !mb-0 !py-1 !px-3 text-white border-primary/20 !bg-black/80 backdrop-blur-md">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                         {item.category}
-                    </p>
+                    </div>
                     <h3 className="text-xl md:text-2xl font-playfair font-medium text-white tracking-wide">
                         {item.title}
                     </h3>
@@ -204,12 +99,13 @@ interface PortfoliosProps {
 }
 
 export default function Portfolios({ 
-    items = webPortfolioData, 
+    items = [], 
     title = "Digital Future", 
     subtitle = "Work.Archive",
     showTitle = false,
     aspectRatio = "aspect-[16/10]"
 }: PortfoliosProps) {
+    if (!items || items.length === 0) return null;
     return (
         <section className="py-10 px-6 md:px-12 lg:px-24 bg-background">
             <div className="max-w-7xl mx-auto">
@@ -217,7 +113,8 @@ export default function Portfolios({
                 {showTitle && (
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-20">
                         <div className="max-w-2xl space-y-4">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-none text-primary text-[10px] uppercase tracking-[0.3em] font-mono font-bold">
+                            <div className="hud-badge !mb-4 !py-1 !px-3 text-primary">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                                 {subtitle}
                             </div>
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-medium text-foreground leading-tight">
@@ -226,7 +123,7 @@ export default function Portfolios({
                         </div>
                         
                         <div className="text-right">
-                            <div className="text-[10px] font-mono text-foreground/30 uppercase tracking-[0.2em] mb-2">Total Deployments</div>
+                            <div className="text-sm font-playfair text-primary font-medium mb-2">Total Deployments</div>
                             <div className="text-4xl font-playfair text-primary">{items.length}+</div>
                         </div>
                     </div>
@@ -239,7 +136,7 @@ export default function Portfolios({
                         const colorClass = colorClasses[index % colorClasses.length];
                         return (
                             <PortfolioCard 
-                                key={item.id} 
+                                key={item._id} 
                                 item={item} 
                                 aspectRatio={aspectRatio} 
                                 className={colorClass}

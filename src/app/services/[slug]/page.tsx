@@ -54,8 +54,8 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-3">
               <div className="w-8 h-px bg-[var(--primary)]" />
-              <span className="text-[var(--primary)] text-[10px] uppercase tracking-[0.4em] font-mono font-bold">
-                Professional.Services
+              <span className="text-[var(--primary)] text-base font-playfair font-medium">
+                Professional Services
               </span>
             </div>
             <h2 className="text-4xl md:text-6xl font-serif font-medium text-[var(--foreground)] leading-[1.1]">

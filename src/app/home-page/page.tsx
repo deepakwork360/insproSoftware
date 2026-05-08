@@ -2,8 +2,8 @@ import Footer from "@/components/Footer/footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Welcome to Insprosoftware. Your partner for innovative software solutions.",
+  title: "insprosoftware - Web Development, Mobile & Digital Solutions Agency",
+  description: "insprosoftware provides modern web development, mobile app development, UI/UX Design, branding, and digital marketing solutions focused on performance , creativity, and business growth.",
 };
 import CompanyDetails from "./sections/comp-details";
 import DevProcess from "./sections/dev-process";
@@ -18,12 +18,16 @@ import ProfessionalExp from "./sections/professional-exp";
 import Testimonials from "./sections/testimonials";
 import Understand from "./sections/understand";
 
-export default function HomePage() {
+import { getContactSettings } from "@/sanity/lib/queries";
+
+export default async function HomePage() {
+    const contactData = await getContactSettings();
+
     return (
         <div>
             <HeroBanner />
             <CompanyDetails />
-            <LeadingSection />
+            <LeadingSection phoneNumber={contactData?.phoneNumbers?.[0]} />
             <DigitalServices />
             <Understand />
             <Portfolio />
@@ -32,7 +36,7 @@ export default function HomePage() {
             <DevProcess />
             <FAQ />
             <Testimonials />
-            <FooterCTA />
+            <FooterCTA contactData={contactData} />
         </div>
     );
 }

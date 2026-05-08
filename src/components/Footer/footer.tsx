@@ -56,25 +56,32 @@ export default function Footer({ data }: FooterProps) {
     const copyrightText = data?.copyrightText || "© 2024 Insprosoftware. All rights reserved.";
 
     return (
-        <footer className="bg-background border-t border-border/10 pt-20 pb-10 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+        <footer className="bg-background border-t border-border/10 pt-20 pb-8 px-6 md:px-12 lg:px-24 relative overflow-hidden">
             {/* Background HUD Detail */}
             <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none opacity-50" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-10">
 
                     {/* Brand Section */}
                     <div className="lg:col-span-4 space-y-8">
                         <div className="flex items-center gap-3 group cursor-pointer" onClick={scrollToTop}>
-                            <div className="relative w-10 h-10">
+                            <div className="relative w-40 h-12">
                                 <Image
-                                    src="/home/logo1.png"
-                                    alt={`${logoText} Logo`}
-                                    fill
-                                    className="object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                                    src="/home/logo.png"
+                                    alt="Logo"
+                                    width={180}
+                                    height={60}
+                                    className="object-contain dark:hidden transition-all duration-500"
+                                />
+                                <Image
+                                    src="/home/logo-main.webp"
+                                    alt="Logo"
+                                    width={180}
+                                    height={60}
+                                    className="object-contain hidden dark:block transition-all duration-500"
                                 />
                             </div>
-                            <span className="text-xl font-playfair font-bold text-foreground tracking-tight">{logoText}</span>
                         </div>
 
                         <p className="text-sm text-foreground/50 font-poppins font-light leading-relaxed max-w-sm">
@@ -129,11 +136,11 @@ export default function Footer({ data }: FooterProps) {
                     <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-8">
                         {data?.columns?.map((column, idx) => (
                             <div key={idx} className="space-y-6">
-                                <div className="space-y-2">
-                                    <h4 className="text-[10px] font-mono text-primary uppercase tracking-[0.4em] font-bold">
+                                <div className="space-y-4">
+                                    <h4 className="text-primary font-playfair text-lg font-medium">
                                         {column.title}
                                     </h4>
-                                    <div className="h-px w-8 bg-primary/30" />
+                                    <div className="h-0.5 w-10 bg-primary/40 rounded-full" />
                                 </div>
                                 <ul className="space-y-3">
                                     {column.links.map((link, lIdx) => (
@@ -158,8 +165,8 @@ export default function Footer({ data }: FooterProps) {
                 </div>
 
                 {/* Footer Bottom Bar */}
-                <div className="pt-10 border-t border-border/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="flex items-center gap-6 text-[9px] font-mono text-foreground/20 uppercase tracking-widest">
+                <div className="pt-8 border-t border-border/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex items-center gap-6 text-xs font-poppins text-foreground/40 font-light">
                         <span>{copyrightText}</span>
                     </div>
 

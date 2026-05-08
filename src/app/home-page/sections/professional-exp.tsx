@@ -28,7 +28,7 @@ export default function ProfessionalExp() {
                     <div className="space-y-6">
                         <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
-                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Partnerships</span>
+                            <span className="text-primary text-base font-playfair font-medium">Partnerships</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             Experience <span className="italic text-primary">Professional</span> Excellence

@@ -56,10 +56,7 @@ export default function DevProcess() {
                 {/* Header Section */}
                 <div className="space-y-4 mb-10">
                     <div className="space-y-4">
-                        <div className="inline-flex items-center gap-3">
-                            <div className="w-8 h-px bg-primary" />
-                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Workflow.Architecture</span>
-                        </div>
+                       
                         <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             Our <span className="italic text-primary">Development</span> Pipeline
                         </h2>
@@ -109,8 +106,8 @@ export default function DevProcess() {
                                     {/* Content Area */}
                                     <div className="space-y-3 md:space-y-4 text-left relative pt-1 md:pt-2">
                                         <div className="flex items-center justify-start gap-3 md:gap-4">
-                                            <span className="font-mono text-[9px] md:text-[10px] text-primary/40 font-bold group-hover:text-primary transition-colors">
-                                                STEP_{index + 1 < 10 ? `0${index + 1}` : index + 1}
+                                            <span className="font-playfair text-base text-primary font-medium group-hover:text-primary/80 transition-colors">
+                                                Step {index + 1 < 10 ? `0${index + 1}` : index + 1}
                                             </span>
                                             <div className="h-px w-4 md:w-6 bg-primary/20 group-hover:w-12 group-hover:bg-primary/50 transition-all duration-700" />
                                         </div>

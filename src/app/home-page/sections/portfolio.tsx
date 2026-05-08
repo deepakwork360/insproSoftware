@@ -48,10 +48,7 @@ export default function Portfolio() {
                 {/* Header Section */}
                 <div className="space-y-6 mb-6">
                     <div className="space-y-4">
-                        <div className="inline-flex items-center gap-3">
-                            <div className="w-8 h-px bg-primary" />
-                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Showcase</span>
-                        </div>
+                       
                         <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             Our <span className="italic text-primary">Portfolio</span> of Excellence
                         </h2>

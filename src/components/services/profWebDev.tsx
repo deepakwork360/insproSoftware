@@ -23,12 +23,12 @@ export default function ProfWebDev({ data }: ProfWebDevProps) {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8 space-y-6">
-          <div className="inline-flex items-center gap-3">
+          {/* <div className="inline-flex items-center gap-3">
             <div className="w-8 h-px bg-[var(--primary)]" />
             <span className="text-[var(--primary)] text-[10px] uppercase tracking-[0.4em] font-mono font-bold">
               Professional.Excellence
             </span>
-          </div>
+          </div> */}
           <h2 className="text-4xl md:text-6xl font-serif font-medium text-[var(--foreground)] leading-[1.1]">
             {data.title.split(' ').slice(0, -1).join(' ')}{' '}
             <span className="italic text-[var(--primary)]">{data.title.split(' ').slice(-1)}</span>

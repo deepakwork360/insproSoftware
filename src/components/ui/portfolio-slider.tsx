@@ -89,7 +89,7 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
                 <div className="w-full lg:w-[40%] space-y-8">
                     <div className="space-y-4">
                         <div className="flex items-center gap-4">
-                            <span className="text-primary font-mono text-[10px] tracking-[0.3em] font-bold">PROJECT.0{activeIndex + 1}</span>
+                            {/* <span className="text-primary font-mono text-[10px] tracking-[0.3em] font-bold">PROJECT.0{activeIndex + 1}</span> */}
                             <div className="h-px flex-1 bg-border/40" />
                         </div>
                         <h3 className="text-3xl lg:text-5xl font-playfair font-medium text-foreground leading-tight">

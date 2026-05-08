@@ -68,16 +68,16 @@ export default function FormPart() {
                                 <CheckCircle size={40} />
                             </div>
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-playfair font-bold text-foreground tracking-tight">Transmission.Successful</h3>
+                                <h3 className="text-2xl font-playfair font-medium text-primary">Message Sent Successfully</h3>
                                 <p className="text-foreground/60 font-poppins text-sm max-w-xs mx-auto">
                                     Your message has been encrypted and sent to our team. We will respond shortly.
                                 </p>
                             </div>
                             <button 
                                 onClick={() => setIsSuccess(false)}
-                                className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] hover:underline transition-all"
+                                className="text-base font-playfair text-primary hover:underline transition-all"
                             >
-                                Send another signal
+                                Send another message
                             </button>
                         </div>
                     ) : (

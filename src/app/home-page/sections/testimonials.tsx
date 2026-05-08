@@ -64,10 +64,7 @@ export default function Testimonials() {
                 {/* Header Section */}
                 <div className="space-y-4">
                     <div className="space-y-4">
-                        <div className="inline-flex items-center gap-3">
-                            <div className="w-8 h-px bg-primary" />
-                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Client Feedback</span>
-                        </div>
+                        
                         <h2 className="text-3xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             Trust Built on <span className="italic text-primary">Excellence</span>
                         </h2>

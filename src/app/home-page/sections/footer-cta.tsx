@@ -5,13 +5,25 @@ import { Phone, Mail, MapPin, Send, Globe, CheckCircle, ArrowRight } from "lucid
 import InputField from "@/components/ui/input-field";
 import ImageContainer from "@/components/ui/image-container";
 
-export default function FooterCTA() {
+interface FooterCTAProps {
+    contactData?: {
+        phoneNumbers?: string[];
+        email?: string;
+        address?: string;
+    };
+}
+
+export default function FooterCTA({ contactData }: FooterCTAProps) {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         projectType: "",
         message: ""
     });
+
+    const contactNumbers = contactData?.phoneNumbers || ["+91 9990760789", "+91 9599408589", "+1(469) 730-0168"];
+    const contactEmail = contactData?.email || "sales@insprosoftware.com";
+    const contactAddress = contactData?.address || "B-127, Block B, Noida Sector 2,\nUttar Pradesh, India - 201301";
     
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -98,10 +110,7 @@ export default function FooterCTA() {
                     {/* Left Side: Information */}
                     <div className="space-y-12">
                         <div className="space-y-6">
-                            <div className="inline-flex items-center gap-3">
-                                <div className="w-8 h-px bg-primary" />
-                                <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Contact Node</span>
-                            </div>
+                           
                             <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                                 Let's Build Your <span className="italic text-primary">Future</span>
                             </h2>
@@ -116,12 +125,12 @@ export default function FooterCTA() {
                             <div className="space-y-4 group">
                                 <div className="flex items-center gap-3 text-primary">
                                     <Phone size={18} />
-                                    <span className="font-mono text-[10px] uppercase tracking-widest">Voice.Channel</span>
+                                    <span className="font-playfair text-base font-medium text-primary">Call for Inquiry</span>
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-foreground/80 hover:text-primary transition-colors cursor-pointer">+91 9990760789</p>
-                                    <p className="text-foreground/80 hover:text-primary transition-colors cursor-pointer">+91 9599408589</p>
-                                    <p className="text-foreground/80 hover:text-primary transition-colors cursor-pointer">+1(469) 730-0168</p>
+                                    {contactNumbers.map((num, i) => (
+                                        <p key={i} className="text-foreground/80 hover:text-primary transition-colors cursor-pointer">{num}</p>
+                                    ))}
                                 </div>
                             </div>
 
@@ -129,10 +138,10 @@ export default function FooterCTA() {
                             <div className="space-y-4 group">
                                 <div className="flex items-center gap-3 text-primary">
                                     <Mail size={18} />
-                                    <span className="font-mono text-[10px] uppercase tracking-widest">Data.Stream</span>
+                                    <span className="font-playfair text-base font-medium text-primary">Send Us Email</span>
                                 </div>
                                 <p className="text-foreground/80 hover:text-primary transition-colors cursor-pointer break-all">
-                                    sales@insprosoftware.com
+                                    {contactEmail}
                                 </p>
                             </div>
 
@@ -140,11 +149,10 @@ export default function FooterCTA() {
                             <div className="space-y-4 group sm:col-span-2">
                                 <div className="flex items-center gap-3 text-primary">
                                     <MapPin size={18} />
-                                    <span className="font-mono text-[10px] uppercase tracking-widest">Physical.Coordinates</span>
+                                    <span className="font-playfair text-base font-medium text-primary">Office Address</span>
                                 </div>
-                                <p className="text-foreground/80 font-poppins font-light leading-relaxed max-w-md">
-                                    B-127, Block B, Noida Sector 2,<br />
-                                    Uttar Pradesh, India - 201301
+                                <p className="text-foreground/80 font-poppins font-light leading-relaxed max-w-md whitespace-pre-line">
+                                    {contactAddress}
                                 </p>
                             </div>
                         </div>
@@ -171,17 +179,16 @@ export default function FooterCTA() {
                                         <CheckCircle size={40} className="text-primary" />
                                     </div>
                                     <div className="space-y-2">
-                                        <h3 className="text-2xl font-playfair font-medium text-foreground">Inquiry Initialized</h3>
-                                        <p className="text-sm font-mono text-primary uppercase tracking-widest">Transmission.Successful</p>
+                                        <h3 className="text-2xl font-playfair font-medium text-primary">Inquiry Sent Successfully</h3>
                                     </div>
                                     <p className="text-foreground/60 font-poppins font-light max-w-xs">
                                         Our agents have received your signal. We will establish contact shortly.
                                     </p>
                                     <button 
                                         onClick={() => setIsSuccess(false)}
-                                        className="text-[10px] font-mono text-primary uppercase tracking-[0.4em] underline underline-offset-8"
+                                        className="text-base font-playfair text-primary hover:underline underline-offset-8 transition-all"
                                     >
-                                        Send another signal
+                                        Send another message
                                     </button>
                                 </div>
                             ) : (
@@ -231,7 +238,7 @@ export default function FooterCTA() {
                                         {/* Button Glint Effect */}
                                         <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />
                                         
-                                        <span className="relative z-10 whitespace-nowrap">{isSubmitting ? "Processing Signal..." : "Initialize Inquiry"}</span>
+                                        <span className="relative z-10 whitespace-nowrap">{isSubmitting ? "Processing..." : "Initialize Inquiry"}</span>
                                         {!isSubmitting && <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />}
                                     </button>
 

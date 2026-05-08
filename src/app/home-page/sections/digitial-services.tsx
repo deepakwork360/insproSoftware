@@ -15,7 +15,7 @@ const servicesData = [
             "Enterprise mobile applications",
             "Healthcare & E-commerce apps"
         ],
-        image: "/home/mobile-app-dev.png"
+        image: "/home/mobile-app1.jpeg"
     },
     {
         id: "web-dev",
@@ -27,7 +27,7 @@ const servicesData = [
             "Custom web applications",
             "Small business websites"
         ],
-        image: "/home/web-devv.png"
+        image: "/home/web-dev1.jpeg"
     },
     {
         id: "marketing",
@@ -39,7 +39,7 @@ const servicesData = [
             "Social media management",
             "Performance analytics"
         ],
-        image: "/home/digital-marketing.png" // Replace with your actual marketing image path
+        image: "/home/digital-marketing.jpeg" // Replace with your actual marketing image path
     },
     {
         id: "uiux",
@@ -51,7 +51,7 @@ const servicesData = [
             "Visual Design Systems",
             "Interaction Design"
         ],
-        image: "/home/ui-ux.png" // Replace with your actual design image path
+        image: "/home/ui-ux.jpeg" // Replace with your actual design image path
     }, {
         id: "graphic-design",
         title: "Graphic Design",
@@ -62,7 +62,7 @@ const servicesData = [
             "Print Design",
             "Social Media Graphics"
         ],
-        image: "/home/graphic.png" // Replace with your actual design image path
+        image: "/home/graphic1.jpeg" // Replace with your actual design image path
     }
 ];
 
@@ -76,9 +76,10 @@ export default function DigitalServices() {
 
                 {/* Header */}
                 <div className="space-y-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-none text-primary text-[10px] uppercase tracking-widest font-mono font-bold">
-                        Services
-                    </div>
+                    {/* <div className="inline-flex items-center gap-3">
+                        <div className="w-8 h-px bg-primary" />
+                        <span className="text-primary text-base font-playfair font-medium">Services</span>
+                    </div> */}
                     <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-tight">
                         Professional Development & <span className="italic text-primary">Digital Services</span>
                     </h2>
@@ -90,14 +91,14 @@ export default function DigitalServices() {
 
                 {/* Main Interactive Grid */}
                 <div className="flex flex-col lg:flex-row border border-border/40 bg-card overflow-hidden min-h-[450px] lg:min-h-[500px]">
-                    
+
                     {/* Sidebar: Service Titles */}
                     <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-border/40 flex flex-col">
                         {servicesData.map((service, index) => (
                             <button
                                 key={service.id}
                                 onClick={() => setActiveTab(index)}
-                                className={`flex-1 text-left p-6 lg:p-8 transition-all duration-300 relative group flex items-center justify-between border-b last:border-0
+                                className={`flex-1 text-left p-6 lg:p-8 relative group flex items-center justify-between border-b last:border-0
                                     ${activeTab === index
                                         ? "bg-primary text-white border-primary"
                                         : "hover:bg-primary/5 text-foreground/70 border-border/20"}`}
@@ -146,7 +147,7 @@ export default function DigitalServices() {
                                     alt={current.title}
                                     fill
                                     priority
-                                    className="object-cover opacity-80 group-hover:opacity-100"
+                                    className="object-cover"
                                 />
                                 {/* Visual Overlay to maintain HUD feel */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 z-10" />

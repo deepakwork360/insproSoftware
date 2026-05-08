@@ -14,10 +14,10 @@ export default function InputField({ label, isTextArea, error, className, ...pro
     return (
         <div className="space-y-2 group">
             <div className="flex justify-between items-center">
-                <label className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] font-bold">
+                <label className="font-playfair text-base font-medium text-primary">
                     {label}
                 </label>
-                {error && <span className="text-[8px] font-mono text-red-500 uppercase tracking-widest animate-pulse">{error}</span>}
+                {error && <span className="text-[10px] font-poppins text-red-500 uppercase animate-pulse">{error}</span>}
             </div>
             
             <div className="relative overflow-hidden">

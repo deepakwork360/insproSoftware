@@ -11,10 +11,10 @@ export default function BestWeb() {
                     {/* Left Side: Content */}
                     <div className="space-y-8 order-2 lg:order-1">
                         <div className="space-y-4">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-none text-primary text-[10px] uppercase tracking-[0.3em] font-mono font-bold">
-                                <Smartphone size={12} />
-                                Web.Solutions
-                            </div>
+                        <div className="inline-flex items-center gap-3">
+                            <div className="w-8 h-px bg-primary" />
+                            <span className="text-primary text-base font-playfair font-medium">Web Solutions</span>
+                        </div>
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-medium text-foreground leading-tight">
                                 Our Best <span className="italic text-primary">Web Portfolio</span>
                             </h2>
@@ -29,7 +29,7 @@ export default function BestWeb() {
                                     <Sparkles size={20} />
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-mono font-bold text-foreground uppercase tracking-wider mb-1">Innovation</h3>
+                                    <h3 className="text-base font-playfair font-medium text-foreground mb-1">Innovation</h3>
                                     <p className="text-xs text-foreground/50 leading-relaxed">Transforming complex ideas into seamless experiences.</p>
                                 </div>
                             </div>
@@ -38,13 +38,13 @@ export default function BestWeb() {
                         <div className="pt-6">
                             <Link 
                                 href="/contact" 
-                                className="relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.2em] transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-primary/20 overflow-hidden group"
+                                className="relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-playfair text-sm font-medium transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-primary/20 overflow-hidden group"
                             >
                                 {/* Button Glint Effect */}
                                 <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />
                                 
-                                <span className="relative z-10">Start Your Project</span>
-                                <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-transform duration-500" />
+                                <span className="relative z-10 text-white">Start Your Project</span>
+                                <ArrowRight size={16} className="relative z-10 group-hover:translate-x-2 transition-transform duration-500 text-white" />
                             </Link>
                         </div>
                     </div>

@@ -1,11 +1,12 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import { blogData } from "@/constants/blog-data";
 import PageBanner from "@/components/ui/page-banner";
 import FAQ from "@/app/home-page/sections/faq";
 import FooterCTA from "@/app/home-page/sections/footer-cta";
 import Image from "next/image";
 import { Calendar, User, Clock, Tag } from "lucide-react";
+import { client } from "@/sanity/lib/client";
+import { GET_BLOG_POST_BY_SLUG } from "@/sanity/lib/queries";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -13,19 +14,19 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const data = blogData[slug];
+  const data = await client.fetch(GET_BLOG_POST_BY_SLUG, { slug });
 
   if (!data) return { title: "Blog Post Not Found" };
 
   return {
-    title: data.metaTitle,
-    description: data.metaDescription,
+    title: data.metaTitle || data.title,
+    description: data.metaDescription || data.bannerDescription,
   };
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
-  const data = blogData[slug];
+  const data = await client.fetch(GET_BLOG_POST_BY_SLUG, { slug });
 
   if (!data) {
     notFound();
@@ -44,23 +45,24 @@ export default async function BlogPostPage({ params }: PageProps) {
       <article className="py-10 px-6 md:px-12 lg:px-24">
         <div className="max-w-4xl mx-auto space-y-12">
           
-          {/* Post Metadata */}
           <div className="flex flex-wrap items-center gap-6 py-8 border-b border-border/10">
             <div className="flex items-center gap-2 text-primary">
               <Calendar size={16} />
-              <span className="text-xs font-mono uppercase tracking-widest">{data.date}</span>
+              <span className="text-sm font-playfair font-medium">
+                {data.publishedAt ? new Date(data.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recent'}
+              </span>
             </div>
-            <div className="flex items-center gap-2 text-foreground/40">
+            <div className="flex items-center gap-2 text-primary/60">
               <User size={16} />
-              <span className="text-xs font-mono uppercase tracking-widest">{data.author}</span>
+              <span className="text-sm font-playfair font-medium">{data.author || 'Inspro Team'}</span>
             </div>
-            <div className="flex items-center gap-2 text-foreground/40">
+            <div className="flex items-center gap-2 text-primary/60">
               <Clock size={16} />
-              <span className="text-xs font-mono uppercase tracking-widest">{data.readTime}</span>
+              <span className="text-sm font-playfair font-medium">{data.readTime || '5 min read'}</span>
             </div>
-            <div className="flex items-center gap-2 text-foreground/40">
+            <div className="flex items-center gap-2 text-primary/60">
               <Tag size={16} />
-              <span className="text-xs font-mono uppercase tracking-widest">{data.category}</span>
+              <span className="text-sm font-playfair font-medium">{data.category || 'Technology'}</span>
             </div>
           </div>
 

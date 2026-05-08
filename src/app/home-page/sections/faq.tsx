@@ -54,7 +54,7 @@ function FAQItem({ que, ans, index, isOpen, toggle }: { que: string, ans: string
             
             <button 
                 onClick={toggle}
-                className="w-full flex items-center justify-between p-6 md:p-8 text-left transition-all relative overflow-hidden group/btn"
+                className="w-full flex items-center justify-between p-6 md:p-8 text-left transition-all relative overflow-hidden group/btn cursor-pointer"
             >
                 {/* Active background glow */}
                 <div className={`absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent transition-opacity duration-700 ${isOpen ? "opacity-100" : "opacity-0"}`} />
@@ -65,7 +65,7 @@ function FAQItem({ que, ans, index, isOpen, toggle }: { que: string, ans: string
                     </h3>
                 </div>
                 
-                <div className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-500 z-10 rounded-full border ${isOpen ? "bg-primary border-primary text-white rotate-180 scale-110 shadow-[0_0_20px_rgba(var(--primary),0.3)]" : "bg-background/50 border-border/40 text-primary"}`}>
+                <div className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-500 z-10 rounded-full border cursor-pointer ${isOpen ? "bg-primary border-primary text-white rotate-180 scale-110 shadow-[0_0_20px_rgba(var(--primary),0.3)]" : "bg-background/50 border-border/40 text-primary"}`}>
                     <Plus 
                         size={20} 
                         className={`absolute transition-all duration-500 ease-out ${isOpen ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"}`} 
@@ -116,10 +116,7 @@ export default function FAQ({
                 {/* Header & Intro Section */}
                 <div className="space-y-4 mb-10">
                     <div className="space-y-4">
-                        <div className="inline-flex items-center gap-3">
-                            <div className="w-8 h-px bg-primary" />
-                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Support.Center</span>
-                        </div>
+                       
                         <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             {title} <span className="italic text-primary">{highlightTitle}</span>
                         </h2>

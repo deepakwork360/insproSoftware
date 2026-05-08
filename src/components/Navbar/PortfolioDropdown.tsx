@@ -10,7 +10,10 @@ interface PortfolioDropdownProps {
   links?: { label: string; href: string }[];
 }
 
-export function PortfolioDropdown({ label, links }: PortfolioDropdownProps) {
+export function PortfolioDropdown({ label = "Portfolio", links = [
+  { label: "Web Apps", href: "/web-portfolio" },
+  { label: "Mobile Apps", href: "/mobile-portfolio" },
+] }: PortfolioDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,22 +24,22 @@ export function PortfolioDropdown({ label, links }: PortfolioDropdownProps) {
     >
       <button 
         type="button"
-        className="flex items-center gap-1 hover:text-blue-500 transition-colors h-full group"
+        className="flex items-center gap-1 hover:text-primary transition-colors h-full group font-semibold text-sm"
       >
         {label}
         <Icons.ChevronDown 
-          className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} 
+          className={`w-3.5 h-3.5 transition-transform duration-500 ${isOpen ? "rotate-180" : ""}`} 
         />
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 15, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 15, scale: 0.95 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute left-0 top-full w-[240px] bg-background border border-border shadow-2xl rounded-xl overflow-hidden z-[999] p-2"
+            className="absolute left-0 top-full w-[240px] bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-xl overflow-hidden z-[999] p-2"
           >
             <div className="flex flex-col gap-1">
               {links?.map((link, idx) => (
@@ -44,10 +47,10 @@ export function PortfolioDropdown({ label, links }: PortfolioDropdownProps) {
                   key={idx}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group/link"
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group/link"
                 >
-                  <div className="w-8 h-8 rounded-md bg-blue-500/10 flex items-center justify-center group-hover/link:bg-blue-500/20 transition-colors">
-                    <Icons.Globe className="w-4 h-4 text-blue-500" />
+                  <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center group-hover/link:bg-primary/20 transition-colors">
+                    <Icons.Globe className="w-4 h-4 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-bold">{link.label}</p>

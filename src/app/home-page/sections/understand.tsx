@@ -79,7 +79,7 @@ function Counter({ value, label, id }: CounterProps) {
                         <span className="text-primary animate-in fade-in duration-1000">{value}</span>
                     )}
                 </h3>
-                <p className="text-xs lg:text-sm font-poppins text-foreground/50 uppercase tracking-widest font-medium">
+                <p className="text-sm lg:text-base font-playfair text-primary font-medium">
                     {label}
                 </p>
             </div>
@@ -109,10 +109,10 @@ export default function Understand() {
                 {/* Header Section */}
                 <div className="space-y-8">
                     <div className="space-y-6">
-                        <div className="inline-flex items-center gap-3">
+                        {/* <div className="inline-flex items-center gap-3">
                             <div className="w-8 h-px bg-primary" />
-                            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-mono font-bold">Value Proposition</span>
-                        </div>
+                            <span className="text-primary text-base font-playfair font-medium">Value Proposition</span>
+                        </div> */}
                         <h2 className="text-4xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
                             We <span className="italic text-primary">Understand</span> You, Like No one Else
                         </h2>
