@@ -33,6 +33,7 @@ function BlogCard({ post }: { post: BlogPost }) {
                     src={post.imageUrl || '/blog/placeholder.png'}
                     alt={post.title}
                     fill
+                    loader={post.imageUrl?.includes('sanity.io') ? ({ src }) => src : undefined}
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 

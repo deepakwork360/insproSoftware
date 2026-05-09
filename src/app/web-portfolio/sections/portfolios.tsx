@@ -57,6 +57,7 @@ function PortfolioCard({ item, aspectRatio = "aspect-[16/10]", className = "" }:
                 src={item.imageUrl} 
                 alt={item.title} 
                 fill 
+                loader={item.imageUrl.includes('sanity.io') ? ({ src }) => src : undefined}
                 className={`object-cover transition-transform duration-1000 ease-out group-hover:scale-110 ${activeImgState}`}
             />
 

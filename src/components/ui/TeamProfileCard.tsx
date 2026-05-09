@@ -19,6 +19,7 @@ export default function TeamProfileCard({ name, role, location, imageUrl }: Team
                 src={imageUrl} 
                 alt={name} 
                 fill 
+                loader={({ src }) => src}
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
 

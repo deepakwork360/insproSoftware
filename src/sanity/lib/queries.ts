@@ -63,7 +63,7 @@ export async function getTeamMembers() {
     name,
     role,
     location,
-    "imageUrl": image.asset->url
+    "imageUrl": image.asset->url + "?auto=format"
   }`);
 }
 
@@ -73,7 +73,7 @@ export const GET_BLOG_POSTS = `*[_type == "blogPost"] | order(orderRank asc) {
   title,
   "slug": slug.current,
   bannerDescription,
-  "imageUrl": bannerImage.asset->url,
+  "imageUrl": bannerImage.asset->url + "?auto=format",
   category,
   publishedAt,
   author,
@@ -83,7 +83,7 @@ export const GET_BLOG_POSTS = `*[_type == "blogPost"] | order(orderRank asc) {
 export const GET_BLOG_POST_BY_SLUG = `*[_type == "blogPost" && slug.current == $slug][0] {
   ...,
   "slug": slug.current,
-  "bannerImage": bannerImage.asset->url,
+  "bannerImage": bannerImage.asset->url + "?auto=format",
   sections[] {
     ...,
     "content": select(
@@ -98,7 +98,7 @@ export const GET_PORTFOLIOS = `*[_type == "portfolio" && platform == $platform] 
   _id,
   title,
   category,
-  "imageUrl": imageUrl.asset->url,
+  "imageUrl": imageUrl.asset->url + "?auto=format",
   link
 }`;
 
@@ -107,5 +107,5 @@ export const GET_HOME_PORTFOLIOS = `*[_type == "portfolio" && showOnHome == true
   title,
   description,
   imagePosition,
-  "image": imageUrl.asset->url
+  "image": imageUrl.asset->url + "?auto=format"
 }`;

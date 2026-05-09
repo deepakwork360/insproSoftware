@@ -142,6 +142,7 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
                                     src={current.image}
                                     alt={current.title}
                                     fill
+                                    loader={current.image.includes('sanity.io') ? ({ src }) => src : undefined}
                                     className="object-cover"
                                     style={{ objectPosition: getFinalPosition(current.imagePosition) }}
                                     priority
