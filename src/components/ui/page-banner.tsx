@@ -34,6 +34,7 @@ export default function PageBanner({
                         src={imageUrl}
                         alt={title}
                         fill
+                        loader={imageUrl.includes('sanity.io') ? ({ src }) => src : undefined}
                         className="object-cover"
                         style={{ objectPosition: finalPosition }}
                         priority

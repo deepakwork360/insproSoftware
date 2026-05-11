@@ -27,10 +27,10 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
             <div className="relative flex flex-col items-center">
                 {/* Client Image - Centered and Premium */}
                 <div className="relative mb-8">
-                    {/* Ambient Glow */}
-                    <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                    {/* Ambient Glow on Hover */}
+                    <div className="absolute inset-0 bg-primary/20 blur-[40px] rounded-full scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-                    <div className="relative w-24 h-24 md:w-32 md:h-32 group-hover:scale-105 transition-transform duration-700">
+                    <div className="relative w-24 h-24 md:w-32 md:h-32">
                         {/* Technical HUD Frame Corners */}
                         <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/40" />
                         <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-primary/40" />
@@ -43,20 +43,10 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                                 src={testimonial.image || "/experience/1.png"}
                                 alt={testimonial.name}
                                 fill
-                                className="object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
+                                loader={testimonial.image?.includes('sanity.io') ? ({ src }) => src : undefined}
+                                className="object-cover"
                             />
-                            {/* Scanning line effect */}
-                            <div className="absolute inset-0 w-full h-[1px] bg-primary/20 -translate-y-full group-hover:animate-[scan_3s_infinite_linear] pointer-events-none" />
                         </div>
-
-                        {/* Technical ID Tag - Refined */}
-                        {/* <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                            <div className="w-4 h-[1px] bg-primary/40" />
-                            <div className="bg-background border border-primary/30 px-3 py-1 text-[9px] font-mono text-primary uppercase tracking-[0.3em] whitespace-nowrap backdrop-blur-md">
-                                ID_{testimonial.name.split(" ")[0].toUpperCase()}
-                            </div>
-                            <div className="w-4 h-[1px] bg-primary/40" />
-                        </div> */}
                     </div>
                 </div>
 
@@ -67,8 +57,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                         <Star
                             key={i}
                             size={14}
-                            className={`${i < testimonial.rating ? "text-primary fill-primary" : "text-border/20"} group-hover:scale-125 transition-transform duration-500`}
-                            style={{ transitionDelay: `${i * 100}ms` }}
+                            className={i < testimonial.rating ? "text-primary fill-primary" : "text-border/20"}
                         />
                     ))}
                 </div>

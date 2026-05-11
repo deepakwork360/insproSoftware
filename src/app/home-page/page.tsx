@@ -18,10 +18,13 @@ import ProfessionalExp from "./sections/professional-exp";
 import Testimonials from "./sections/testimonials";
 import Understand from "./sections/understand";
 
-import { getContactSettings } from "@/sanity/lib/queries";
+import { getContactSettings, getTestimonials } from "@/sanity/lib/queries";
+
+export const revalidate = 0;
 
 export default async function HomePage() {
     const contactData = await getContactSettings();
+    const testimonialData = await getTestimonials();
 
     return (
         <div>
@@ -35,7 +38,7 @@ export default async function HomePage() {
             <Industries />
             <DevProcess />
             <FAQ />
-            <Testimonials />
+            <Testimonials data={testimonialData} />
             <FooterCTA contactData={contactData} />
         </div>
     );

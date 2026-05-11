@@ -59,12 +59,27 @@ export async function getContactSettings() {
 }
 
 export async function getTeamMembers() {
-  return client.fetch(`*[_type == "teamMember"] | order(order asc) {
+  return client.fetch(`*[_type == "teamMember"] | order(order asc, _createdAt desc) {
     name,
     role,
     location,
     "imageUrl": image.asset->url + "?auto=format"
-  }`);
+  }`, {}, {
+    next: { revalidate: 0 }
+  });
+}
+
+export async function getTestimonials() {
+  return client.fetch(`*[_type == "testimonial"] | order(order asc, _createdAt desc) {
+    name,
+    position,
+    "image": image.asset->url + "?auto=format",
+    rating,
+    description,
+    signature
+  }`, {}, {
+    next: { revalidate: 0 }
+  });
 }
 
 // Blog Queries

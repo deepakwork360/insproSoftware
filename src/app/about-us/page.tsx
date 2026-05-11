@@ -13,11 +13,14 @@ export const metadata: Metadata = {
   description: "Learn about InsproSoftware's journey, our values, and the expert team behind our world-class software solutions. We are dedicated to innovation and client success.",
 };
 
-import { getContactSettings, getTeamMembers } from "@/sanity/lib/queries";
+import { getContactSettings, getTeamMembers, getTestimonials } from "@/sanity/lib/queries";
+
+export const revalidate = 0;
 
 export default async function AboutUsPage() {
     const contactData = await getContactSettings();
     const teamData = await getTeamMembers();
+    const testimonialData = await getTestimonials();
 
     return (
         <main>
@@ -27,7 +30,7 @@ export default async function AboutUsPage() {
             <Understand />
             <MeetTeam />
             {/* <ProfessionalExp /> */}
-            <Testimonials />
+            <Testimonials data={testimonialData} />
             <FooterCTA contactData={contactData} />
         </main>
     );

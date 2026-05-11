@@ -1,8 +1,10 @@
-"use client"
-
 import TestimonialCarousel, { Testimonial } from "@/components/Testimonials/testimonials";
 
-const testimonialData: Testimonial[] = [
+interface TestimonialsProps {
+    data?: Testimonial[];
+}
+
+const fallbackTestimonials: Testimonial[] = [
     {
         image: "/testimonials/test1.png",
         name: "David Lee",
@@ -26,34 +28,11 @@ const testimonialData: Testimonial[] = [
         rating: 5,
         description: "Insprosoftware has been instrumental in our digital transformation. Their custom software solutions have optimized our workflow and improved efficiency.",
         signature: "Michael Chen",
-    },
-    {
-        image: "/testimonials/test2.png",
-        name: "Sarah Wilson",
-        position: "Operations Manager at HealthPlus",
-        rating: 5,
-        description: "The mobile app developed by Insprosoftware is world-class. It’s robust, scalable, and our users love the intuitive interface.",
-        signature: "Sarah Wilson",
-    },
-    {
-        image: "/testimonials/test1.png",
-        name: "James Rodriguez",
-        position: "Founder of Startup X",
-        rating: 5,
-        description: "Working with Insprosoftware was a game-changer for our startup. Their ability to understand our vision and execute it flawlessly was truly impressive.",
-        signature: "James Rodriguez",
-    },
-    {
-        image: "/testimonials/test2.png",
-        name: "Emily Carter",
-        position: "Lead Developer at Innovate Inc",
-        rating: 5,
-        description: "The Insprosoftware team is highly professional and efficient. They delivered a complex project ahead of schedule with exceptional quality.",
-        signature: "Emily Carter",
     }
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ data }: TestimonialsProps) {
+    const displayTestimonials = data && data.length > 0 ? data : fallbackTestimonials;
     return (
         <section className="bg-background py-10 px-6 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
             {/* Background Glow */}
@@ -76,9 +55,8 @@ export default function Testimonials() {
                 </div>
 
 
-                {/* Testimonial Carousel */}
                 <div className="w-full">
-                    <TestimonialCarousel items={testimonialData} />
+                    <TestimonialCarousel items={displayTestimonials} />
                 </div>
             </div>
         </section>
