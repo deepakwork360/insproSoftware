@@ -90,8 +90,8 @@ export default function Navbar({ navData, settings }: { navData?: any[], setting
                             <>
                                 <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                                 <Link href="/about-us" className="hover:text-primary transition-colors">About Us</Link>
-                                <MegaMenu />
-                                <PortfolioDropdown label="Portfolio" />
+                                <MegaMenu label="Services" sections={[{ title: "Services", links: [] }]} />
+                                <PortfolioDropdown label="Portfolio" links={[]} />
                                 <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
                                 <Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link>
                             </>

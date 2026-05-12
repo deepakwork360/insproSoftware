@@ -254,16 +254,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 <span className="relative z-10">Initialize Inquiry</span>
                 <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />
               </Link>
-              <div className="mt-6 flex flex-col items-center gap-2">
-                <p className="text-xs text-muted-foreground font-playfair font-medium">
-                  Insprosoftware HUD
-                </p>
-                {/* <div className="flex items-center gap-4 text-[8px] text-muted-foreground/40 font-mono tracking-widest uppercase">
-                  <span>Version 1.2</span>
-                  <div className="w-1 h-1 bg-primary rounded-full animate-pulse" />
-                  <span>Adaptive System</span>
-                </div> */}
-              </div>
+              
             </div>
           </motion.div>
         </div>

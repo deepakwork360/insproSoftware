@@ -9,7 +9,7 @@ export interface CompDetailCardProps {
 
 export default function CompDetailCard({ icon, title, description }: CompDetailCardProps) {
     return (
-        <div className="group relative p-8 bg-card border border-border/50 hover:border-accent/40 transition-all duration-500 overflow-hidden">
+        <div className="group relative p-8 bg-card border border-border hover:border-accent/40 transition-all duration-500 overflow-hidden">
             {/* Corner Accent - Top Right */}
             <div className="absolute top-0 right-0 w-8 h-px bg-accent/0 group-hover:bg-accent/40 transition-all duration-500" />
             <div className="absolute top-0 right-0 w-px h-8 bg-accent/0 group-hover:bg-accent/40 transition-all duration-500" />

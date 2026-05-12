@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import ImageContainer from "@/components/ui/image-container";
+import { useSwipe } from "@/hooks/use-swipe";
 
 export interface Testimonial {
     image: string;
@@ -16,6 +17,10 @@ export interface Testimonial {
 
 interface TestimonialCardProps {
     testimonial: Testimonial;
+}
+
+interface TestimonialCarouselProps {
+    items: Testimonial[];
 }
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
@@ -98,8 +103,6 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
         </div>
     );
 }
-
-import { useSwipe } from "@/hooks/use-swipe";
 
 export default function TestimonialCarousel({ items }: TestimonialCarouselProps) {
     const [activeIndex, setActiveIndex] = useState(0);

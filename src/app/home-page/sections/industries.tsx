@@ -32,20 +32,20 @@ const row2 = [
 
 export default function Industries() {
     return (
-        <section className="bg-background px-4 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
+        <section className="bg-black px-4 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
             {/* Background Accent for Premium Feel */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto space-y-8 relative z-10">
                 
                 {/* Header Section */}
-                <div className="space-y-4 mb-10">
+                <div className="space-y-4 py-10 mb-10">
                     <div className="space-y-2 md:space-y-4">
-                        <h2 className="text-3xl md:text-5xl font-playfair font-medium text-foreground leading-[1.1]">
+                        <h2 className="text-3xl md:text-5xl font-playfair font-medium text-white leading-[1.1]">
                             Expertise <span className="italic text-primary">Across</span> Global Sectors
                         </h2>
                     </div>
-                    <p className="text-base md:text-xl text-foreground/70 font-poppins font-light leading-relaxed max-w-5xl">
+                    <p className="text-base md:text-xl text-white/70 font-poppins font-light leading-relaxed max-w-5xl">
                         We leverage the top 1% of software engineering talent to deliver specialized, 
                         high-performance solutions tailored to the unique demands of these core industries.
                     </p>
@@ -53,7 +53,7 @@ export default function Industries() {
 
 
                 {/* Industries Grid */}
-                <div className="space-y-1">
+                <div className="space-y-1 mb-18">
                     {/* Row 1 & 2 combined for better mobile stacking */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1">
                         {[...row1, ...row2].map((item, index) => (
@@ -61,7 +61,8 @@ export default function Industries() {
                                 key={index} 
                                 id={item.id} 
                                 showBackground={true}
-                                className="group flex flex-col items-center justify-center gap-4 md:gap-6 p-6 md:p-10 aspect-square md:aspect-auto md:min-h-[220px]"
+                                padding="p-8"
+                                className="group flex flex-col items-center justify-center gap-4"
                             >
                                 <div className="relative group-hover:scale-110 transition-transform duration-500">
                                     {/* Subtle Glow behind icon on hover */}

@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Dynamic Content Sections */}
           <div className="space-y-10">
-            {data.sections.map((section, idx) => {
+            {data.sections.map((section: any, idx: number) => {
               if (section.type === "heading") {
                 return (
                   <h2 key={idx} className="text-3xl md:text-4xl font-playfair font-medium text-foreground leading-tight pt-4">

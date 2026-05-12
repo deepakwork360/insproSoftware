@@ -48,7 +48,7 @@ const faqs = [
 
 function FAQItem({ que, ans, index, isOpen, toggle }: { que: string, ans: string, index: number, isOpen: boolean, toggle: () => void }) {
     return (
-        <div className={`group border-b border-border/40 transition-all duration-700 relative ${isOpen ? "bg-primary/[0.04] backdrop-blur-sm" : "hover:bg-primary/[0.01]"}`}>
+        <div className={`group border-b border-border transition-all duration-700 relative ${isOpen ? "bg-primary/[0.04] backdrop-blur-sm" : "hover:bg-primary/[0.01]"}`}>
             {/* Dynamic left accent bar */}
             <div className={`absolute left-0 top-0 bottom-0 w-[3px] bg-primary transition-all duration-700 ease-out z-20 ${isOpen ? "opacity-100" : "opacity-0 h-0"}`} />
             
@@ -65,7 +65,7 @@ function FAQItem({ que, ans, index, isOpen, toggle }: { que: string, ans: string
                     </h3>
                 </div>
                 
-                <div className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-500 z-10 rounded-full border cursor-pointer ${isOpen ? "bg-primary border-primary text-white rotate-180 scale-110 shadow-[0_0_20px_rgba(var(--primary),0.3)]" : "bg-background/50 border-border/40 text-primary"}`}>
+                <div className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-500 z-10 rounded-full border cursor-pointer ${isOpen ? "bg-primary border-primary text-white rotate-180 scale-110 shadow-[0_0_20px_rgba(var(--primary),0.3)]" : "bg-background/50 border-border text-primary"}`}>
                     <Plus 
                         size={20} 
                         className={`absolute transition-all duration-500 ease-out ${isOpen ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"}`} 
@@ -127,7 +127,7 @@ export default function FAQ({
                 </div>
                 
                 {/* Accordion List */}
-                <div className="border-t border-border/40 relative">
+                <div className="border-t border-border relative">
                     {displayFaqs.map((faq, index) => (
                         <FAQItem 
                             key={index}

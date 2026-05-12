@@ -90,10 +90,10 @@ export default function DigitalServices() {
                 </div>
 
                 {/* Main Interactive Grid */}
-                <div className="flex flex-col lg:flex-row border border-border/40 bg-card overflow-hidden min-h-[450px] lg:min-h-[500px]">
+                <div className="flex flex-col lg:flex-row border border-border bg-card overflow-hidden min-h-[450px] lg:min-h-[500px]">
 
                     {/* Sidebar: Service Titles */}
-                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-border/40 flex flex-col">
+                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 flex flex-col">
                         {servicesData.map((service, index) => (
                             <button
                                 key={service.id}
@@ -101,7 +101,7 @@ export default function DigitalServices() {
                                 className={`flex-1 text-left p-6 lg:p-8 relative group flex items-center justify-between border-b last:border-0
                                     ${activeTab === index
                                         ? "bg-primary text-white border-primary"
-                                        : "hover:bg-primary/5 text-foreground/70 border-border/20"}`}
+                                        : "hover:bg-primary/5 text-foreground/70 border-border"}`}
                             >
                                 <span className="text-sm lg:text-lg font-medium font-poppins tracking-wide">
                                     {service.title}
@@ -118,18 +118,18 @@ export default function DigitalServices() {
                     {/* Content Area: Details & Image */}
                     <div className="flex-1 flex flex-col md:flex-row">
                         {/* Middle: Description & Points */}
-                        <div className="flex-1 p-8 lg:p-12 space-y-8 bg-card/50">
-                            <h3 className="text-2xl lg:text-3xl font-playfair font-medium text-foreground">
+                        <div className="flex-1 p-8 lg:p-12 space-y-8 bg-black">
+                            <h3 className="text-2xl lg:text-3xl font-playfair font-medium text-white">
                                 {current.title}
                             </h3>
                             <div className="w-16 h-px bg-primary" />
-                            <p className="text-foreground/70 leading-relaxed min-h-[100px]">
+                            <p className="text-white/70 leading-relaxed min-h-[100px]">
                                 {current.description}
                             </p>
 
                             <ul className="space-y-4">
                                 {current.points.map((point, idx) => (
-                                    <li key={idx} className="flex items-center gap-4 text-foreground/80 group">
+                                    <li key={idx} className="flex items-center gap-4 text-white/80 group">
                                         <div className="w-6 h-6 flex items-center justify-center bg-primary/10 text-primary border border-primary/20 rounded-none group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                         </div>
@@ -140,8 +140,8 @@ export default function DigitalServices() {
                         </div>
 
                         {/* Right: Visual Image */}
-                        <div className="w-full md:w-2/5 min-h-[350px] relative overflow-hidden">
-                            <ImageContainer className="w-full h-full p-0 border-0" id={activeTab + 1} showBackground={false}>
+                        <div className="flex-1 relative overflow-hidden">
+                            <ImageContainer padding="p-0" className="w-full h-full border-0" id={activeTab + 1} showBackground={false}>
                                 <Image
                                     src={current.image}
                                     alt={current.title}

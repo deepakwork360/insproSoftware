@@ -87,7 +87,7 @@ export default function DevProcess() {
                                             <ImageContainer 
                                                 id={item.id} 
                                                 showBackground={true}
-                                                className="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 p-0 flex items-center justify-center bg-card/40 backdrop-blur-xl border-border/20 group-hover:border-primary/40 transition-all duration-700"
+                                                className="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 p-0 flex items-center justify-center bg-card/40 backdrop-blur-xl border-border group-hover:border-primary/40 transition-all duration-700"
                                             >
                                                 <item.icon size={28} className="text-primary/70 md:hidden transition-all duration-700 group-hover:text-primary" />
                                                 <item.icon size={36} className="text-primary/70 hidden md:block transition-all duration-700 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12" />

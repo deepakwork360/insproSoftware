@@ -60,7 +60,7 @@ function Counter({ value, label, id }: CounterProps) {
     return (
         <div
             ref={elementRef}
-            className="group relative p-8 bg-card border border-border/40 hover:border-primary/40 transition-all duration-500 overflow-hidden"
+            className="group relative p-8 bg-card hover:border-primary/40 transition-all duration-500 overflow-hidden"
         >
             {/* HUD Decoration */}
             {/* <div className="absolute top-0 right-0 p-2 opacity-5 font-mono text-[8px] tracking-widest text-foreground uppercase">
@@ -103,7 +103,7 @@ export default function Understand() {
     ];
 
     return (
-        <section className="bg-background px-6 md:px-12 lg:px-24 transition-colors duration-300">
+        <section className="bg-background px-6 mb-10 md:px-12 lg:px-24 transition-colors duration-300">
             <div className="max-w-7xl mx-auto space-y-10 lg:space-y-10">
 
                 {/* Header Section */}

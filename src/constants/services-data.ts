@@ -7,7 +7,7 @@ export interface ServiceCard {
 export interface ProfPoint {
   title: string;
   description: string;
-  iconName: "Users" | "TrendingUp" | "ShieldCheck" | "LifeBuoy" | "Code2" | "Server" | "Database" | "Layout" | "Search" | "Settings" | "BarChart";
+  iconName: "Users" | "TrendingUp" | "ShieldCheck" | "LifeBuoy" | "Code2" | "Server" | "Database" | "Layout" | "Search" | "Settings" | "BarChart" | "Target" | "RefreshCw" | "Zap" | "Smartphone" | "WifiOff" | "Globe" | "Brain" | "Cpu" | "Cloud" | "ShoppingCart" | "Monitor" | "Layers" | "Activity" | string;
 }
 
 export interface TechItem {
@@ -18,7 +18,7 @@ export interface TechItem {
 export interface TechCategory {
   category: string;
   intro: string;
-  iconName: "Code2" | "Server" | "Database" | "Layout" | "Search" | "Settings" | "BarChart";
+  iconName: "Code2" | "Server" | "Database" | "Layout" | "Search" | "Settings" | "BarChart" | "Palette" | "Zap" | "Users" | "Search" | string;
   items: TechItem[];
 }
 
