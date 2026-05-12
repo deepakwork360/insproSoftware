@@ -10,7 +10,7 @@ export default function Map() {
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
 
     return (
-        <section className="relative py-10 px-6 md:px-12 lg:px-24 bg-background overflow-hidden">
+        <section id='site-map1' className="relative py-10 px-6 md:px-12 lg:px-24 bg-background overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Header Info */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4">

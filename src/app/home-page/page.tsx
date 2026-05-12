@@ -38,8 +38,8 @@ export default async function HomePage() {
             <Industries />
             <DevProcess />
             <FAQ />
-            <Testimonials data={testimonialData} />
-            <FooterCTA contactData={contactData} />
+            <Testimonials data={testimonialData || []} />
+            <FooterCTA contactData={contactData || {}} />
         </div>
     );
 }

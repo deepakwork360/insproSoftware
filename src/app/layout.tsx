@@ -41,6 +41,10 @@ export default async function RootLayout({
   const navData = await getNavigation("Main Menu");
   const footerData = await getFooterSettings();
 
+  // Defensive defaults for layout rendering
+  const safeNavLinks = navData?.links || [];
+  const safeFooterData = footerData || { logoText: "Insprosoftware", columns: [], socialLinks: [] };
+
   return (
     <html
       lang="en"
@@ -82,7 +86,7 @@ export default async function RootLayout({
             darkTheme={settings?.darkTheme} 
             defaultAppearance={settings?.defaultAppearance} 
           />
-          <ConditionalNavigation navData={navData?.links} footerData={footerData} settings={settings}>
+          <ConditionalNavigation navData={safeNavLinks} footerData={safeFooterData} settings={settings}>
             {children}
           </ConditionalNavigation>
         </ThemeProvider>

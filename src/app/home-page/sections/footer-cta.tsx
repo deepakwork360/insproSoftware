@@ -91,33 +91,65 @@ export default function FooterCTA({ contactData }: FooterCTAProps) {
     return (
         <section className="relative bg-background py-10 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-border/10">
             {/* Background Decorative Elements */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden opacity-20">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,153,0.1)_0%,transparent_70%)]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden opacity-40">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,153,0.15)_0%,transparent_70%)]" />
                 
-                {/* SVG Technical Flower Pattern */}
-                <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] text-primary/30 animate-[spin_60s_infinite_linear]" viewBox="0 0 200 200">
-                    <defs>
-                        <linearGradient id="flower-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="currentColor" stopOpacity="0.3" />
-                            <stop offset="50%" stopColor="currentColor" stopOpacity="0.9" />
-                            <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
-                        </linearGradient>
-                    </defs>
-                    {/* Rotating Petals */}
-                    {[...Array(12)].map((_, i) => (
-                        <ellipse 
-                            key={i}
-                            cx="100" cy="100" rx="60" ry="15" 
-                            fill="none" stroke="url(#flower-grad)" strokeWidth="1.2"
-                            transform={`rotate(${i * 30} 100 100)`}
-                        />
-                    ))}
-                    {/* Inner HUD Rings */}
-                    <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 4" />
-                    <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" strokeWidth="0.4" />
-                    {/* Central Core */}
-                    <circle cx="100" cy="100" r="6" fill="currentColor" className="animate-pulse" />
-                </svg>
+                {/* Technical HUD Schematic */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] flex items-center justify-center">
+                    <svg className="w-full h-full text-primary/40" viewBox="0 0 200 200">
+                        <defs>
+                            <linearGradient id="hud-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="currentColor" stopOpacity="0.3" />
+                                <stop offset="50%" stopColor="currentColor" stopOpacity="1" />
+                                <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+
+                        {/* Outer Slow Rotating Ring */}
+                        <g className="animate-[spin_120s_infinite_linear]" filter="url(#glow)">
+                            <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="1 10" />
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" strokeWidth="0.8" />
+                        </g>
+
+                        {/* Medium Fast Counter-Rotating Ring */}
+                        <g className="animate-[spin_40s_infinite_linear_reverse]" filter="url(#glow)">
+                            <circle cx="100" cy="100" r="75" fill="none" stroke="currentColor" strokeWidth="2.5" strokeDasharray="20 40" />
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 4" />
+                        </g>
+
+                        {/* Inner Technical HUD Components */}
+                        <g className="animate-[spin_20s_infinite_linear]" filter="url(#glow)">
+                            <path d="M60 100 L40 100 M140 100 L160 100 M100 60 L100 40 M100 140 L100 160" stroke="currentColor" strokeWidth="2.5" />
+                            <rect x="95" y="45" width="10" height="4" fill="currentColor" />
+                            <rect x="95" y="151" width="10" height="4" fill="currentColor" />
+                        </g>
+
+                        {/* Central Pulsing Core */}
+                        <circle cx="100" cy="100" r="40" fill="none" stroke="url(#hud-grad)" strokeWidth="1.5" className="animate-pulse" filter="url(#glow)" />
+                        <circle cx="100" cy="100" r="4" fill="currentColor" className="animate-pulse" filter="url(#glow)" />
+
+                        {/* Scanning "Data" Points */}
+                        {[...Array(8)].map((_, i) => (
+                            <circle 
+                                key={i}
+                                cx={100 + 60 * Math.cos(i * Math.PI / 4)} 
+                                cy={100 + 60 * Math.sin(i * Math.PI / 4)} 
+                                r="2.5" 
+                                fill="currentColor"
+                                className="animate-pulse"
+                                style={{ animationDelay: `${i * 0.5}s` }}
+                                filter="url(#glow)"
+                            />
+                        ))}
+                    </svg>
+                </div>
             </div>
 
 

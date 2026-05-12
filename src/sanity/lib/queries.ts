@@ -1,85 +1,115 @@
 import { client } from "./client";
 
 export async function getSiteSettings() {
-  return client.fetch(`*[_type == "siteSettings"][0]{ lightTheme, darkTheme, defaultAppearance, showThemeToggle }`);
+  try {
+    return await client.fetch(`*[_type == "siteSettings"][0]{ lightTheme, darkTheme, defaultAppearance, showThemeToggle }`);
+  } catch (error) {
+    console.error("Sanity Fetch Error (getSiteSettings):", error);
+    return null;
+  }
 }
 
 export async function getNavigation(title: string) {
-  return client.fetch(
-    `*[_type == "navigation" && title == $title][0]{
-      links[]{
-        label,
-        href,
-        type,
-        sections[]{
-          title,
-          icon,
-          links[]{
+  try {
+    return await client.fetch(
+      `*[_type == "navigation" && title == $title][0]{
+        links[]{
+          label,
+          href,
+          type,
+          sections[]{
+            title,
+            icon,
+            links[]{
+              label,
+              href
+            }
+          },
+          dropdownLinks[]{
             label,
             href
           }
-        },
-        dropdownLinks[]{
-          label,
-          href
         }
-      }
-    }`,
-    { title }
-  );
+      }`,
+      { title }
+    );
+  } catch (error) {
+    console.error(`Sanity Fetch Error (getNavigation - ${title}):`, error);
+    return null;
+  }
 }
 
 export async function getFooterSettings() {
-  return client.fetch(`*[_type == "footerSettings"][0]{
-    logoText,
-    description,
-    columns[]{
-      title,
-      links[]{
-        label,
-        href
-      }
-    },
-    socialLinks[]{
-      platform,
-      url,
-      icon
-    },
-    copyrightText
-  }`);
+  try {
+    return await client.fetch(`*[_type == "footerSettings"][0]{
+      logoText,
+      description,
+      columns[]{
+        title,
+        links[]{
+          label,
+          href
+        }
+      },
+      socialLinks[]{
+        platform,
+        url,
+        icon
+      },
+      copyrightText
+    }`);
+  } catch (error) {
+    console.error("Sanity Fetch Error (getFooterSettings):", error);
+    return null;
+  }
 }
 
 export async function getContactSettings() {
-  return client.fetch(`*[_type == "contactSettings"][0]{
-    phoneNumbers,
-    email,
-    address,
-    googleMapsLink
-  }`);
+  try {
+    return await client.fetch(`*[_type == "contactSettings"][0]{
+      phoneNumbers,
+      email,
+      address,
+      googleMapsLink
+    }`);
+  } catch (error) {
+    console.error("Sanity Fetch Error (getContactSettings):", error);
+    return null;
+  }
 }
 
 export async function getTeamMembers() {
-  return client.fetch(`*[_type == "teamMember"] | order(order asc, _createdAt desc) {
-    name,
-    role,
-    location,
-    "imageUrl": image.asset->url + "?auto=format"
-  }`, {}, {
-    next: { revalidate: 0 }
-  });
+  try {
+    return await client.fetch(`*[_type == "teamMember"] | order(order asc, _createdAt desc) {
+      name,
+      role,
+      location,
+      "imageUrl": image.asset->url + "?auto=format"
+    }`, {}, {
+      next: { revalidate: 0 }
+    });
+  } catch (error) {
+    console.error("Sanity Fetch Error (getTeamMembers):", error);
+    return [];
+  }
 }
 
 export async function getTestimonials() {
-  return client.fetch(`*[_type == "testimonial"] | order(order asc, _createdAt desc) {
-    name,
-    position,
-    "image": image.asset->url + "?auto=format",
-    rating,
-    description,
-    signature
-  }`, {}, {
-    next: { revalidate: 0 }
-  });
+  try {
+    return await client.fetch(`*[_type == "testimonial"] | order(order asc, _createdAt desc) {
+      name,
+      position,
+      "image": image.asset->url + "?auto=format",
+      rating,
+      description,
+      signature
+    }`, {}, {
+      next: { revalidate: 0 }
+    });
+  } catch (error) {
+    console.error("Sanity Fetch Error (getTestimonials):", error);
+    return [];
+  }
 }
 
 // Blog Queries
