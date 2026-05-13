@@ -246,7 +246,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               <Link 
                 href="/contact"
                 onClick={onClose}
-                className="group relative inline-flex w-full items-center justify-center gap-6 px-8 py-5 bg-primary text-primary-foreground text-base font-playfair font-medium transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-primary/20 overflow-hidden"
+                className="group relative inline-flex w-full items-center justify-center gap-6 px-8 py-5 bg-primary text-primary-foreground text-base font-playfair font-medium transition-all duration-500 hover:bg-accent hover:shadow-2xl hover:shadow-primary/20 overflow-hidden"
               >
                 {/* Button Glint Effect */}
                 <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />

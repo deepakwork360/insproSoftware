@@ -71,8 +71,16 @@ export default function DigitalServices() {
     const current = servicesData[activeTab];
 
     return (
-        <section className="bg-background py-10 md:py-18 px-6 md:px-12 lg:px-24 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto space-y-10 lg:space-y-15">
+        <section className="relative bg-white dark:bg-background py-10 md:py-20 px-6 md:px-12 lg:px-24 transition-colors duration-500 overflow-hidden">
+            {/* 3D Background UI Elements (Light Mode Only) */}
+            <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[120px] pointer-events-none dark:hidden animate-pulse" />
+            <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none dark:hidden" />
+            
+            {/* HUD Grid Background UI */}
+            <div className="absolute inset-0 opacity-[0.05] dark:hidden pointer-events-none" 
+                 style={{ backgroundImage: 'linear-gradient(to right, #2563EB 1px, transparent 1px), linear-gradient(to bottom, #2563EB 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+            <div className="relative z-10 max-w-7xl mx-auto space-y-10 lg:space-y-15">
 
                 {/* Header */}
                 <div className="space-y-6">

@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function WantTalk() {
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24 bg-black border-y border-[var(--border)]">
+    <section className="py-12 px-6 md:px-12 lg:px-24 bg-background border-y border-[var(--border)]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Left Content */}
         <div className="space-y-4">
@@ -16,7 +16,7 @@ export default function WantTalk() {
               Ready To Start?
             </span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-serif font-medium text-white leading-tight max-w-2xl">
+          <h2 className="text-2xl md:text-4xl font-serif font-medium text-black dark:text-white leading-tight max-w-2xl">
             Want to accelerate <span className="italic text-[var(--primary)]">software development</span> at your company?
           </h2>
         </div>

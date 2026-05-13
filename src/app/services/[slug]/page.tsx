@@ -12,6 +12,7 @@ import WantTalk from "@/components/services/wantTalk";
 import Testimonials from "@/app/home-page/sections/testimonials";
 import FAQ from "@/app/home-page/sections/faq";
 import FooterCTA from "@/app/home-page/sections/footer-cta";
+import { getContactSettings, getTestimonials } from "@/sanity/lib/queries";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -36,6 +37,9 @@ export default async function ServicePage({ params }: PageProps) {
   if (!data) {
     notFound();
   }
+
+  const testimonialData = await getTestimonials();
+  const contactData = await getContactSettings();
 
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
@@ -82,9 +86,9 @@ export default async function ServicePage({ params }: PageProps) {
       {/* <ProfessionalExp /> */}
       <Portfolio />
       <WantTalk />
-      <Testimonials />
+      <Testimonials data={testimonialData || []} />
       <FAQ />
-      <FooterCTA />
+      <FooterCTA contactData={contactData || {}} />
 
       <div className="h-20" />
     </main>

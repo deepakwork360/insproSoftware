@@ -107,9 +107,14 @@ export default function FAQ({
     const displayFaqs = customFaqs || faqs;
 
     return (
-        <section className="bg-background py-10 px-6 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
-            {/* Background Accent */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+        <section className="relative bg-neutral-50/50 dark:bg-background py-10 lg:py-20 px-6 md:px-12 lg:px-24 transition-colors duration-500 overflow-hidden">
+            {/* 3D Background UI Elements (Light Mode Only) */}
+            <div className="absolute top-[20%] left-[-5%] w-[400px] h-[400px] bg-primary/[0.03] rounded-full blur-[100px] pointer-events-none dark:hidden" />
+            <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-[100px] pointer-events-none dark:hidden" />
+            
+            {/* Background Texture UI */}
+            <div className="absolute inset-0 opacity-[0.03] dark:hidden pointer-events-none" 
+                 style={{ backgroundImage: 'linear-gradient(to right, #64748b 1px, transparent 1px), linear-gradient(to bottom, #64748b 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
 
             <div className="max-w-7xl mx-auto space-y-12 relative z-10">
                 

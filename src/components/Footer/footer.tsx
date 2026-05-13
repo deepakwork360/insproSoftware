@@ -57,6 +57,17 @@ export default function Footer({ data }: FooterProps) {
 
     return (
         <footer className="bg-background border-t border-border/10 pt-20 pb-8 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+            {/* Background UI Image - Light Mode Only */}
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15] dark:hidden">
+                <Image 
+                    src="/about/footer-ui360.jpeg" 
+                    alt="Footer Background UI" 
+                    fill 
+                    className="object-contain object-bottom"
+                    priority
+                />
+            </div>
+
             {/* Background HUD Detail */}
             <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none opacity-50" />
 
@@ -69,7 +80,7 @@ export default function Footer({ data }: FooterProps) {
                             <div className="relative w-[180px] h-[60px]">
                                 {/* Default Logos */}
                                 <Image src="/logo/blue-black.png" alt="Logo" width={180} height={40} className="logo-img light-only default-only" priority />
-                                <Image src="/logo/green-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only default-only" priority />
+                                <Image src="/logo/blue-white3.png" alt="Logo" width={180} height={40} className="logo-img dark-only default-only" priority />
 
                                 {/* Sapphire Gold */}
                                 <Image src="/logo/golden-black3.png" alt="Logo" width={180} height={40} className="logo-img light-only sapphire-only" priority />

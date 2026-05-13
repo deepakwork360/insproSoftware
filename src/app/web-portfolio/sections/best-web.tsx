@@ -38,7 +38,7 @@ export default function BestWeb() {
                         <div className="pt-6">
                             <Link 
                                 href="/contact" 
-                                className="relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-playfair text-sm font-medium transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-primary/20 overflow-hidden group"
+                                className="relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-playfair text-sm font-medium transition-all duration-500 hover:bg-accent hover:shadow-2xl hover:shadow-primary/20 overflow-hidden group"
                             >
                                 {/* Button Glint Effect */}
                                 <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />

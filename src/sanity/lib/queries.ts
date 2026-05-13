@@ -70,6 +70,7 @@ export async function getContactSettings() {
       phoneNumbers,
       email,
       address,
+      workingHours,
       googleMapsLink
     }`);
   } catch (error) {

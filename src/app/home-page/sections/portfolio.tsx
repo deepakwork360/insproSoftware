@@ -45,8 +45,16 @@ export default async function Portfolio() {
     const finalData = portfolioData && portfolioData.length > 0 ? portfolioData : fallbackData;
 
     return (
-        <section className="bg-background py-10 md:py-18 px-6 md:px-12 lg:px-24 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto">
+        <section className="relative bg-zinc-50/50 dark:bg-background py-10 md:py-20 px-6 md:px-12 lg:px-24 transition-colors duration-500 overflow-hidden">
+            {/* 3D Background UI Elements (Light Mode Only) */}
+            <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-[100px] pointer-events-none dark:hidden" />
+            <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-[100px] pointer-events-none dark:hidden" />
+            
+            {/* Background Texture UI */}
+            <div className="absolute inset-0 opacity-[0.03] dark:hidden pointer-events-none" 
+                 style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+
+            <div className="relative z-10 max-w-7xl mx-auto">
                 
                 {/* Header Section */}
                 <div className="space-y-6 mb-6">

@@ -60,13 +60,16 @@ function Counter({ value, label, id }: CounterProps) {
     return (
         <div
             ref={elementRef}
-            className="group relative p-8 bg-card hover:border-primary/40 transition-all duration-500 overflow-hidden"
+            className="group relative p-8 bg-card border border-primary/20 hover:border-primary/50 transition-all duration-500 overflow-hidden"
         >
-            {/* HUD Decoration */}
-            {/* <div className="absolute top-0 right-0 p-2 opacity-5 font-mono text-[8px] tracking-widest text-foreground uppercase">
-                Data.Point_{id}
-            </div> */}
-            <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-700" />
+            {/* Colorful Gradient Background (Visible normally) */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-primary/[0.05] group-hover:from-primary/15 group-hover:to-primary/[0.08] transition-all duration-500 pointer-events-none" />
+
+            {/* Corner Brackets */}
+            <div className="absolute top-0 right-0 w-8 h-px bg-primary/20 group-hover:bg-primary/60 transition-all duration-500" />
+            <div className="absolute top-0 right-0 w-px h-8 bg-primary/20 group-hover:bg-primary/60 transition-all duration-500" />
+            
+            <div className="absolute bottom-0 left-0 w-8 h-[2px] bg-primary/40 group-hover:w-full transition-all duration-700" />
 
             <div className="relative z-10 space-y-2">
                 <h3 className="text-4xl lg:text-5xl font-playfair font-medium text-foreground tracking-tight">
@@ -79,18 +82,15 @@ function Counter({ value, label, id }: CounterProps) {
                         <span className="text-primary animate-in fade-in duration-1000">{value}</span>
                     )}
                 </h3>
-                <p className="text-sm lg:text-base font-playfair text-primary font-medium">
+                <p className="text-sm lg:text-base font-playfair text-foreground/70 font-medium group-hover:text-primary transition-colors">
                     {label}
                 </p>
             </div>
-
-            {/* Corner Brackets */}
-            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
     );
 }
 
-export default function Understand() {
+export default function Understand({ className = "" }: { className?: string }) {
     const stats = [
         { id: "01", value: "8+ Million", label: "Users Engagement" },
         { id: "02", value: "11+", label: "Years of Experience" },
@@ -103,8 +103,15 @@ export default function Understand() {
     ];
 
     return (
-        <section className="bg-background px-6 mb-10 md:px-12 lg:px-24 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto space-y-10 lg:space-y-10">
+        <section className={`relative bg-emerald-50/30 dark:bg-background py-10 lg:py-20 px-6 md:px-12 lg:px-24 transition-colors duration-500 overflow-hidden ${className}`}>
+            {/* 3D Background UI Elements (Light Mode Only) */}
+            <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/[0.04] rounded-full blur-[150px] pointer-events-none dark:hidden" />
+            
+            {/* Floating UI Elements */}
+            <div className="absolute top-20 right-20 w-32 h-32 border border-primary/10 rounded-full dark:hidden pointer-events-none animate-bounce" style={{ animationDuration: '6s' }} />
+            <div className="absolute bottom-20 left-10 w-48 h-48 border border-accent/10 rounded-full dark:hidden pointer-events-none" />
+
+            <div className="relative z-10 max-w-7xl mx-auto space-y-10 lg:space-y-10">
 
                 {/* Header Section */}
                 <div className="space-y-8">

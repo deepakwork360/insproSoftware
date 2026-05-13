@@ -9,11 +9,15 @@ export const metadata: Metadata = {
   description: "Have a project in mind? Contact InsproSoftware today. Our experts are ready to help you with your next big idea. Reach out via form, email, or phone.",
 };
 
-export default function Contact() {
+import { getContactSettings } from "@/sanity/lib/queries";
+
+export default async function Contact() {
+    const contactData = await getContactSettings();
+
     return (
         <div>
             <ContactBanner />
-            <CompDetail />
+            <CompDetail contactData={contactData} />
             <FormPart />
             <Map />
         </div>

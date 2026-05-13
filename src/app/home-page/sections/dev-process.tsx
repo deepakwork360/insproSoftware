@@ -46,10 +46,14 @@ const devData = [
 
 export default function DevProcess() {
     return (
-        <section className="bg-background py-10 md:py-18 px-6 md:px-12 lg:px-24 transition-colors duration-300 relative overflow-hidden">
-            {/* Background Ambient Glow */}
-            <div className="absolute -top-[10%] -right-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute -bottom-[10%] -left-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        <section className="relative bg-blue-50/40 dark:bg-background py-10 md:py-20 px-6 md:px-12 lg:px-24 transition-colors duration-500 overflow-hidden">
+            {/* 3D Background UI Elements (Light Mode Only) */}
+            <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px] pointer-events-none dark:hidden" />
+            <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-[120px] pointer-events-none dark:hidden" />
+            
+            {/* Background Texture UI */}
+            <div className="absolute inset-0 opacity-[0.03] dark:hidden pointer-events-none" 
+                 style={{ backgroundImage: 'linear-gradient(45deg, #3b82f6 1px, transparent 1px), linear-gradient(-45deg, #3b82f6 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
 
             <div className="max-w-7xl mx-auto space-y-12 relative z-10">
                 

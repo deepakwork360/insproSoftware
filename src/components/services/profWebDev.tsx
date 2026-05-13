@@ -19,7 +19,7 @@ export default function ProfWebDev({ data }: ProfWebDevProps) {
   };
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 bg-[var(--background)] transition-colors duration-300">
+    <section className="md:py-12 px-6 md:px-12 lg:px-24 bg-[var(--background)] transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8 space-y-6">

@@ -31,6 +31,13 @@ export const contactSettings = {
       description: 'Physical office address.',
     },
     {
+      name: 'workingHours',
+      title: 'Working Hours',
+      type: 'string',
+      initialValue: 'Monday - Friday: 9:00 AM - 6:00 PM',
+      description: 'e.g., Monday - Friday: 9:00 AM - 6:00 PM',
+    },
+    {
       name: 'googleMapsLink',
       title: 'Google Maps Link',
       type: 'url',

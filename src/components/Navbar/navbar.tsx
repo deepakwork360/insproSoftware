@@ -31,7 +31,7 @@ export default function Navbar({ navData, settings }: { navData?: any[], setting
 
     return (
         <header 
-            className={`sticky top-0 z-50 transition-all duration-500 ease-in-out ${
+            className={`sticky top-0 z-50 transition-all duration-150 ease-in-out ${
                 isScrolled 
                 ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm is-scrolled" 
                 : `${isLightMode ? "bg-black md:bg-transparent" : "bg-transparent"} border-transparent`
@@ -46,7 +46,7 @@ export default function Navbar({ navData, settings }: { navData?: any[], setting
                         <Link href="/" className="font-playfair font-bold text-xl tracking-tight relative block w-[160px] h-[40px]">
                             {/* Default Logos */}
                             <Image src="/logo/blue-black.png" alt="Logo" width={160} height={40} className="logo-img light-only default-only" priority />
-                            <Image src="/logo/green-white3.png" alt="Logo" width={160} height={40} className="logo-img dark-only default-only" priority />
+                            <Image src="/logo/blue-white3.png" alt="Logo" width={160} height={40} className="logo-img dark-only default-only" priority />
 
                             {/* Sapphire Gold */}
                             <Image src="/logo/golden-black3.png" alt="Logo" width={160} height={40} className="logo-img light-only sapphire-only" priority />

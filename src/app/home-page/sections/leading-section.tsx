@@ -6,7 +6,7 @@ import ImageContainer from "@/components/ui/image-container";
 export default function LeadingSection({ className = "", phoneNumber }: { className?: string, phoneNumber?: string }) {
     const displayPhone = phoneNumber || "+91 9990760789";
     return (
-        <section className={`bg-background px-6 md:px-12 lg:px-24 transition-colors duration-300 overflow-hidden ${className}`}>
+        <section className={`bg-background mb-4 px-6 md:px-12 lg:px-24 transition-colors duration-300 overflow-hidden ${className}`}>
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
 
                 {/* Left Side: Clean Image */}

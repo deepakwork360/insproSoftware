@@ -304,7 +304,7 @@ export default function FooterCTA({ contactData }: FooterCTAProps) {
                                     <button 
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="group relative inline-flex w-full items-center justify-center gap-4 md:gap-6 px-6 md:px-12 py-5 bg-[var(--primary)] text-white text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-[var(--primary)]/20 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="group relative inline-flex w-full items-center justify-center gap-4 md:gap-6 px-6 md:px-12 py-5 bg-[var(--primary)] text-white text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-accent hover:shadow-2xl hover:shadow-[var(--primary)]/20 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {/* Button Glint Effect */}
                                         <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out" />
