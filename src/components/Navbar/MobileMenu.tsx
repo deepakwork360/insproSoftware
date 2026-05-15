@@ -121,7 +121,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   const menuContent = (
     <AnimatePresence mode="wait">
       {isOpen && (
-        <div className="fixed inset-0 z-[99999] md:hidden">
+        <div className="fixed inset-0 z-[99999] md:hidden overscroll-behavior-contain">
           {/* Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -136,14 +136,14 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
             className="absolute right-0 top-0 bottom-0 w-[90%] max-w-[450px] bg-background border-l border-border flex flex-col shadow-2xl"
           >
             {/* Header */}
             <div className="p-6 flex items-center justify-between border-b border-border bg-background">
               <div className="flex flex-col">
                 <span className="font-playfair font-bold text-2xl text-foreground tracking-tight">Navigation</span>
-                <span className="text-xs font-playfair font-medium text-primary mt-1">Innovation Hub</span>
+                {/* <span className="text-xs font-playfair font-medium text-primary mt-1">Innovation Hub</span> */}
               </div>
               <button
                 onClick={onClose}
@@ -244,7 +244,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             {/* Footer */}
             <div className="p-8 border-t border-border bg-muted/30">
               <Link 
-                href="/contact"
+                href="/#footer-cta"
                 onClick={onClose}
                 className="group relative inline-flex w-full items-center justify-center gap-6 px-8 py-5 bg-primary text-primary-foreground text-base font-playfair font-medium transition-all duration-500 hover:bg-accent hover:shadow-2xl hover:shadow-primary/20 overflow-hidden"
               >

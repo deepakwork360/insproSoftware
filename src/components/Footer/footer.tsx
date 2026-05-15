@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import { ArrowUpRight } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 
@@ -50,6 +52,43 @@ export default function Footer({ data }: FooterProps) {
         }
     };
 
+    const [bgImage, setBgImage] = useState<string | null>(null);
+    const { resolvedTheme } = useTheme();
+
+    useEffect(() => {
+        const updateBg = () => {
+            const html = document.documentElement;
+            const classString = html.className;
+            const isLight = resolvedTheme === "light" || classString.includes("light");
+            
+            if (!isLight) {
+                setBgImage(null);
+                return;
+            }
+
+            if (classString.includes("theme-emerald-night")) {
+                setBgImage("/about/footer-ui88.jpeg");
+            } else if (classString.includes("theme-cyber-neon")) {
+                setBgImage("/about/footer-ui360.jpeg");
+            } else if (
+                !classString.includes("theme-sapphire-gold") &&
+                !classString.includes("theme-royal-amethyst") &&
+                !classString.includes("theme-crimson-slate")
+            ) {
+                // Default theme (no specific premium theme class)
+                setBgImage("/about/footer-ui360.jpeg");
+            } else {
+                setBgImage(null);
+            }
+        };
+
+        updateBg();
+
+        const observer = new MutationObserver(updateBg);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+        return () => observer.disconnect();
+    }, [resolvedTheme]);
+
     // Default Fallback Data
     const description = data?.description || "Delivering precision-engineered IT solutions for global leaders. From custom software to digital transformation, we build the future of technology.";
     const logoText = data?.logoText || "Insprosoftware";
@@ -58,15 +97,17 @@ export default function Footer({ data }: FooterProps) {
     return (
         <footer className="bg-background border-t border-border/10 pt-20 pb-8 px-6 md:px-12 lg:px-24 relative overflow-hidden">
             {/* Background UI Image - Light Mode Only */}
-            <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15] dark:hidden">
-                <Image 
-                    src="/about/footer-ui360.jpeg" 
-                    alt="Footer Background UI" 
-                    fill 
-                    className="object-contain object-bottom"
-                    priority
-                />
-            </div>
+            {bgImage && (
+                <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15] transition-opacity duration-500 overflow-hidden">
+                    <Image 
+                        src={bgImage} 
+                        alt="Footer Background UI" 
+                        fill 
+                        className="object-contain object-bottom"
+                        priority
+                    />
+                </div>
+            )}
 
             {/* Background HUD Detail */}
             <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none opacity-50" />

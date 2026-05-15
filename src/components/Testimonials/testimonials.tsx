@@ -195,13 +195,13 @@ export default function TestimonialCarousel({ items }: TestimonialCarouselProps)
                 <div className="hidden md:flex gap-4">
                     <button
                         onClick={handleManualPrev}
-                        className="w-12 h-12 md:w-14 md:h-14 border border-border/20 hover:border-primary/40 hover:bg-primary/5 transition-all flex items-center justify-center group/btn"
+                        className="w-12 h-12 md:w-14 cursor-pointer md:h-14 border border-border/20 hover:border-primary/40 hover:bg-primary/5 transition-all flex items-center justify-center group/btn"
                     >
                         <ChevronLeft size={20} className="group-hover/btn:-translate-x-1 transition-transform" />
                     </button>
                     <button
                         onClick={handleManualNext}
-                        className="w-12 h-12 md:w-14 md:h-14 border border-border/20 hover:border-primary/40 hover:bg-primary/5 transition-all flex items-center justify-center group/btn"
+                        className="w-12 h-12 md:w-14 cursor-pointer md:h-14 border border-border/20 hover:border-primary/40 hover:bg-primary/5 transition-all flex items-center justify-center group/btn"
                     >
                         <ChevronRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
                     </button>

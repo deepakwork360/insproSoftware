@@ -2,6 +2,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
 :root {
   /* Premium Light Mode - Mist & Sapphire */
   --background: #F8FAFC;

@@ -2,7 +2,7 @@
 
 import React from "react";
 import PageBanner from "@/components/ui/page-banner";
-import { motion } from "framer-motion";
+
 
 export default function PrivacyPolicyClient() {
   const sections = [
@@ -42,16 +42,11 @@ export default function PrivacyPolicyClient() {
         title="Privacy Policy"
         subtitle="Data Governance & Protection"
         description="At Inspro Software, we are committed to safeguarding your digital privacy through precision engineered security protocols and transparent data practices."
-        imageUrl="/images/privacy-policy-bg.png"
+        imageUrl="/home/privacy-policy.jpg"
       />
 
-      <div className="max-w-4xl mx-auto px-6 py-10 md:py-18">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-18">
+        <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-playfair font-medium text-foreground mb-6">
             Our Commitment to Transparency
           </h2>
@@ -59,16 +54,12 @@ export default function PrivacyPolicyClient() {
             This Privacy Policy outlines how Inspro Software ("we," "our," or "us") collects, uses, and protects your personal information when you interact with our digital platforms. Our goal is to provide you with a clear understanding of our data practices so you can make informed decisions about your privacy.
           </p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-primary/30 via-primary/10 to-transparent" />
-        </motion.div>
+        </div>
 
         <div className="space-y-16">
           {sections.map((section, index) => (
-            <motion.section
+            <section
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
               <div className="flex items-start gap-6">
@@ -85,17 +76,11 @@ export default function PrivacyPolicyClient() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </section>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-32 p-8 md:p-12 rounded-2xl border border-primary/10 bg-primary/5 backdrop-blur-sm relative overflow-hidden"
-        >
+        <div className="mt-18 md:mt-24 p-8 md:p-12 rounded-2xl border border-primary/10 bg-primary/5 backdrop-blur-sm relative overflow-hidden">
           {/* Subtle HUD background element */}
           {/* <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-primary/20 tracking-widest uppercase pointer-events-none">
             Secure_Protocol: v.2.4.0
@@ -131,7 +116,7 @@ export default function PrivacyPolicyClient() {
               <div className="w-1.5 h-1.5 rounded-full bg-primary/60" />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </main>
   );

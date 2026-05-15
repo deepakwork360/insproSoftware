@@ -122,10 +122,10 @@ export default function PortfolioSlider({ items }: PortfolioSliderProps) {
                             ))}
                         </div>
                         <div className="flex gap-4">
-                            <button onClick={() => prevSlide(true)} className="w-10 h-10 flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all">
+                            <button onClick={() => prevSlide(true)} className="w-10 h-10 cursor-pointer flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m15 18-6-6 6-6" /></svg>
                             </button>
-                            <button onClick={() => nextSlide(true)} className="w-10 h-10 flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all">
+                            <button onClick={() => nextSlide(true)} className="w-10 h-10 cursor-pointer flex items-center justify-center border border-border hover:border-primary hover:text-primary transition-all">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m9 18 6-6-6-6" /></svg>
                             </button>
                         </div>

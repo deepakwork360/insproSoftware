@@ -46,7 +46,7 @@ export default function CompDetail({ className = "", contactData }: CompDetailPr
                         Send a message through the form below. If your enquiry is time sensitive, please use the contact details provided below.
                     </p>
                 </div>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6">
                     {contactDetails.map((detail, index) => (
                         <CompDetailCard
                             key={index}

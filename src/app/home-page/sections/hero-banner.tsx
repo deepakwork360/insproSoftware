@@ -5,7 +5,7 @@ export default function HeroBanner() {
         <section className="w-full aspect-video md:aspect-auto md:h-[76vh] lg:h-[86vh] overflow-hidden relative bg-black/40 md:-mt-14 md:pt-14">
             {/* Mobile Video - Only loads/plays on small screens */}
             <video 
-                src="/home/mobile-banner.mp4"
+                src="/home/og-mobile.mp4"
                 autoPlay
                 muted
                 loop
@@ -17,7 +17,7 @@ export default function HeroBanner() {
             
             {/* Desktop Video - Only loads/plays on medium screens and up */}
             <video 
-                src="/home/desktop-banner.mp4"
+                src="/home/og.mp4"
                 autoPlay
                 muted
                 loop

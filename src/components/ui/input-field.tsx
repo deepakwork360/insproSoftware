@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+import React, { memo } from "react";
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
     label: string;
@@ -8,13 +6,13 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement | H
     error?: string;
 }
 
-export default function InputField({ label, isTextArea, error, className, ...props }: InputFieldProps) {
+const InputField = memo(({ label, isTextArea, error, className, ...props }: InputFieldProps) => {
     const Component = isTextArea ? "textarea" : "input";
     
     return (
         <div className="space-y-2 group">
             <div className="flex justify-between items-center">
-                <label className="font-playfair text-base font-medium text-primary">
+                <label className="font-playfair text-sm md:text-base font-medium text-primary">
                     {label}
                 </label>
                 {error && <span className="text-[10px] font-poppins text-red-500 uppercase animate-pulse">{error}</span>}
@@ -24,10 +22,10 @@ export default function InputField({ label, isTextArea, error, className, ...pro
                 <Component
                     className={`
                         w-full bg-background/20 backdrop-blur-md border border-border/60 dark:border-border/20 
-                        p-4 text-foreground font-poppins text-sm
+                        p-3.5 md:p-4 text-foreground font-poppins text-sm
                         placeholder:text-foreground/40 focus:outline-none focus:border-primary/50
                         transition-all duration-300
-                        ${isTextArea ? "min-h-[120px] resize-none" : ""}
+                        ${isTextArea ? "min-h-[100px] md:min-h-[120px] resize-none" : ""}
                         ${error ? "border-red-500/50" : ""}
                         ${className}
                     `}
@@ -42,4 +40,8 @@ export default function InputField({ label, isTextArea, error, className, ...pro
             </div>
         </div>
     );
-}
+});
+
+InputField.displayName = "InputField";
+
+export default InputField;

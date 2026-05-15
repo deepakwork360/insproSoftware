@@ -106,7 +106,7 @@ export default function DigitalServices() {
                             <button
                                 key={service.id}
                                 onClick={() => setActiveTab(index)}
-                                className={`flex-1 text-left p-6 lg:p-8 relative group flex items-center justify-between border-b last:border-0
+                                className={`flex-1 cursor-pointer text-left p-6 lg:p-8 relative group flex items-center justify-between border-b last:border-0
                                     ${activeTab === index
                                         ? "bg-primary text-white border-primary"
                                         : "hover:bg-primary/5 text-foreground/70 border-border"}`}
