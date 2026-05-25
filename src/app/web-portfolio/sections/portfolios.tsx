@@ -3,7 +3,6 @@
 import React from 'react';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 export interface PortfolioItem {
@@ -46,12 +45,13 @@ function PortfolioCard({ item, aspectRatio = "aspect-[16/10]", className = "" }:
     const activeOverlayState = isCentered ? "opacity-90" : "";
 
     return (
-        <Link 
+        <a 
             href={item.link}
             ref={cardRef}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`group relative block w-full ${aspectRatio} bg-card overflow-hidden border border-border/40 ${className}`}
         >
-
             {/* Project Image */}
             <Image 
                 src={item.imageUrl} 
@@ -87,7 +87,7 @@ function PortfolioCard({ item, aspectRatio = "aspect-[16/10]", className = "" }:
             {/* HUD Corner Accents - Expand on Hover or when Centered */}
             <div className={`absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/40 group-hover:w-10 group-hover:h-10 transition-all duration-500 ${isCentered ? 'w-10 h-10' : ''}`} />
             <div className={`absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/40 group-hover:w-10 group-hover:h-10 transition-all duration-500 ${isCentered ? 'w-10 h-10' : ''}`} />
-        </Link>
+        </a>
     );
 }
 

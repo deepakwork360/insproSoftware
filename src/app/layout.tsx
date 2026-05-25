@@ -60,13 +60,26 @@ export default async function RootLayout({
                 try {
                   var lightTheme = "${settings?.lightTheme || ''}";
                   var darkTheme = "${settings?.darkTheme || ''}";
+                  var defaultAppearance = "${settings?.defaultAppearance || 'system'}";
                   var storageKey = "theme";
                   
                   if (typeof window !== 'undefined') {
                     var theme = localStorage.getItem(storageKey);
                     var supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
                     
-                    var isDark = theme === "dark" || (!theme && supportDarkMode);
+                    var isDark = false;
+                    if (theme === "dark") {
+                      isDark = true;
+                    } else if (theme === "light") {
+                      isDark = false;
+                    } else if (defaultAppearance === "dark") {
+                      isDark = true;
+                    } else if (defaultAppearance === "light") {
+                      isDark = false;
+                    } else {
+                      isDark = supportDarkMode;
+                    }
+                    
                     var activePalette = isDark ? darkTheme : lightTheme;
                     
                     if (activePalette) {
@@ -80,7 +93,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <ThemeProvider>
+        <ThemeProvider defaultTheme={settings?.defaultAppearance || "system"}>
           <SanityThemeSync 
             lightTheme={settings?.lightTheme} 
             darkTheme={settings?.darkTheme} 
