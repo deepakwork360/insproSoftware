@@ -161,10 +161,10 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                     <div className="space-y-2">
                       <button
                         onClick={() => setActiveLevel1(activeLevel1 === link.name ? null : link.name)}
-                        className={`w-full flex items-center justify-between p-4 rounded-2xl transition-all border ${activeLevel1 === link.name ? "bg-primary/5 border-primary/20 shadow-sm" : "bg-muted/70 dark:bg-white/[0.02] border-black/[0.04] dark:border-white/[0.05] hover:bg-muted dark:hover:bg-white/[0.05]"}`}
+                        className={`w-full flex items-center justify-between p-4 rounded-2xl transition-all border ${activeLevel1 === link.name ? "bg-primary/5 border-primary/20 shadow-sm" : "bg-muted/50 border-transparent"}`}
                       >
                         <div className="flex items-center gap-4">
-                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${activeLevel1 === link.name ? "bg-primary text-primary-foreground" : "bg-background dark:bg-white/[0.02] text-muted-foreground border border-border/60 dark:border-white/[0.08]"}`}>
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${activeLevel1 === link.name ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground border border-border"}`}>
                             {link.icon}
                           </div>
                           <span className={`font-bold text-lg ${activeLevel1 === link.name ? "text-primary" : "text-foreground/80"}`}>{link.name}</span>
@@ -201,7 +201,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                                       initial={{ height: 0, opacity: 0 }}
                                       animate={{ height: "auto", opacity: 1 }}
                                       exit={{ height: 0, opacity: 0 }}
-                                      className="overflow-hidden bg-muted/80 dark:bg-white/[0.01] border border-black/[0.02] dark:border-white/[0.03] rounded-xl ml-4"
+                                      className="overflow-hidden bg-muted/40 rounded-xl ml-4"
                                     >
                                       <div className="py-2 px-2 space-y-1">
                                         {category.links.map((sub, sIdx) => (
@@ -209,7 +209,7 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                                             key={sIdx}
                                             href={sub.href}
                                             onClick={onClose}
-                                            className="flex items-center justify-between p-4 rounded-xl text-foreground/50 hover:text-primary hover:bg-background dark:hover:bg-white/[0.03] transition-all text-sm font-medium"
+                                            className="flex items-center justify-between p-4 rounded-xl text-foreground/50 hover:text-primary hover:bg-background transition-all text-sm font-medium"
                                           >
                                             {sub.name}
                                             <ChevronRight className="w-3 h-3 text-muted-foreground/30" />
@@ -229,9 +229,9 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                     <Link
                       href={link.href!}
                       onClick={onClose}
-                      className="w-full flex items-center gap-4 p-4 rounded-2xl bg-muted/70 dark:bg-white/[0.02] border border-black/[0.04] dark:border-white/[0.05] hover:bg-muted dark:hover:bg-white/[0.05] transition-all group hover:border-primary/20 dark:hover:border-primary/20"
+                      className="w-full flex items-center gap-4 p-4 rounded-2xl bg-muted/50 hover:bg-muted transition-all group border border-transparent hover:border-border"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-background dark:bg-white/[0.02] border border-border/60 dark:border-white/[0.08] flex items-center justify-center text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
+                      <div className="w-10 h-10 rounded-xl bg-background border border-border flex items-center justify-center text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
                         {link.icon}
                       </div>
                       <span className="font-bold text-foreground/80 group-hover:text-foreground text-lg">{link.name}</span>

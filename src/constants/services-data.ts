@@ -2240,7 +2240,7 @@ export const servicesData: Record<string, ServicePageData> = {
     subtitle: "Paid Search Excellence",
     bannerDescription: "Maximize your ROI and drive instant traffic with strategic Pay-Per-Click campaigns. Leading PPC agency in USA delivering data-driven advertising excellence.",
     bannerImage: "/banner/38.jpg",
-    imagePosition: "33%",
+    imagePosition: "90%",
     sectionTitle: "Data-Driven Ad Management",
     sectionDescription: "We specialize in building high-conversion paid search and social campaigns that deliver measurable returns and scale your business growth.",
     metaTitle: "Professional PPC Management Services | Paid Search",
