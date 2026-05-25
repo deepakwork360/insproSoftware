@@ -1,31 +1,37 @@
 "use client"
 
+import { useEffect, useState } from "react";
+
 export default function HeroBanner() {
+    const [videoSrc, setVideoSrc] = useState<string | null>(null);
+
+    useEffect(() => {
+        const checkDevice = () => {
+            const isMobile = window.innerWidth < 768;
+            setVideoSrc(isMobile ? "/home/mob.mp4" : "/home/desk2.mp4");
+        };
+
+        checkDevice();
+        window.addEventListener("resize", checkDevice);
+        return () => window.removeEventListener("resize", checkDevice);
+    }, []);
+
     return (
         <section className="w-full aspect-video md:aspect-auto md:h-[76vh] lg:h-[86vh] overflow-hidden relative bg-black/40 md:-mt-14 md:pt-14">
-            {/* Mobile Video - Only loads/plays on small screens */}
-            <video 
-                src="/home/mob.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                disablePictureInPicture
-                className="w-full h-full object-cover absolute inset-0 md:hidden pointer-events-none"
-                style={{ objectPosition: "center" }}
-            />
-            
-            {/* Desktop Video - Only loads/plays on medium screens and up */}
-            <video 
-                src="/home/desk2.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                disablePictureInPicture
-                className="w-full h-full object-cover absolute inset-0 hidden md:block pointer-events-none"
-                style={{ objectPosition: "center" }}
-            />
+            {/* Dynamic Responsive Video - Only loads the single correct source matching the device viewport */}
+            {videoSrc && (
+                <video 
+                    key={videoSrc}
+                    src={videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    disablePictureInPicture
+                    className="w-full h-full object-cover absolute inset-0 pointer-events-none"
+                    style={{ objectPosition: "center" }}
+                />
+            )}
 
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,0,0,0.7)_0%,transparent_60%)] pointer-events-none" />
 
